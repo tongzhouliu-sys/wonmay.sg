@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Resale — RHCLOUD PTE. LTD.</title>
+  <meta name="description" content="Authorized cloud reseller for Alibaba Cloud, Tencent Cloud, Huawei Cloud, JD Cloud, Google Cloud, and AWS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Variables ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    :root {
+      --bg:         #060a12;
+      --bg2:        #0d1420;
+      --bgcard:     #111827;
+      --bgcard2:    #162035;
+      --accent:     #0ea5e9;
+      --accentbr:   #38bdf8;
+      --accentdim:  #0369a1;
+      --accentgl:   rgba(14,165,233,0.15);
+      --white:      #f0f6ff;
+      --gl:         #94a3b8;
+      --gm:         #475569;
+      --border:     rgba(14,165,233,0.13);
+      --borderst:   rgba(14,165,233,0.32);
+      --r:          8px;
+      --rl:         16px;
+      --tr:         0.3s cubic-bezier(0.4,0,0.2,1);
+      --fd:         'Barlow Condensed', sans-serif;
+      --fb:         'IBM Plex Sans', sans-serif;
+      --fm:         'IBM Plex Mono', monospace;
+    }
+    body {
+      font-family: var(--fb); background: var(--bg); color: var(--white);
+      line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
+
+    /* ── Layout ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 96px 0; }
+
+    /* ── Typography ── */
+    h1,h2,h3,h4 { font-family: var(--fd); font-weight: 700; line-height: 1.15; letter-spacing: 0.01em; }
+
+    /* ── Tag ── */
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--fm); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); background: var(--accentgl);
+      border: 1px solid var(--borderst); padding: 5px 12px; border-radius: 4px;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: var(--r);
+      font-family: var(--fd); font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.04em; transition: var(--tr); white-space: nowrap; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 24px rgba(14,165,233,0.35); }
+    .btn-primary:hover { background: var(--accentbr); transform: translateY(-1px); box-shadow: 0 6px 32px rgba(56,189,248,0.5); }
+    .btn-outline { border: 1px solid var(--borderst); color: var(--white); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accentgl); }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 0 32px;
+      background: rgba(6,10,18,0.92); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-mark {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accentdim));
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-family: var(--fm); font-size: 13px; font-weight: 500; color: #fff;
+      box-shadow: 0 0 20px rgba(14,165,233,0.4); flex-shrink: 0;
+    }
+    .nav-logo-text { font-family: var(--fd); font-size: 1.25rem; font-weight: 700; letter-spacing: 0.05em; }
+    .nav-logo-text span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      padding: 8px 14px; border-radius: 6px;
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.03em;
+      color: var(--gl); transition: var(--tr);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.06); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: var(--tr); }
+    .mobile-nav {
+      display: none; position: fixed; top: 72px; left: 0; right: 0;
+      background: rgba(6,10,18,0.98); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border); padding: 16px 24px 24px; z-index: 999;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a { display: block; padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--gl); font-size: 1rem; transition: var(--tr); }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav .btn { margin-top: 16px; width: 100%; justify-content: center; }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      position: relative; padding: 160px 0 80px; overflow: hidden;
+      background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(14,165,233,0.12) 0%, transparent 60%);
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(14,165,233,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14,165,233,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
+    }
+    .page-hero > * { position: relative; z-index: 1; }
+    .page-hero-title { font-size: clamp(2.4rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; }
+    .page-hero-sub { font-size: 1.1rem; color: var(--gl); margin-top: 14px; max-width: 580px; font-weight: 300; line-height: 1.7; }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 16px;
+      font-family: var(--fm); font-size: 0.75rem; color: var(--gm);
+    }
+    .breadcrumb a { color: var(--gm); transition: var(--tr); }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { color: var(--gl); }
+
+    /* ── Section headers ── */
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .section-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; }
+    .section-subtitle { font-size: 1.05rem; color: var(--gl); max-width: 600px; margin-top: 12px; font-weight: 300; }
+
+    /* ── Animations ── */
+    @keyframes fadeup { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+    .animate-up { animation: fadeup 0.7s ease forwards; opacity: 0; }
+    .d1 { animation-delay: 0.1s; } .d2 { animation-delay: 0.2s; }
+    .d3 { animation-delay: 0.3s; } .d4 { animation-delay: 0.4s; }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── PARTNER CARDS ── */
+    .partners-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .pcard {
+      background: var(--bgcard); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 32px 24px 28px;
+      text-align: center; transition: var(--tr); position: relative;
+      overflow: hidden; display: flex; flex-direction: column; align-items: center;
+    }
+    .pcard::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 55% at 50% 0%, var(--cglow, rgba(14,165,233,0.07)), transparent 70%);
+      opacity: 0; transition: opacity 0.4s ease;
+    }
+    .pcard:hover { border-color: var(--cborder, var(--borderst)); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,0.55); }
+    .pcard:hover::after { opacity: 1; }
+
+    /* Per-brand CSS vars */
+    .p-ali   { --cborder:rgba(255,106,0,0.55);  --cglow:rgba(255,106,0,0.09);   --ibg:rgba(255,106,0,0.08);   --ibor:rgba(255,106,0,0.22);   --ibgh:rgba(255,106,0,0.15);   --igl:rgba(255,106,0,0.28); }
+    .p-ten   { --cborder:rgba(0,122,255,0.55);  --cglow:rgba(0,122,255,0.09);   --ibg:rgba(0,122,255,0.08);   --ibor:rgba(0,122,255,0.22);   --ibgh:rgba(0,122,255,0.15);   --igl:rgba(0,122,255,0.28); }
+    .p-hua   { --cborder:rgba(207,0,15,0.55);   --cglow:rgba(207,0,15,0.09);    --ibg:rgba(207,0,15,0.08);    --ibor:rgba(207,0,15,0.22);    --ibgh:rgba(207,0,15,0.15);    --igl:rgba(207,0,15,0.28); }
+    .p-jd    { --cborder:rgba(200,20,30,0.55);  --cglow:rgba(200,20,30,0.09);   --ibg:rgba(200,20,30,0.08);   --ibor:rgba(200,20,30,0.22);   --ibgh:rgba(200,20,30,0.15);   --igl:rgba(200,20,30,0.28); }
+    .p-gcp   { --cborder:rgba(66,133,244,0.55); --cglow:rgba(66,133,244,0.08);  --ibg:rgba(30,40,60,0.6);     --ibor:rgba(100,130,200,0.2);  --ibgh:rgba(30,40,70,0.9);     --igl:rgba(66,133,244,0.28); }
+    .p-aws   { --cborder:rgba(255,153,0,0.55);  --cglow:rgba(255,153,0,0.08);   --ibg:rgba(30,25,10,0.7);     --ibor:rgba(255,153,0,0.22);   --ibgh:rgba(40,32,10,0.9);     --igl:rgba(255,153,0,0.28); }
+
+    /* Logo icon box */
+    .logo-box {
+      width: 80px; height: 80px;
+      background: var(--ibg); border: 1px solid var(--ibor);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px; position: relative; z-index: 1;
+      transition: var(--tr); flex-shrink: 0;
+      padding: 14px;
+    }
+    .pcard:hover .logo-box {
+      background: var(--ibgh);
+      border-color: var(--cborder);
+      box-shadow: 0 0 24px var(--igl), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .logo-box svg { width: 100%; height: 100%; display: block; }
+
+    /* Badge */
+    .pbadge {
+      position: absolute; top: 14px; right: 14px; z-index: 3;
+      background: var(--accentgl); border: 1px solid var(--borderst);
+      color: var(--accent); font-family: var(--fm); font-size: 0.62rem;
+      padding: 3px 9px; border-radius: 4px; letter-spacing: 0.07em; text-transform: uppercase;
+    }
+    .pcard h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; position: relative; z-index: 1; }
+    .pcard p  { font-size: 0.8rem; color: var(--gl); line-height: 1.65; position: relative; z-index: 1; }
+
+    /* ── ADV CARDS ── */
+    .adv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .adv-card { background: var(--bgcard); border: 1px solid var(--border); border-radius: var(--rl); padding: 32px; transition: var(--tr); }
+    .adv-card:hover { border-color: var(--borderst); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+    .adv-num { font-family: var(--fm); font-size: 2.8rem; font-weight: 500; color: var(--accentbr); line-height: 1; margin-bottom: 12px; }
+    .adv-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+    .adv-card p { font-size: 0.875rem; color: var(--gl); line-height: 1.7; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .pill {
+      padding: 5px 13px; border-radius: 100px; font-size: 0.78rem;
+      font-family: var(--fm); background: var(--bgcard2); border: 1px solid var(--border);
+      color: var(--gl); letter-spacing: 0.03em; transition: var(--tr);
+    }
+    .pill:hover { border-color: var(--accent); color: var(--accentbr); }
+
+    /* ── FEATURE ROW ── */
+    .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .feature-tag { margin-bottom: 16px; }
+    .feature-title { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 16px; }
+    .feature-body { color: var(--gl); font-weight: 300; margin-bottom: 20px; line-height: 1.8; font-size: 0.95rem; }
+    .feature-list { display: flex; flex-direction: column; gap: 11px; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--gl); }
+    .feature-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-family: var(--fm); margin-top: 1px; }
+    .feature-visual {
+      background: var(--bgcard); border: 1px solid var(--border); border-radius: var(--rl); padding: 36px; position: relative; overflow: hidden;
+    }
+    .feature-visual::before {
+      content: ''; position: absolute; top:-40%; left:-20%; width:80%; height:80%;
+      background: radial-gradient(ellipse, rgba(14,165,233,0.08) 0%, transparent 70%); pointer-events: none;
+    }
+    .mono-label { font-family: var(--fm); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: block; }
+
+    /* ── SCENARIO CARDS ── */
+    .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .scard {
+      background: var(--bgcard); border: 1px solid var(--border); border-radius: var(--rl);
+      padding: 22px 26px; display: flex; align-items: flex-start; gap: 16px; transition: var(--tr);
+    }
+    .scard:hover { border-color: var(--borderst); background: var(--bgcard2); }
+    .scard-icon { font-size: 1.7rem; flex-shrink: 0; }
+    .scard-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 5px; }
+    .scard-text { font-size: 0.82rem; color: var(--gl); line-height: 1.6; }
+
+    /* ── CTA ── */
+    .cta-block {
+      background: linear-gradient(135deg, rgba(14,165,233,0.12), rgba(14,165,233,0.03));
+      border: 1px solid var(--borderst); border-radius: 24px; padding: 64px 48px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-block::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    /* ── DIVIDER / BG sections ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+    .bg2-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 64px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand-desc { font-size: 0.875rem; color: var(--gl); margin-top: 16px; line-height: 1.7; max-width: 260px; }
+    .footer-col-title { font-family: var(--fm); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a { font-size: 0.875rem; color: var(--gl); transition: var(--tr); }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-contact p { font-size: 0.84rem; color: var(--gl); line-height: 1.9; }
+    .footer-contact strong { color: var(--white); font-weight: 500; font-family: var(--fm); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; display: block; margin-top: 12px; margin-bottom: 1px; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--gm); flex-wrap: wrap; gap: 12px; }
+
+    /* ── Step flow ── */
+    .step-row { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .step-row:last-child { border-bottom: none; }
+    .step-num { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--fm); font-size: 0.72rem; font-weight: 600; flex-shrink: 0; }
+    .step-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 3px; }
+    .step-sub { font-size: 0.78rem; color: var(--gl); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .container { padding: 0 20px; }
+      .partners-grid { grid-template-columns: 1fr 1fr; }
+      .adv-grid { grid-template-columns: 1fr; }
+      .feature-row { grid-template-columns: 1fr; gap: 36px; }
+      .scenario-grid { grid-template-columns: 1fr; }
+      .cta-block { padding: 40px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+    }
+    @media (max-width: 520px) {
+      .partners-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">RH</div>
+      <span class="nav-logo-text">RH<span>CLOUD</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cloud-resale.html" class="active">Cloud Resale</a></li>
+      <li><a href="ai-models.html">AI Models</a></li>
+      <li><a href="msp.html">MSP</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="mailto:info@rhcloud.com" class="btn btn-primary" style="padding:10px 22px;font-size:0.875rem;">Get a Quote</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="cloud-resale.html">Cloud Resale</a>
+  <a href="ai-models.html">AI Models</a>
+  <a href="msp.html">MSP</a>
+  <a href="careers.html">Careers</a>
+  <a href="about.html">About Us</a>
+  <a href="mailto:info@rhcloud.com" class="btn btn-primary">Get a Quote</a>
+</div>
+
+
+<!-- ══ PAGE HERO ══ -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb animate-up">
+      <a href="index.html">Home</a><span>/</span><span>Cloud Resale</span>
+    </div>
+    <span class="tag animate-up d1">Cloud Resale</span>
+    <h1 class="page-hero-title animate-up d2" style="margin-top:14px;">
+      Professional Cloud<br>Resale &amp; Distribution
+    </h1>
+    <p class="page-hero-sub animate-up d3">
+      Authorized reseller for the world's leading cloud platforms. Deeper discounts, full account ownership, and expert architectural support — all in one place.
+    </p>
+    <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;" class="animate-up d4">
+      <a href="mailto:info@rhcloud.com" class="btn btn-primary">Request Enterprise Pricing</a>
+      <a href="#scenarios" class="btn btn-outline">View Industry Scenarios</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ PARTNER CARDS ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Authorized Partnerships</span>
+      <h2 class="section-title" style="margin-top:14px;">6 Major Cloud Platforms</h2>
+      <p class="section-subtitle">Authorized reseller and strategic partner status across China's leading clouds and global hyperscalers.</p>
+    </div>
+
+    <div class="partners-grid">
+
+      <!-- ① Alibaba Cloud -->
+      <div class="pcard p-ali reveal">
+        <span class="pbadge">Strategic</span>
+        <div class="logo-box">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Alibaba Cloud official orange cloud symbol -->
+            <path d="M100 18C71 18 47 38 40 65C24 68 12 82 12 99C12 118 28 134 47 134H72V118H47C37 118 30 111 30 101C30 91 37 84 47 84H55L53 76C51 71 50 65 50 59C50 36 73 20 100 20C127 20 150 36 150 59C150 65 149 71 147 76L145 84H153C163 84 170 91 170 101C170 111 163 118 153 118H128V134H153C172 134 188 118 188 99C188 82 176 68 160 65C153 38 129 18 100 18Z" fill="#FF6A00"/>
+            <rect x="72" y="118" width="56" height="16" rx="8" fill="#FF6A00"/>
+            <rect x="86" y="142" width="28" height="16" rx="8" fill="#FF6A00"/>
+          </svg>
+        </div>
+        <h3>Alibaba Cloud</h3>
+        <p>Strategic Partner level. Largest cloud provider in Asia Pacific, covering 30+ global regions with full enterprise services.</p>
+      </div>
+
+      <!-- ② Tencent Cloud -->
+      <div class="pcard p-ten reveal" style="transition-delay:.08s">
+        <span class="pbadge">Partner</span>
+        <div class="logo-box">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Tencent Cloud — stylised pentagon/shield mark -->
+            <path d="M100 15L170 55V135L100 175L30 135V55L100 15Z" stroke="#007AFF" stroke-width="14" fill="none" stroke-linejoin="round"/>
+            <path d="M100 48L145 73V123L100 148L55 123V73L100 48Z" fill="#007AFF" opacity=".18"/>
+            <!-- "C" arc inside -->
+            <path d="M122 78A30 30 0 1 0 122 122" stroke="#007AFF" stroke-width="13" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <h3>Tencent Cloud</h3>
+        <p>Enterprise cloud services, CDN, gaming infrastructure, and AI platforms backed by Tencent's global network.</p>
+      </div>
+
+      <!-- ③ Huawei Cloud -->
+      <div class="pcard p-hua reveal" style="transition-delay:.16s">
+        <span class="pbadge">Partner</span>
+        <div class="logo-box">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Huawei — 8-petal flower, brand red -->
+            <g transform="translate(100,100)">
+              <!-- 8 petals at 45° intervals, different opacities like the real logo -->
+              <ellipse rx="18" ry="40" transform="rotate(0)"   fill="#CF000F" opacity="1"/>
+              <ellipse rx="18" ry="40" transform="rotate(45)"  fill="#CF000F" opacity="0.85"/>
+              <ellipse rx="18" ry="40" transform="rotate(90)"  fill="#CF000F" opacity="0.7"/>
+              <ellipse rx="18" ry="40" transform="rotate(135)" fill="#CF000F" opacity="0.55"/>
+              <ellipse rx="18" ry="40" transform="rotate(180)" fill="#CF000F" opacity="0.7"/>
+              <ellipse rx="18" ry="40" transform="rotate(225)" fill="#CF000F" opacity="0.55"/>
+              <ellipse rx="18" ry="40" transform="rotate(270)" fill="#CF000F" opacity="0.85"/>
+              <ellipse rx="18" ry="40" transform="rotate(315)" fill="#CF000F" opacity="1"/>
+              <circle r="20" fill="#CF000F"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Huawei Cloud</h3>
+        <p>Full-stack Huawei Cloud including Kirin AI compute, 5G edge solutions, and enterprise-grade security products.</p>
+      </div>
+
+      <!-- ④ JD Cloud -->
+      <div class="pcard p-jd reveal" style="transition-delay:.08s">
+        <span class="pbadge">Partner</span>
+        <div class="logo-box">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- JD Cloud — red background square, bold white JD -->
+            <rect width="200" height="200" rx="36" fill="#C8141E"/>
+            <!-- J letterform -->
+            <path d="M34 52H70V138C70 152 60 164 44 164C28 164 18 152 18 138H46C46 142 50 146 54 146C58 146 62 142 62 138V68H34V52Z" fill="white"/>
+            <!-- D letterform -->
+            <path d="M84 52H118C144 52 164 72 164 100C164 128 144 148 118 148H84V52ZM112 124C130 124 138 114 138 100C138 86 130 76 112 76H110V124H112Z" fill="white"/>
+          </svg>
+        </div>
+        <h3>JD Cloud</h3>
+        <p>JD Group's enterprise cloud with deep e-commerce, supply chain integration, and logistics infrastructure capabilities.</p>
+      </div>
+
+      <!-- ⑤ Google Cloud -->
+      <div class="pcard p-gcp reveal" style="transition-delay:.16s">
+        <span class="pbadge">Global</span>
+        <div class="logo-box" style="background:rgba(255,255,255,0.92);border-color:rgba(200,210,230,0.4);">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Google Cloud — accurate G + coloured arc segments -->
+            <!-- Blue segment (largest, ~180°) -->
+            <path d="M100 28 A72 72 0 0 1 172 100 L148 100 A48 48 0 0 0 100 52 Z" fill="#4285F4"/>
+            <!-- Red segment -->
+            <path d="M172 100 A72 72 0 0 1 150 150 L133 133 A48 48 0 0 0 148 100 Z" fill="#EA4335"/>
+            <!-- Yellow segment -->
+            <path d="M150 150 A72 72 0 0 1 100 172 L100 148 A48 48 0 0 0 133 133 Z" fill="#FBBC05"/>
+            <!-- Green segment -->
+            <path d="M100 172 A72 72 0 0 1 28 100 L52 100 A48 48 0 0 0 100 148 Z" fill="#34A853"/>
+            <!-- Close back to start (top-left blue) -->
+            <path d="M28 100 A72 72 0 0 1 100 28 L100 52 A48 48 0 0 0 52 100 Z" fill="#4285F4"/>
+            <!-- White G cut-out -->
+            <rect x="96" y="88" width="52" height="24" rx="12" fill="white"/>
+            <circle cx="100" cy="100" r="32" fill="white"/>
+            <!-- Inner G shape in blue -->
+            <path d="M100 76 A24 24 0 1 0 124 100 L108 100 L108 90 L124 90 L124 100" stroke="#4285F4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <h3>Google Cloud (GCP)</h3>
+        <p>BigQuery, Vertex AI, Kubernetes Engine, and the world's fastest private fiber backbone across 40+ regions.</p>
+      </div>
+
+      <!-- ⑥ AWS -->
+      <div class="pcard p-aws reveal" style="transition-delay:.24s">
+        <span class="pbadge">Global</span>
+        <div class="logo-box" style="background:rgba(15,12,5,0.85);border-color:rgba(255,153,0,0.3);">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- AWS wordmark: "aws" in white + orange smile arrow -->
+            <!-- a -->
+            <path d="M22 118 L22 82 C22 72 30 64 42 64 C54 64 62 72 62 82 L62 118 L50 118 L50 96 L34 96 L34 118 Z M34 84 L50 84 C50 78 46 74 42 74 C38 74 34 78 34 84 Z" fill="white"/>
+            <!-- w -->
+            <path d="M70 64 L82 108 L94 64 L106 64 L118 108 L130 64 L142 64 L124 118 L106 118 L100 96 L94 118 L76 118 Z" fill="white"/>
+            <!-- s -->
+            <path d="M148 108 C148 108 156 116 168 116 C172 116 178 114 178 110 C178 106 174 104 166 102 C158 100 148 96 148 86 C148 74 158 64 172 64 C184 64 190 70 190 70 L184 80 C184 80 178 74 172 74 C168 74 162 76 162 82 C162 88 168 90 176 92 C184 94 192 98 192 110 C192 122 182 126 168 126 C152 126 142 116 142 116 Z" fill="white"/>
+            <!-- Orange smile arrow -->
+            <path d="M32 140 Q100 170 168 140" stroke="#FF9900" stroke-width="9" stroke-linecap="round" fill="none"/>
+            <path d="M156 130 L168 140 L158 150" stroke="#FF9900" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <h3>Amazon Web Services</h3>
+        <p>Full AWS portfolio — EC2, S3, RDS, Lambda, SageMaker and 200+ services across 33+ global infrastructure regions.</p>
+      </div>
+
+    </div><!-- /partners-grid -->
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══ KEY ADVANTAGES ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="tag">Key Advantages</span>
+      <h2 class="section-title" style="margin-top:14px;">Why Buy Cloud Through RHCLOUD</h2>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card reveal">
+        <div class="adv-num">1.5x</div>
+        <h3>Cost Efficiency</h3>
+        <p>Selected products available at as low as <strong style="color:var(--white);">15% of official list price</strong> — made possible through strategic partnership tiers and volume commitments. Custom pricing for enterprise contracts.</p>
+        <div class="pill-row">
+          <span class="pill">Volume Discounts</span>
+          <span class="pill">Pre-paid Savings</span>
+          <span class="pill">Bundle Deals</span>
+        </div>
+      </div>
+      <div class="adv-card reveal" style="transition-delay:.12s">
+        <div class="adv-num">100%</div>
+        <h3>Account Ownership</h3>
+        <p>Clients self-register accounts directly on the cloud platform. <strong style="color:var(--white);">100% data sovereignty and account ownership</strong> guaranteed — we are your service gateway, not your account holder.</p>
+        <div class="pill-row">
+          <span class="pill">Self-Registration</span>
+          <span class="pill">Data Sovereignty</span>
+          <span class="pill">No Lock-in</span>
+        </div>
+      </div>
+      <div class="adv-card reveal" style="transition-delay:.24s">
+        <div class="adv-num">7×24</div>
+        <h3>Expert Support</h3>
+        <p>Round-the-clock professional consulting, cloud architecture design, migration services, and ongoing optimization — staffed by certified cloud architects with multi-cloud expertise.</p>
+        <div class="pill-row">
+          <span class="pill">Architecture Design</span>
+          <span class="pill">Migration</span>
+          <span class="pill">Optimization</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="feature-row reveal">
+      <div>
+        <span class="tag feature-tag">How It Works</span>
+        <h2 class="feature-title">Simple, Transparent<br>Cloud Procurement</h2>
+        <p class="feature-body">Our streamlined process means you get up and running on any major cloud platform within 24 hours — with pricing transparency, zero hidden fees, and dedicated account management from day one.</p>
+        <ul class="feature-list">
+          <li>Choose your target cloud platform(s) and resource requirements</li>
+          <li>We provide a tailored quote with enterprise discount applied</li>
+          <li>You self-register your account on the cloud provider's portal</li>
+          <li>RHCLOUD activates your discount tier and assigns a dedicated architect</li>
+          <li>Ongoing monitoring, optimization, and 7×24 support activated</li>
+        </ul>
+        <div style="margin-top:28px;">
+          <a href="mailto:info@rhcloud.com" class="btn btn-primary">Start a Conversation</a>
+        </div>
+      </div>
+
+      <div class="feature-visual reveal" style="transition-delay:.2s">
+        <span class="mono-label">Procurement Flow</span>
+        <div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--accent);">01</div>
+            <div><div class="step-title">Needs Assessment</div><div class="step-sub">Discuss requirements, workloads, and budget</div></div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--accentdim);">02</div>
+            <div><div class="step-title">Custom Pricing Proposal</div><div class="step-sub">Enterprise discount quote with ROI projection</div></div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--accentdim);">03</div>
+            <div><div class="step-title">Account Registration</div><div class="step-sub">You own the account — we activate your tier</div></div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--accentdim);">04</div>
+            <div><div class="step-title">Architecture Design</div><div class="step-sub">Certified architects design optimal cloud setup</div></div>
+          </div>
+          <div class="step-row">
+            <div class="step-num" style="background:var(--accentdim);">05</div>
+            <div><div class="step-title">Ongoing Support &amp; Optimization</div><div class="step-sub">7×24 monitoring, cost reviews, upgrades</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SCENARIOS ══ -->
+<section class="section bg2-section" id="scenarios">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="tag">Industry Scenarios</span>
+      <h2 class="section-title" style="margin-top:14px;">Serving Every Vertical</h2>
+      <p class="section-subtitle" style="margin:12px auto 0;">Our cloud expertise spans diverse industry verticals with global deployment requirements.</p>
+    </div>
+    <div class="scenario-grid">
+      <div class="scard reveal"><span class="scard-icon">🛒</span><div><div class="scard-title">E-Commerce &amp; Retail</div><p class="scard-text">Elastic compute for peak traffic, CDN for global storefronts, and database solutions that scale to marketplace platforms with millions of SKUs.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.08s"><span class="scard-icon">🏦</span><div><div class="scard-title">Financial Services</div><p class="scard-text">High-compliance cloud architecture for fintech, banking, and insurance — with data localization, encryption standards, and audit trail support.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.16s"><span class="scard-icon">🎮</span><div><div class="scard-title">Gaming &amp; Entertainment</div><p class="scard-text">Low-latency global game servers, CDN acceleration, and anti-DDoS protection purpose-built for interactive entertainment and live-streaming.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.24s"><span class="scard-icon">🏭</span><div><div class="scard-title">Manufacturing &amp; Industry</div><p class="scard-text">IoT data ingestion, industrial AI inference, and hybrid cloud deployments connecting factory floors to enterprise ERP systems.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.08s"><span class="scard-icon">🎓</span><div><div class="scard-title">Education &amp; SaaS</div><p class="scard-text">Scalable infrastructure for EdTech platforms, SaaS startups, and digital-native businesses requiring rapid global expansion.</p></div></div>
+      <div class="scard reveal" style="transition-delay:.16s"><span class="scard-icon">🏥</span><div><div class="scard-title">Healthcare &amp; Life Sciences</div><p class="scard-text">Compliance-friendly cloud architectures, medical imaging storage, and bioinformatics compute clusters for research organizations.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="section">
+  <div class="container">
+    <div class="cta-block reveal">
+      <span class="tag" style="margin-bottom:20px;">Get Started</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.8rem);font-family:var(--fd);font-weight:700;margin-bottom:16px;">Get Your Enterprise<br>Cloud Quote Today</h2>
+      <p style="color:var(--gl);max-width:480px;margin:0 auto 32px;font-weight:300;line-height:1.7;">Tell us your cloud requirements and we'll respond with a tailored pricing proposal within one business day.</p>
+      <a href="mailto:info@rhcloud.com" class="btn btn-primary">Request a Quote — info@rhcloud.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:12px;display:inline-flex;">
+          <div class="nav-logo-mark">RH</div>
+          <span class="nav-logo-text">RH<span>CLOUD</span></span>
+        </a>
+        <p class="footer-brand-desc">Global Cloud &amp; AI Infrastructure Leader. Headquartered in Singapore, serving enterprises worldwide since 2007.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="cloud-resale.html">Cloud Resale</a></li>
+          <li><a href="ai-models.html">Aggregate AI Models</a></li>
+          <li><a href="msp.html">MSP Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="mailto:info@rhcloud.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <div class="footer-col-title">Contact</div>
+        <p>
+          <strong>Email</strong>info@rhcloud.com
+          <strong>Singapore HQ</strong>RHCLOUD PTE. LTD.
+          <strong>Wuhan R&amp;D</strong>武汉完美网络科技有限公司
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 RHCLOUD PTE. LTD. All Rights Reserved.</span>
+      <span style="font-family:var(--fm);font-size:0.72rem;">Reg. in Singapore</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav toggle
+  const nav = document.getElementById('nav');
+  const toggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  toggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+    const spans = toggle.querySelectorAll('span');
+    if (mobileNav.classList.contains('open')) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+    } else {
+      spans.forEach(s => { s.style.transform=''; s.style.opacity=''; });
+    }
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

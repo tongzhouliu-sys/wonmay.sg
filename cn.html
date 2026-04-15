@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RHCloud — 全球多云生态集成与 AI 模型聚合专家</title>
+<meta name="description" content="RHCloud PTE LTD — 全球云资源分销商、大模型API聚合平台、多云治理MSP专家。Cloud Agency Singapore, 大模型API聚合, 多云管理服务商。">
+<meta name="keywords" content="Cloud Agency Singapore, 大模型API聚合, 多云管理服务商, RHCloud, 云计算, AI模型">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #003366;
+  --navy-deep: #001f40;
+  --navy-mid: #004d99;
+  --accent: #0099ff;
+  --accent-bright: #00c8ff;
+  --white: #ffffff;
+  --gray-light: #F4F7F9;
+  --gray-mid: #e2e8f0;
+  --gray-text: #94a3b8;
+  --text-dark: #0f2744;
+  --gold: #f0b429;
+  --green: #10b981;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 5%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0,20,50,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,153,255,0.15);
+  transition: all 0.3s;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--accent-bright); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent-bright); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-switch {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.75);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.lang-switch:hover { background: rgba(0,153,255,0.2); border-color: var(--accent); color: white; }
+
+.btn-console {
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  color: white;
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 0 20px rgba(0,153,255,0.3);
+}
+.btn-console:hover { transform: translateY(-1px); box-shadow: 0 0 30px rgba(0,153,255,0.5); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s; }
+
+/* ── HERO ── */
+#home {
+  min-height: 100vh;
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 72px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* animated grid */
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,153,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,153,255,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridDrift 20s linear infinite;
+}
+
+@keyframes gridDrift {
+  from { transform: translate(0, 0); }
+  to { transform: translate(60px, 60px); }
+}
+
+/* orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,153,255,0.25), transparent 70%);
+  top: -100px; right: -100px;
+}
+.orb-2 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(0,51,102,0.4), transparent 70%);
+  bottom: 50px; left: 10%;
+  animation-delay: -3s;
+}
+.orb-3 {
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, rgba(0,200,255,0.15), transparent 70%);
+  top: 40%; left: 50%;
+  animation-delay: -5s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -15px) scale(1.05); }
+  66% { transform: translate(-10px, 10px) scale(0.95); }
+}
+
+/* Neural nodes */
+.neural-canvas {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,153,255,0.12);
+  border: 1px solid rgba(0,153,255,0.3);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--accent-bright);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--accent-bright);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+  box-shadow: 0 0 30px rgba(0,153,255,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,153,255,0.55); }
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.25);
+  transition: all 0.25s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.stat-item { }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-bright);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+/* 3D cloud visual */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInRight 0.8s ease 0.3s both;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.cloud-sphere {
+  width: 380px;
+  height: 380px;
+  position: relative;
+}
+
+.sphere-core {
+  position: absolute;
+  inset: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(0,153,255,0.5), rgba(0,30,80,0.9) 70%);
+  border: 1px solid rgba(0,153,255,0.3);
+  box-shadow:
+    0 0 60px rgba(0,153,255,0.3),
+    inset 0 0 60px rgba(0,30,80,0.5);
+  animation: spherePulse 4s ease-in-out infinite;
+}
+
+@keyframes spherePulse {
+  0%, 100% { box-shadow: 0 0 60px rgba(0,153,255,0.3), inset 0 0 60px rgba(0,30,80,0.5); }
+  50% { box-shadow: 0 0 100px rgba(0,153,255,0.5), inset 0 0 80px rgba(0,30,80,0.5); }
+}
+
+.orbit {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0,153,255,0.2);
+  border-radius: 50%;
+  animation: orbitSpin 10s linear infinite;
+}
+.orbit:nth-child(2) { inset: 20px; border-style: dashed; animation-duration: 15s; animation-direction: reverse; }
+.orbit:nth-child(3) { inset: -20px; border-color: rgba(0,200,255,0.1); animation-duration: 20s; }
+
+@keyframes orbitSpin {
+  from { transform: rotateX(70deg) rotateZ(0deg); }
+  to { transform: rotateX(70deg) rotateZ(360deg); }
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-bright);
+  border-radius: 50%;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--accent-bright);
+}
+
+.tech-tags {
+  position: absolute;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-bright);
+  background: rgba(0,30,60,0.8);
+  border: 1px solid rgba(0,153,255,0.3);
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.tag-aws { top: 10%; left: -10%; }
+.tag-gcp { top: 30%; right: -15%; }
+.tag-azure { bottom: 25%; left: -15%; }
+.tag-ali { bottom: 10%; right: -5%; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SECTION COMMON ── */
+section { padding: 100px 5%; }
+
+.section-max { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 560px;
+  font-weight: 300;
+}
+
+/* ── BUSINESS CARDS (三板斧) ── */
+#services {
+  background: var(--gray-light);
+  padding: 80px 5%;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gray-mid);
+  transition: all 0.3s;
+  cursor: default;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,51,102,0.12); }
+.service-card:hover::before { transform: scaleX(1); }
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(0,153,255,0.1), rgba(0,200,255,0.15));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+.card-link:hover { gap: 10px; }
+
+/* ── CLOUD PAGE ── */
+#cloud {
+  background: white;
+}
+
+.cloud-header { margin-bottom: 4rem; }
+
+.vendor-section { margin-bottom: 3rem; }
+
+.vendor-section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.vendor-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gray-mid);
+}
+
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.vendor-card {
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.vendor-card:hover {
+  background: white;
+  border-color: var(--accent);
+  box-shadow: 0 8px 25px rgba(0,153,255,0.12);
+  transform: translateY(-3px);
+}
+
+.vendor-logo {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.vendor-logo.ali { color: #FF6A00; }
+.vendor-logo.tencent { color: #006EFF; }
+.vendor-logo.huawei { color: #cf0a2c; }
+.vendor-logo.google { color: #4285F4; }
+.vendor-logo.aws { color: #FF9900; }
+.vendor-logo.azure { color: #0078D4; }
+
+.vendor-sub {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.btn-order {
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+}
+.btn-order:hover { box-shadow: 0 4px 15px rgba(0,153,255,0.4); }
+
+.features-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--navy-deep);
+  border-radius: 16px;
+}
+
+.feature-item {
+  text-align: center;
+  color: white;
+}
+
+.feature-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.feature-label { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+
+/* ── MODELS PAGE ── */
+#models {
+  background: var(--navy-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+#models::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,153,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,153,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+#models .section-title { color: white; }
+#models .section-sub { color: rgba(255,255,255,0.6); }
+#models .section-label { color: var(--accent-bright); }
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.model-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(0,153,255,0.15);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.25s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.model-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,153,255,0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.model-card:hover {
+  border-color: rgba(0,153,255,0.5);
+  background: rgba(0,153,255,0.08);
+  transform: translateY(-3px);
+}
+.model-card:hover::before { opacity: 1; }
+
+.model-logo { font-size: 2rem; margin-bottom: 0.75rem; }
+.model-name { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: white; margin-bottom: 0.3rem; }
+.model-type { font-size: 0.7rem; color: rgba(255,255,255,0.45); }
+
+.model-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.mf-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.8rem;
+}
+
+.mf-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+.mf-title { font-family: var(--font-display); font-weight: 700; color: white; margin-bottom: 0.5rem; }
+.mf-desc { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+/* compliance box */
+.compliance-box {
+  background: rgba(240,180,41,0.08);
+  border: 1px solid rgba(240,180,41,0.35);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.compliance-title {
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.compliance-text {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+}
+
+.btn-model {
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 0 25px rgba(0,153,255,0.3);
+}
+.btn-model:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,153,255,0.5); }
+
+/* ── SOLUTIONS PAGE ── */
+#solutions {
+  background: var(--gray-light);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.sol-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--gray-mid);
+  transition: all 0.3s;
+}
+.sol-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(0,51,102,0.1);
+  transform: translateY(-4px);
+}
+
+.sol-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+.sol-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.75rem; }
+.sol-desc { font-size: 0.88rem; color: #64748b; line-height: 1.7; }
+
+/* process flow */
+.process-flow {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  margin-top: 3rem;
+  border: 1px solid var(--gray-mid);
+}
+
+.process-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  padding-top: 0;
+}
+
+.step-num {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0,153,255,0.3);
+}
+
+.step-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+.step-desc { font-size: 0.78rem; color: #94a3b8; line-height: 1.5; padding: 0 0.5rem; }
+
+/* ── PARTNERS ── */
+#partners {
+  background: white;
+}
+
+.partners-tiers { margin-top: 3rem; }
+
+.tier-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.tier-badge {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.tier-gold { background: rgba(240,180,41,0.12); color: var(--gold); border: 1px solid rgba(240,180,41,0.3); }
+.tier-silver { background: rgba(100,116,139,0.1); color: #64748b; border: 1px solid rgba(100,116,139,0.25); }
+
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.partner-logo-box {
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: 10px;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  transition: all 0.2s;
+  cursor: default;
+}
+.partner-logo-box:hover { border-color: var(--accent); background: white; }
+
+.partner-logo-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+/* ── CONTACT ── */
+#contact {
+  background: var(--navy-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+#contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(0,153,255,0.15), transparent 60%);
+}
+
+#contact .section-title { color: white; }
+#contact .section-sub { color: rgba(255,255,255,0.6); }
+#contact .section-label { color: var(--accent-bright); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.contact-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.cd-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(0,153,255,0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cd-text { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+.cd-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 2px; }
+
+.im-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.im-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.whatsapp { background: #25D366; color: white; }
+.telegram { background: #229ED9; color: white; }
+.im-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+/* contact form */
+.contact-form {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: white;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: rgba(0,153,255,0.5);
+  background: rgba(0,153,255,0.05);
+}
+
+.form-group select option { background: var(--navy-deep); }
+
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 0 25px rgba(0,153,255,0.3);
+  margin-top: 0.5rem;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,153,255,0.5); }
+
+/* ── FOOTER ── */
+footer {
+  background: #00091a;
+  padding: 3rem 5%;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand { }
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+}
+.footer-logo span { color: var(--accent-bright); }
+.footer-desc { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.7; }
+
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.6rem; }
+.footer-col a {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--accent-bright); }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-bottom-text { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+.footer-legal { display: flex; gap: 1.5rem; }
+.footer-legal a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+.footer-legal a:hover { color: rgba(255,255,255,0.6); }
+
+/* ── FLOATING CTA ── */
+.float-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.float-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+.float-btn:hover { transform: translateY(-2px); }
+
+.float-main {
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright));
+  color: white;
+}
+
+.float-wa { background: #25D366; color: white; }
+.float-tg { background: #229ED9; color: white; }
+
+.float-sub { opacity: 0; transform: translateY(10px); transition: all 0.3s; pointer-events: none; }
+.float-cta:hover .float-sub { opacity: 1; transform: translateY(0); pointer-events: all; }
+
+/* ── COOKIE BANNER ── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(0,153,255,0.2);
+  padding: 1.2rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 2000;
+  transition: transform 0.4s;
+}
+
+.cookie-banner.hidden { transform: translateY(100%); }
+
+.cookie-text {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.cookie-text a { color: var(--accent-bright); }
+
+.cookie-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+
+.btn-cookie {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-cookie-accept { background: var(--accent); color: white; }
+.btn-cookie-decline { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,10,30,0.85);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--navy-deep);
+  border: 1px solid rgba(0,153,255,0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 100%;
+  transform: translateY(20px);
+  transition: transform 0.3s;
+}
+.modal-overlay.active .modal { transform: translateY(0); }
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.modal-sub { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 2rem; }
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal { position: relative; }
+
+/* ── MOBILE ── */
+@media (max-width: 1024px) {
+  .cards-grid, .solutions-grid, .model-features { grid-template-columns: repeat(2, 1fr); }
+  .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { display: none; }
+  .features-strip { grid-template-columns: repeat(3, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; }
+  .process-steps::before { display: none; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links, .nav-actions { display: none; }
+  .hamburger { display: flex; }
+  
+  section { padding: 70px 4%; }
+  
+  .cards-grid, .solutions-grid, .model-features { grid-template-columns: 1fr; }
+  .vendor-grid { grid-template-columns: repeat(2, 1fr); }
+  .models-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-strip { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .cookie-banner { flex-direction: column; gap: 1rem; }
+  .float-cta { bottom: 1rem; right: 1rem; }
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── MOBILE NAV DRAWER ── */
+.mobile-nav {
+  position: fixed;
+  top: 72px; left: 0; right: 0;
+  background: rgba(0,15,40,0.97);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  padding: 1.5rem 5%;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(0,153,255,0.1);
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">RH<span>Cloud</span></a>
+  <ul class="nav-links">
+    <li><a href="#cloud">云计算</a></li>
+    <li><a href="#models">大模型</a></li>
+    <li><a href="#solutions">解决方案</a></li>
+    <li><a href="#partners">合作伙伴</a></li>
+    <li><a href="#contact">联系我们</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="lang-switch" onclick="toggleLang()">EN / 中文</button>
+    <a href="#" class="btn-console">控制台登录</a>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#cloud" onclick="closeMobileNav()">云计算</a>
+  <a href="#models" onclick="closeMobileNav()">大模型</a>
+  <a href="#solutions" onclick="closeMobileNav()">解决方案</a>
+  <a href="#partners" onclick="closeMobileNav()">合作伙伴</a>
+  <a href="#contact" onclick="closeMobileNav()">联系我们</a>
+  <a href="#" style="color: var(--accent-bright);">控制台登录</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div class="hero-bg">
+    <div class="grid-lines"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas class="neural-canvas" id="neuralCanvas"></canvas>
+  </div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        新加坡注册企业 · RHCloud PTE LTD
+      </div>
+      <h1 class="hero-title">
+        全球多云生态集成<br>与 <span class="highlight">AI 模型聚合</span>专家
+      </h1>
+      <p class="hero-sub">
+        从云资源采购到大模型 API 接入，从成本优化到合规架构，RHCloud 为出海企业和开发者提供一站式云智能解决方案。
+      </p>
+      <div class="hero-ctas">
+        <a href="#cloud" class="btn-primary">获取云折扣 →</a>
+        <a href="#models" class="btn-secondary">定制 AI 方案</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">顶级云服务商</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">7+</div>
+          <div class="stat-label">大模型聚合</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">架构师支持</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="cloud-sphere">
+        <div class="orbit"></div>
+        <div class="orbit" style="transform: rotateX(70deg) rotateZ(60deg);"><div class="orbit-dot"></div></div>
+        <div class="orbit"></div>
+        <div class="sphere-core"></div>
+        <span class="tech-tags tag-aws">AWS</span>
+        <span class="tech-tags tag-gcp">Google Cloud</span>
+        <span class="tech-tags tag-azure">Azure</span>
+        <span class="tech-tags tag-ali">阿里云</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BUSINESS 三板斧 ── -->
+<section id="services">
+  <div class="section-max">
+    <span class="section-label">核心业务</span>
+    <h2 class="section-title">业务三板斧</h2>
+    <p class="section-sub">云代理 × 模型聚合 × 多云管理，三位一体的云智能生态</p>
+    <div class="cards-grid">
+      <div class="service-card reveal">
+        <div class="card-icon">☁️</div>
+        <div class="card-title">全球云代理</div>
+        <p class="card-desc">与阿里云、腾讯云、华为云、AWS、Google Cloud、Azure 建立官方合作，提供正规授权折扣资源，支持多币种统一账单结算。</p>
+        <a href="#cloud" class="card-link">了解更多 →</a>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.1s">
+        <div class="card-icon">🤖</div>
+        <div class="card-title">大模型聚合</div>
+        <p class="card-desc">统一 API 接入 OpenAI、Gemini、Claude、通义千问等主流模型，支持本地化部署与企业知识库对接，一个接口调用全部能力。</p>
+        <a href="#models" class="card-link">了解更多 →</a>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.2s">
+        <div class="card-icon">🔧</div>
+        <div class="card-title">多云管理咨询</div>
+        <p class="card-desc">专业 MSP 团队提供从需求分析到持续运营的全周期服务，帮助企业解决多云成本黑洞，实现出海合规架构落地。</p>
+        <a href="#solutions" class="card-link">了解更多 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOUD ── -->
+<section id="cloud">
+  <div class="section-max">
+    <div class="cloud-header">
+      <span class="section-label">云计算服务</span>
+      <h2 class="section-title">全球云资源 · 官方授权代理</h2>
+      <p class="section-sub">覆盖中国站与国际站顶级云服务商，统一账单，享受最高返利</p>
+    </div>
+
+    <div class="vendor-section reveal">
+      <div class="vendor-section-label">🇨🇳 中国站代理</div>
+      <div class="vendor-grid">
+        <div class="vendor-card">
+          <div class="vendor-logo ali">阿里云</div>
+          <div class="vendor-sub">Alibaba Cloud</div>
+          <button class="btn-order" onclick="openConsole('aliyun')">立即订购</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo tencent">腾讯云</div>
+          <div class="vendor-sub">Tencent Cloud</div>
+          <button class="btn-order" onclick="openConsole('tencent')">立即订购</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo huawei">华为云</div>
+          <div class="vendor-sub">Huawei Cloud</div>
+          <button class="btn-order" onclick="openConsole('huawei')">立即订购</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="vendor-section reveal" style="transition-delay: 0.15s">
+      <div class="vendor-section-label">🌐 国际站代理</div>
+      <div class="vendor-grid">
+        <div class="vendor-card">
+          <div class="vendor-logo google">Google Cloud</div>
+          <div class="vendor-sub">GCP</div>
+          <button class="btn-order" onclick="openConsole('gcp')">立即订购</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo aws">Amazon AWS</div>
+          <div class="vendor-sub">AWS</div>
+          <button class="btn-order" onclick="openConsole('aws')">立即订购</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo azure">Microsoft Azure</div>
+          <div class="vendor-sub">Azure</div>
+          <button class="btn-order" onclick="openConsole('azure')">立即订购</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-strip reveal">
+      <div class="feature-item">
+        <div class="feature-icon">🧾</div>
+        <div class="feature-label">统一账单</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">💱</div>
+        <div class="feature-label">多币种结算</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">💰</div>
+        <div class="feature-label">高额返利</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🎫</div>
+        <div class="feature-label">代金券支持</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-label">全天候架构师</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MODELS ── -->
+<section id="models">
+  <div class="section-max" style="position:relative">
+    <span class="section-label">大模型服务</span>
+    <h2 class="section-title">一个 API · 接入全球主流大模型</h2>
+    <p class="section-sub">无需多账号切换，统一接口调用 7 大主流 AI 模型，开箱即用</p>
+
+    <div class="models-grid reveal">
+      <div class="model-card">
+        <div class="model-logo">🟢</div>
+        <div class="model-name">OpenAI GPT</div>
+        <div class="model-type">GPT-4o / o1</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">💎</div>
+        <div class="model-name">Gemini</div>
+        <div class="model-type">Google DeepMind</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🔶</div>
+        <div class="model-name">Claude</div>
+        <div class="model-type">Anthropic</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🌊</div>
+        <div class="model-name">通义千问</div>
+        <div class="model-type">阿里云 Qwen</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🫘</div>
+        <div class="model-name">豆包</div>
+        <div class="model-type">字节跳动</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🌙</div>
+        <div class="model-name">Kimi</div>
+        <div class="model-type">月之暗面</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🧠</div>
+        <div class="model-name">智谱 AI</div>
+        <div class="model-type">GLM / CogVideo</div>
+      </div>
+    </div>
+
+    <div class="model-features reveal">
+      <div class="mf-item">
+        <div class="mf-icon">⚡</div>
+        <div class="mf-title">统一 API 调用接口</div>
+        <p class="mf-desc">兼容 OpenAI SDK 格式，一套代码即可调用所有模型，无缝切换，零迁移成本。</p>
+      </div>
+      <div class="mf-item">
+        <div class="mf-icon">🏗️</div>
+        <div class="mf-title">本地化算力部署</div>
+        <p class="mf-desc">支持私有云及本地服务器部署，数据不出境，满足金融、医疗等高合规场景需求。</p>
+      </div>
+      <div class="mf-item">
+        <div class="mf-icon">📚</div>
+        <div class="mf-title">企业知识库对接</div>
+        <p class="mf-desc">RAG 架构支持，将大模型与企业内部 ERP、CRM 及文档知识库深度融合，构建专属 AI 助手。</p>
+      </div>
+    </div>
+
+    <div class="compliance-box reveal">
+      <div class="compliance-title">⚠️ 合规声明 · Legal Compliance Notice</div>
+      <p class="compliance-text">
+        本平台提供的国际模型服务仅限于合规司法管辖区使用，用户需确保其数据处理及访问行为符合当地法律法规（如 GDPR、PDPA 或中国《人工智能生成内容管理办法》）。RHCloud 仅作为技术接口提供方，不承担内容生成的直接法律责任。用户须自行评估其所在地区的合规要求并承担相应责任。
+      </p>
+    </div>
+
+    <div style="text-align:center; margin-top: 1.5rem;">
+      <button class="btn-model" onclick="openModal()">预约演示 / 咨询 API →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTIONS ── -->
+<section id="solutions">
+  <div class="section-max">
+    <span class="section-label">解决方案</span>
+    <h2 class="section-title">MSP 专家服务 · 全周期云治理</h2>
+    <p class="section-sub">不只是工具，更是您的云战略合作伙伴</p>
+
+    <div class="solutions-grid">
+      <div class="sol-card reveal">
+        <div class="sol-icon">📊</div>
+        <div class="sol-title">多云成本管理</div>
+        <p class="sol-desc">解决账单分散、成本黑洞问题。通过统一监控平台可视化所有云支出，智能优化资源配置，平均降低 30% 云成本。</p>
+      </div>
+      <div class="sol-card reveal" style="transition-delay:0.1s">
+        <div class="sol-icon">🌏</div>
+        <div class="sol-title">出海合规架构</div>
+        <p class="sol-desc">帮助国内企业通过云原生方式在新加坡、东南亚、欧洲等市场合规落地，覆盖数据跨境、隐私保护、当地法规适配。</p>
+      </div>
+      <div class="sol-card reveal" style="transition-delay:0.2s">
+        <div class="sol-icon">🚀</div>
+        <div class="sol-title">AI 赋能业务</div>
+        <p class="sol-desc">将大模型能力无缝集成到企业现有 ERP/CRM 系统，构建智能客服、文档处理、数据分析等场景化 AI 应用。</p>
+      </div>
+    </div>
+
+    <div class="process-flow reveal">
+      <div class="process-title">服务交付流程</div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-label">需求分析</div>
+          <p class="step-desc">深入了解业务场景，明确云架构目标与合规要求</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-label">架构设计</div>
+          <p class="step-desc">专业架构师团队制定最优多云方案与成本预算</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-label">迁移交付</div>
+          <p class="step-desc">零停机迁移，确保业务连续性与数据安全</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-label">持续运营</div>
+          <p class="step-desc">7×24 监控告警，持续优化性能与成本</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ── -->
+<section id="partners">
+  <div class="section-max">
+    <span class="section-label">合作伙伴</span>
+    <h2 class="section-title">值得信赖的全球生态</h2>
+    <p class="section-sub">与全球顶级云服务商及技术合作伙伴共建云智能生态</p>
+
+    <div class="partners-tiers">
+      <div class="tier-label">
+        <span class="tier-badge tier-gold">Gold Partner 黄金伙伴</span>
+      </div>
+      <div class="partner-logos reveal">
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#FF6A00">Alibaba Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#FF9900">Amazon AWS</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#4285F4">Google Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#0078D4">Microsoft Azure</span></div>
+      </div>
+
+      <div class="tier-label" style="margin-top: 2rem;">
+        <span class="tier-badge tier-silver">Strategic Ally 战略合作</span>
+      </div>
+      <div class="partner-logos reveal">
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#006EFF">腾讯云</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#cf0a2c">华为云</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#10B981">OpenAI</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#6366F1">Anthropic</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#F59E0B">通义千问</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-max" style="position:relative">
+    <span class="section-label">联系我们</span>
+    <h2 class="section-title">开始您的云智能旅程</h2>
+    <p class="section-sub">填写表单或通过即时通讯联系我们，专业顾问将在 24 小时内响应</p>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>RHCloud PTE LTD</h3>
+        <div class="contact-detail">
+          <div class="cd-icon">📍</div>
+          <div>
+            <div class="cd-label">公司地址</div>
+            <div class="cd-text">Singapore, Republic of Singapore<br>（新加坡注册企业）</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">📧</div>
+          <div>
+            <div class="cd-label">电子邮件</div>
+            <div class="cd-text">hello@rhcloud.io</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">💬</div>
+          <div>
+            <div class="cd-label">即时通讯</div>
+            <div class="cd-text">WhatsApp / WeChat / Telegram<br>工作时间 9:00 - 22:00 SGT</div>
+          </div>
+        </div>
+        <div class="im-buttons">
+          <a href="https://wa.me/" class="im-btn whatsapp">💬 WhatsApp</a>
+          <a href="https://t.me/" class="im-btn telegram">✈️ Telegram</a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal" style="transition-delay:0.15s">
+        <div class="form-row">
+          <div class="form-group">
+            <label>姓名 *</label>
+            <input type="text" placeholder="您的姓名">
+          </div>
+          <div class="form-group">
+            <label>公司名称 *</label>
+            <input type="text" placeholder="公司全称">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>联系方式（WhatsApp / WeChat / Email）*</label>
+          <input type="text" placeholder="例：+65 9123 4567 或 email@company.com">
+        </div>
+        <div class="form-group">
+          <label>意向产品</label>
+          <select>
+            <option value="">请选择意向产品</option>
+            <option>云计算 — 阿里云</option>
+            <option>云计算 — 腾讯云</option>
+            <option>云计算 — 华为云</option>
+            <option>云计算 — Google Cloud</option>
+            <option>云计算 — AWS</option>
+            <option>云计算 — Azure</option>
+            <option>大模型 API 聚合</option>
+            <option>多云管理咨询（MSP）</option>
+            <option>出海合规架构</option>
+            <option>AI 赋能业务</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>需求描述</label>
+          <textarea placeholder="请简要描述您的业务需求、规模和预算范围..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="handleSubmit()">提交咨询请求 →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">RH<span>Cloud</span></div>
+      <p class="footer-desc">全球多云生态集成与 AI 模型聚合专家。<br>RHCloud PTE LTD — 新加坡注册企业。<br>为出海企业与开发者提供可信赖的云智能服务。</p>
+    </div>
+    <div class="footer-col">
+      <h4>云计算</h4>
+      <ul>
+        <li><a href="#cloud">阿里云代理</a></li>
+        <li><a href="#cloud">腾讯云代理</a></li>
+        <li><a href="#cloud">华为云代理</a></li>
+        <li><a href="#cloud">Google Cloud</a></li>
+        <li><a href="#cloud">Amazon AWS</a></li>
+        <li><a href="#cloud">Microsoft Azure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>大模型</h4>
+      <ul>
+        <li><a href="#models">OpenAI GPT</a></li>
+        <li><a href="#models">Gemini</a></li>
+        <li><a href="#models">Claude</a></li>
+        <li><a href="#models">通义千问</a></li>
+        <li><a href="#models">豆包 / Kimi</a></li>
+        <li><a href="#models">智谱 AI</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>公司</h4>
+      <ul>
+        <li><a href="#solutions">解决方案</a></li>
+        <li><a href="#partners">合作伙伴</a></li>
+        <li><a href="#contact">联系我们</a></li>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">Cookie 政策</a></li>
+        <li><a href="#">服务条款</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-bottom-text">© 2025 RHCloud PTE LTD. All rights reserved. 版权所有。</span>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+      <a href="#">AI Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="https://wa.me/" class="float-btn float-wa float-sub">💬 WhatsApp</a>
+  <a href="https://t.me/" class="float-btn float-tg float-sub">✈️ Telegram</a>
+  <button class="float-btn float-main" onclick="openModal()">📅 在线预约</button>
+</div>
+
+<!-- ── COOKIE BANNER ── -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    我们使用 Cookie 以改善您的浏览体验。继续使用本站，即表示您同意我们的 <a href="#">Cookie 政策</a> 及 <a href="#">隐私声明</a>。
+  </p>
+  <div class="cookie-actions">
+    <button class="btn-cookie btn-cookie-decline" onclick="dismissCookie()">仅必要项</button>
+    <button class="btn-cookie btn-cookie-accept" onclick="dismissCookie()">接受全部</button>
+  </div>
+</div>
+
+<!-- ── DEMO MODAL ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">预约演示 / 咨询 API</div>
+    <p class="modal-sub">填写信息后，我们的 AI 专家将在 24 小时内与您联系</p>
+    <div class="form-group">
+      <label>姓名 *</label>
+      <input type="text" placeholder="您的姓名">
+    </div>
+    <div class="form-group">
+      <label>联系方式 *</label>
+      <input type="text" placeholder="WhatsApp / Email">
+    </div>
+    <div class="form-group">
+      <label>感兴趣的模型</label>
+      <select>
+        <option>OpenAI GPT-4o</option>
+        <option>Gemini</option>
+        <option>Claude</option>
+        <option>通义千问</option>
+        <option>全部模型聚合</option>
+      </select>
+    </div>
+    <button class="btn-submit" onclick="handleModalSubmit()">立即预约 →</button>
+  </div>
+</div>
+
+<!-- ── SCRIPTS ── -->
+<script>
+// Neural canvas animation
+const canvas = document.getElementById('neuralCanvas');
+const ctx = canvas.getContext('2d');
+let nodes = [];
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+
+function initNodes() {
+  nodes = [];
+  const count = Math.floor((canvas.width * canvas.height) / 18000);
+  for (let i = 0; i < count; i++) {
+    nodes.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 2 + 1,
+    });
+  }
+}
+
+function drawNeural() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Draw connections
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 130) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(0,153,255,${(1 - dist/130) * 0.3})`;
+        ctx.lineWidth = 1;
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+  
+  // Draw nodes
+  nodes.forEach(n => {
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0,200,255,0.6)';
+    ctx.fill();
+    
+    n.x += n.vx;
+    n.y += n.vy;
+    if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+    if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+  });
+  
+  requestAnimationFrame(drawNeural);
+}
+
+window.addEventListener('resize', () => { resizeCanvas(); initNodes(); });
+resizeCanvas(); initNodes(); drawNeural();
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+// Mobile nav
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+}
+
+// Cookie
+function dismissCookie() {
+  document.getElementById('cookieBanner').classList.add('hidden');
+}
+
+// Modal
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('active');
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+// Console redirect
+function openConsole(vendor) {
+  // In production, redirect to actual console URL
+  alert(`正在跳转至 ${vendor.toUpperCase()} 分销后台...`);
+}
+
+// Form submit
+function handleSubmit() {
+  alert('感谢您的咨询！我们将在 24 小时内通过您留下的联系方式与您取得联系。');
+}
+
+function handleModalSubmit() {
+  closeModal();
+  alert('预约成功！专属 AI 顾问将尽快联系您。');
+}
+
+// Lang toggle (placeholder)
+function toggleLang() {
+  alert('语言切换功能（English / 中文 / 繁体）开发中...');
+}
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    nav.style.background = 'rgba(0,10,30,0.95)';
+  } else {
+    nav.style.background = 'rgba(0,20,50,0.85)';
+  }
+});
+</script>
+</body>
+</html>

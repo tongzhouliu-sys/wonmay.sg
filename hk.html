@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhcloud Group Holding Limited — The Bridge Between China & The World</title>
+<meta name="description" content="Rhcloud Group Holding Limited 融合雲集團控股有限公司 — Hong Kong headquartered group with R&D centres in China and the USA. Global multi-cloud integration, AI model aggregation, bridging East and West.">
+<meta name="keywords" content="Hong Kong Cloud Company, China US Cloud Bridge, AI Model Aggregation HK, Multi-Cloud MSP Hong Kong, Rhcloud Group, 融合雲集團">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --hk-red: #B5172A;
+  --hk-red-soft: #D4293F;
+  --hk-red-glow: rgba(181,23,42,0.15);
+  --gold: #C9982A;
+  --gold-bright: #E8B94A;
+  --gold-glow: rgba(201,152,42,0.15);
+  --midnight: #060C18;
+  --deep: #0B1220;
+  --navy: #0F1B2E;
+  --slate: #1A2A40;
+  --white: #FFFFFF;
+  --off-white: #F8F6F1;
+  --cream: #FAF7F2;
+  --gray-light: #EEF0F5;
+  --gray-mid: #D4D9E4;
+  --text-dark: #0B1220;
+  --text-mid: #4A5568;
+  --text-light: #8A96A8;
+  --cyan: #00BFFF;
+  --green: #00C896;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 5%; height: 74px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(6,12,24,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,152,42,0.15);
+  transition: all 0.3s;
+}
+
+.nav-logo {
+  display: flex; flex-direction: column;
+  text-decoration: none; gap: 1px;
+}
+.nav-logo-en {
+  font-family: var(--font-display);
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--white); letter-spacing: 0.3px;
+  line-height: 1;
+}
+.nav-logo-en span { color: var(--gold-bright); }
+.nav-logo-zh {
+  font-size: 0.65rem; font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+}
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  font-size: 0.85rem; font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-bright); }
+
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+
+.nav-hq {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(201,152,42,0.1);
+  border: 1px solid rgba(201,152,42,0.25);
+  padding: 5px 14px; border-radius: 20px;
+  font-size: 0.72rem; font-weight: 600;
+  color: var(--gold-bright); letter-spacing: 0.5px;
+}
+
+.btn-nav {
+  background: linear-gradient(135deg, var(--hk-red), var(--hk-red-soft));
+  color: white; padding: 9px 22px;
+  border-radius: 6px; font-size: 0.84rem; font-weight: 700;
+  text-decoration: none; transition: all 0.2s;
+  box-shadow: 0 0 20px rgba(181,23,42,0.3);
+}
+.btn-nav:hover { transform: translateY(-1px); box-shadow: 0 0 30px rgba(181,23,42,0.5); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+/* ── HERO ── */
+#home {
+  min-height: 100vh;
+  background: var(--midnight);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding-top: 74px;
+}
+
+.hero-bg { position: absolute; inset: 0; }
+
+/* Victoria Harbour ambient */
+.harbour-glow {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(181,23,42,0.08), transparent);
+}
+.star-field {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 60%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 50% 15%, rgba(201,152,42,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 50%, rgba(255,255,255,0.2) 0%, transparent 100%);
+}
+
+.orb-cn {
+  position: absolute; width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(181,23,42,0.12), transparent 65%);
+  top: -150px; right: -150px; border-radius: 50%;
+  animation: breathe 7s ease-in-out infinite;
+}
+.orb-us {
+  position: absolute; width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(21,87,255,0.1), transparent 65%);
+  bottom: -100px; left: -100px; border-radius: 50%;
+  animation: breathe 7s ease-in-out infinite reverse;
+}
+.orb-hk {
+  position: absolute; width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(201,152,42,0.08), transparent 65%);
+  top: 40%; left: 45%; border-radius: 50%;
+  animation: breathe 5s ease-in-out infinite 2s;
+}
+@keyframes breathe {
+  0%,100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+
+.grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,152,42,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,152,42,0.04) 1px, transparent 1px);
+  background-size: 55px 55px;
+  animation: gridDrift 30s linear infinite;
+}
+@keyframes gridDrift { from { transform: translate(0,0); } to { transform: translate(55px,55px); } }
+
+.neural-canvas { position: absolute; inset: 0; opacity: 0.25; }
+
+.hero-content {
+  position: relative; z-index: 10;
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 1.75rem;
+  animation: fadeUp 0.6s ease both;
+}
+.eyebrow-hk {
+  background: rgba(201,152,42,0.12);
+  border: 1px solid rgba(201,152,42,0.3);
+  padding: 5px 14px; border-radius: 20px;
+  font-size: 0.72rem; font-weight: 700;
+  color: var(--gold-bright); letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.eyebrow-dot { width: 5px; height: 5px; background: var(--gold-bright); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+.eyebrow-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 900; line-height: 1.1;
+  color: var(--white); margin-bottom: 1rem;
+  animation: fadeUp 0.6s ease 0.1s both;
+  letter-spacing: -0.5px;
+}
+.hero-title .gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-title .red { color: var(--hk-red-soft); }
+
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: 1.05rem; font-style: italic;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.6s ease 0.15s both;
+}
+
+.hero-sub {
+  font-size: 1rem; color: rgba(255,255,255,0.6);
+  line-height: 1.8; margin-bottom: 2.5rem;
+  font-weight: 400;
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+
+.hero-ctas {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  color: var(--midnight); padding: 14px 28px;
+  border-radius: 8px; font-size: 0.92rem;
+  font-weight: 700; text-decoration: none;
+  cursor: pointer; border: none;
+  transition: all 0.25s;
+  box-shadow: 0 0 25px rgba(201,152,42,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 35px rgba(201,152,42,0.55); }
+
+.btn-outline {
+  background: transparent; color: white;
+  padding: 14px 28px; border-radius: 8px;
+  font-size: 0.92rem; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.2); transition: all 0.25s;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(201,152,42,0.4); }
+
+.hero-stats {
+  display: flex; gap: 2.5rem;
+  margin-top: 3rem; padding-top: 2.5rem;
+  border-top: 1px solid rgba(201,152,42,0.15);
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+.stat-val {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 900; line-height: 1;
+}
+.stat-val.gold { color: var(--gold-bright); }
+.stat-val.red { color: var(--hk-red-soft); }
+.stat-val.green { color: var(--green); }
+.stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 5px; line-height: 1.45; }
+
+/* ── GLOBE VISUAL ── */
+.hero-visual {
+  animation: fadeRight 0.8s ease 0.3s both;
+  display: flex; justify-content: center; align-items: center;
+}
+@keyframes fadeRight { from { opacity:0; transform:translateX(30px); } to { opacity:1; transform:translateX(0); } }
+
+.globe-container { width: 420px; position: relative; }
+
+.globe-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 1.4rem 1.6rem;
+  margin-bottom: 0.65rem; transition: all 0.3s;
+}
+.globe-card:hover { background: rgba(255,255,255,0.05); }
+
+.globe-card.hk-card {
+  border-color: rgba(201,152,42,0.4);
+  background: rgba(201,152,42,0.06);
+  position: relative; overflow: hidden;
+}
+.globe-card.hk-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-bright), var(--gold));
+}
+
+.gc-header {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 0.75rem;
+}
+.gc-flag { font-size: 1.3rem; }
+.gc-title {
+  font-family: var(--font-display); font-size: 0.95rem;
+  font-weight: 700; color: white;
+}
+.gc-badge {
+  font-size: 0.62rem; font-weight: 700;
+  padding: 3px 9px; border-radius: 20px; letter-spacing: 0.5px;
+}
+.badge-hq { background: rgba(201,152,42,0.2); color: var(--gold-bright); border: 1px solid rgba(201,152,42,0.3); }
+.badge-cn { background: rgba(181,23,42,0.2); color: #FF8A9A; border: 1px solid rgba(181,23,42,0.3); }
+.badge-us { background: rgba(21,87,255,0.2); color: #7BAAFF; border: 1px solid rgba(21,87,255,0.3); }
+
+.gc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.gc-tag {
+  font-size: 0.65rem; font-weight: 600;
+  padding: 3px 8px; border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.55);
+}
+
+.bridge-flow {
+  display: flex; align-items: center;
+  justify-content: center; gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+.bf-arrow {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 0.7rem; color: rgba(255,255,255,0.3);
+}
+.bf-node {
+  width: 46px; height: 46px;
+  background: linear-gradient(135deg, rgba(201,152,42,0.2), rgba(201,152,42,0.05));
+  border: 1px solid rgba(201,152,42,0.3);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 0.7rem;
+  font-weight: 800; color: var(--gold-bright);
+  font-family: var(--font-display);
+}
+
+.savings-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.65rem; margin-top: 0.65rem;
+}
+.sr-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 0.85rem; text-align: center;
+}
+.sr-box.green-border { border-color: rgba(0,200,150,0.3); }
+.sr-box.red-border { border-color: rgba(181,23,42,0.3); }
+.sr-val {
+  font-family: var(--font-display); font-size: 1.5rem;
+  font-weight: 900; line-height: 1;
+}
+.sr-val.green { color: var(--green); }
+.sr-val.red { color: #FF8A9A; }
+.sr-label { font-size: 0.62rem; color: rgba(255,255,255,0.4); margin-top: 4px; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* ── SECTIONS ── */
+section { padding: 100px 5%; }
+.section-max { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.9rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800; color: var(--text-dark);
+  line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.3px;
+}
+.section-sub {
+  font-size: 1rem; color: var(--text-mid);
+  line-height: 1.8; max-width: 640px; font-weight: 400;
+}
+.dark .section-label { color: var(--gold-bright); }
+.dark .section-title { color: white; }
+.dark .section-sub { color: rgba(255,255,255,0.55); }
+
+/* ── GROUP INTRO ── */
+#group { background: var(--cream); }
+
+.group-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center; margin-top: 4rem;
+}
+
+.group-pillars {
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+.pillar {
+  display: flex; align-items: flex-start; gap: 1.25rem;
+  background: white; border-radius: 14px; padding: 1.6rem;
+  border: 1px solid var(--gray-mid); transition: all 0.3s;
+  position: relative; overflow: hidden;
+}
+.pillar::before {
+  content: ''; position: absolute;
+  left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, var(--gold), var(--gold-bright));
+  transform: scaleY(0); transition: transform 0.3s; transform-origin: top;
+}
+.pillar:hover { transform: translateX(6px); box-shadow: 0 8px 30px rgba(0,0,0,0.07); }
+.pillar:hover::before { transform: scaleY(1); }
+
+.pillar-icon { font-size: 1.8rem; flex-shrink: 0; }
+.pillar-title {
+  font-family: var(--font-display); font-size: 1rem;
+  font-weight: 700; color: var(--text-dark); margin-bottom: 0.4rem;
+}
+.pillar-desc { font-size: 0.84rem; color: var(--text-mid); line-height: 1.7; }
+
+.group-about {}
+.group-about h3 {
+  font-family: var(--font-display); font-size: 1.8rem;
+  font-weight: 800; color: var(--text-dark);
+  line-height: 1.25; margin-bottom: 1.5rem;
+  letter-spacing: -0.3px;
+}
+.group-about h3 em { font-style: italic; color: var(--hk-red); }
+.group-about p {
+  font-size: 0.92rem; color: var(--text-mid);
+  line-height: 1.85; margin-bottom: 1.2rem;
+}
+
+.offices-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 2rem;
+}
+.office-box {
+  background: white; border-radius: 12px;
+  padding: 1.25rem; border: 1px solid var(--gray-mid);
+  text-align: center; transition: all 0.2s;
+}
+.office-box:hover { border-color: var(--gold); box-shadow: 0 6px 20px rgba(201,152,42,0.1); }
+.office-flag { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.office-name {
+  font-family: var(--font-display); font-size: 0.88rem;
+  font-weight: 700; color: var(--text-dark); margin-bottom: 0.25rem;
+}
+.office-role { font-size: 0.72rem; color: var(--text-light); }
+
+/* ── BRIDGE SECTION ── */
+#bridge { background: var(--midnight); position: relative; overflow: hidden; }
+#bridge::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,152,42,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,152,42,0.03) 1px, transparent 1px);
+  background-size: 45px 45px;
+}
+
+.bridge-visual {
+  margin-top: 4rem;
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  gap: 2rem; align-items: start;
+}
+
+.bridge-side {}
+.bridge-side-title {
+  font-family: var(--font-display); font-size: 1.1rem;
+  font-weight: 800; color: white; margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.bridge-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 1.25rem;
+  margin-bottom: 0.75rem; transition: all 0.25s;
+}
+.bridge-item:hover { background: rgba(255,255,255,0.05); transform: translateX(4px); }
+.bridge-item.cn-item { border-color: rgba(181,23,42,0.25); }
+.bridge-item.cn-item:hover { border-color: rgba(181,23,42,0.5); }
+.bridge-item.us-item { border-color: rgba(21,87,255,0.25); }
+.bridge-item.us-item:hover { border-color: rgba(21,87,255,0.5); transform: translateX(-4px); }
+
+.bi-name {
+  font-family: var(--font-display); font-size: 0.88rem;
+  font-weight: 700; color: white; margin-bottom: 0.25rem;
+}
+.bi-desc { font-size: 0.75rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+.bi-price {
+  display: inline-block; margin-top: 0.5rem;
+  font-size: 0.68rem; font-weight: 700; padding: 2px 8px;
+  border-radius: 4px;
+}
+.bi-price.cheap { background: rgba(0,200,150,0.15); color: var(--green); }
+.bi-price.standard { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
+
+.bridge-center {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 1rem;
+  padding-top: 2rem;
+}
+.bc-hk-badge {
+  background: linear-gradient(135deg, rgba(201,152,42,0.2), rgba(201,152,42,0.05));
+  border: 1px solid rgba(201,152,42,0.4);
+  border-radius: 16px; padding: 1.5rem 1.25rem;
+  text-align: center; width: 160px;
+}
+.bc-hk-flag { font-size: 2rem; margin-bottom: 0.5rem; }
+.bc-hk-name {
+  font-family: var(--font-display); font-size: 0.85rem;
+  font-weight: 800; color: var(--gold-bright); margin-bottom: 0.25rem;
+}
+.bc-hk-sub { font-size: 0.65rem; color: rgba(255,255,255,0.4); line-height: 1.4; }
+
+.bc-flow-arrows {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 4px;
+}
+.bc-arrow { font-size: 1.1rem; color: rgba(201,152,42,0.5); animation: arrowPulse 2s ease infinite; }
+.bc-arrow:nth-child(2) { animation-delay: 0.3s; }
+.bc-arrow:nth-child(3) { animation-delay: 0.6s; }
+@keyframes arrowPulse { 0%,100% { opacity:0.3; } 50% { opacity:1; } }
+
+.bridge-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem; margin-top: 4rem;
+}
+.bs-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,152,42,0.2);
+  border-radius: 14px; padding: 1.75rem;
+  text-align: center;
+}
+.bs-val {
+  font-family: var(--font-display); font-size: 2.2rem;
+  font-weight: 900; line-height: 1; color: var(--gold-bright);
+  margin-bottom: 0.5rem;
+}
+.bs-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.45; }
+
+/* ── SAVINGS ── */
+#savings { background: var(--off-white); }
+
+.savings-twin {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; margin-top: 3rem;
+}
+
+.savings-panel {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--gray-mid);
+}
+.sp-header {
+  padding: 2rem 2rem 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.sp-header.cn-header { background: linear-gradient(135deg, #1a0508, #2d0a10); }
+.sp-header.us-header { background: linear-gradient(135deg, #08102a, #0d1e44); }
+
+.sp-flag { font-size: 2rem; }
+.sp-title {
+  font-family: var(--font-display); font-size: 1rem;
+  font-weight: 800; color: white;
+}
+.sp-sub { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+.sp-body { background: white; padding: 1.5rem 2rem; }
+
+.sp-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 0.85rem 0;
+  border-bottom: 1px solid var(--gray-light);
+}
+.sp-row:last-child { border-bottom: none; }
+.sp-name { font-size: 0.82rem; color: var(--text-mid); }
+.sp-prices { display: flex; align-items: center; gap: 0.75rem; }
+.sp-old { font-size: 0.8rem; color: var(--text-light); text-decoration: line-through; }
+.sp-new {
+  font-family: var(--font-display); font-size: 0.95rem;
+  font-weight: 800;
+}
+.sp-new.cn { color: var(--hk-red); }
+.sp-new.us { color: #2B5CE6; }
+.sp-save {
+  font-size: 0.65rem; font-weight: 700;
+  padding: 2px 7px; border-radius: 4px;
+}
+.sp-save.cn-save { background: rgba(181,23,42,0.08); color: var(--hk-red); }
+.sp-save.us-save { background: rgba(0,200,150,0.1); color: var(--green); }
+
+.savings-cta {
+  margin-top: 3rem;
+  background: linear-gradient(135deg, var(--midnight), var(--navy));
+  border-radius: 20px; padding: 3rem;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 2rem;
+  border: 1px solid rgba(201,152,42,0.2);
+}
+.sc-text h3 {
+  font-family: var(--font-display); font-size: 1.5rem;
+  font-weight: 800; color: white; margin-bottom: 0.5rem;
+}
+.sc-text h3 span { color: var(--gold-bright); }
+.sc-text p { font-size: 0.88rem; color: rgba(255,255,255,0.55); }
+
+/* ── CLOUD ── */
+#cloud { background: white; }
+
+.vendor-section { margin-bottom: 3rem; }
+.vendor-section-label {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-light); margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 12px;
+}
+.vendor-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-mid); }
+
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.vendor-card {
+  background: var(--gray-light); border: 1px solid var(--gray-mid);
+  border-radius: 12px; padding: 1.5rem; text-align: center;
+  transition: all 0.25s; cursor: pointer;
+}
+.vendor-card:hover {
+  background: white; border-color: var(--gold);
+  box-shadow: 0 8px 25px rgba(201,152,42,0.1);
+  transform: translateY(-3px);
+}
+.vendor-logo { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.4rem; }
+.vendor-logo.ali { color: #FF6A00; }
+.vendor-logo.tencent { color: #006EFF; }
+.vendor-logo.huawei { color: #cf0a2c; }
+.vendor-logo.jd { color: #CC0000; }
+.vendor-logo.ct { color: #005BAC; }
+.vendor-logo.google { color: #4285F4; }
+.vendor-logo.aws { color: #FF9900; }
+.vendor-logo.azure { color: #0078D4; }
+.vendor-sub { font-size: 0.72rem; color: var(--text-light); margin-bottom: 0.85rem; }
+
+.btn-order {
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  color: var(--midnight); border: none; padding: 8px 14px;
+  border-radius: 6px; font-size: 0.75rem; font-weight: 800;
+  cursor: pointer; width: 100%; transition: all 0.2s;
+}
+.btn-order:hover { box-shadow: 0 4px 15px rgba(201,152,42,0.35); }
+
+.features-strip {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 1rem; margin-top: 3rem; padding: 2rem;
+  background: var(--midnight); border-radius: 16px;
+}
+.feature-item { text-align: center; color: white; }
+.feature-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.feature-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+
+/* ── MODELS ── */
+#models { background: var(--deep); position: relative; overflow: hidden; }
+#models::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,152,42,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,152,42,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 1rem; margin: 3rem 0;
+}
+.model-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 1.5rem 1rem;
+  text-align: center; transition: all 0.25s; cursor: pointer;
+}
+.model-card:hover {
+  border-color: rgba(201,152,42,0.4);
+  background: rgba(201,152,42,0.05);
+  transform: translateY(-3px);
+}
+.model-logo { font-size: 2rem; margin-bottom: 0.75rem; }
+.model-name { font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: white; margin-bottom: 0.3rem; }
+.model-type { font-size: 0.68rem; color: rgba(255,255,255,0.4); }
+.model-origin {
+  display: inline-block; margin-top: 6px;
+  font-size: 0.62rem; padding: 2px 7px;
+  border-radius: 3px; font-weight: 700;
+}
+.origin-us { background: rgba(21,87,255,0.2); color: #7BAAFF; }
+.origin-cn { background: rgba(181,23,42,0.2); color: #FF9A9A; }
+
+.model-features {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin: 3rem 0;
+}
+.mf-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px; padding: 1.8rem;
+}
+.mf-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+.mf-title { font-family: var(--font-display); font-weight: 700; color: white; margin-bottom: 0.5rem; }
+.mf-desc { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+.compliance-box {
+  background: rgba(201,152,42,0.06);
+  border: 1px solid rgba(201,152,42,0.25);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0;
+}
+.compliance-title {
+  font-weight: 700; color: var(--gold-bright); margin-bottom: 0.75rem;
+  font-size: 0.88rem; display: flex; align-items: center; gap: 8px;
+}
+.compliance-text { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+
+.btn-model {
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  color: var(--midnight); border: none; padding: 14px 32px;
+  border-radius: 8px; font-size: 0.95rem; font-weight: 800;
+  font-family: var(--font-display);
+  cursor: pointer; transition: all 0.25s;
+  box-shadow: 0 0 25px rgba(201,152,42,0.3);
+}
+.btn-model:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,152,42,0.5); }
+
+/* ── SOLUTIONS ── */
+#solutions { background: var(--cream); }
+.solutions-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin: 3rem 0;
+}
+.sol-card {
+  background: white; border-radius: 16px;
+  padding: 2rem; border: 1px solid var(--gray-mid);
+  transition: all 0.3s;
+}
+.sol-card:hover { border-color: var(--gold); box-shadow: 0 12px 40px rgba(201,152,42,0.1); transform: translateY(-4px); }
+.sol-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+.sol-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.75rem; }
+.sol-desc { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; }
+
+.process-flow {
+  background: white; border-radius: 20px;
+  padding: 3rem; margin-top: 3rem; border: 1px solid var(--gray-mid);
+}
+.process-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-align: center; margin-bottom: 3rem; color: var(--text-dark); }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+.process-steps::before {
+  content: ''; position: absolute;
+  top: 27px; left: 12.5%; right: 12.5%; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-bright));
+}
+.process-step { text-align: center; }
+.step-num {
+  width: 54px; height: 54px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; margin: 0 auto 1rem;
+  font-family: var(--font-display); font-size: 1rem; font-weight: 900;
+  color: var(--midnight); position: relative; z-index: 1;
+  box-shadow: 0 0 20px rgba(201,152,42,0.3);
+}
+.step-label { font-family: var(--font-display); font-size: 0.88rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.4rem; }
+.step-desc { font-size: 0.76rem; color: var(--text-light); line-height: 1.55; padding: 0 0.5rem; }
+
+/* ── PARTNERS ── */
+#partners { background: white; }
+.partners-tiers { margin-top: 3rem; }
+.tier-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 1.5rem; }
+.tier-badge {
+  padding: 4px 14px; border-radius: 20px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px;
+}
+.tier-gold { background: rgba(201,152,42,0.1); color: var(--gold); border: 1px solid rgba(201,152,42,0.3); }
+.tier-silver { background: rgba(100,116,139,0.08); color: #64748b; border: 1px solid rgba(100,116,139,0.2); }
+
+.partner-logos { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+.partner-logo-box {
+  background: var(--gray-light); border: 1px solid var(--gray-mid);
+  border-radius: 10px; padding: 1.1rem 1.8rem;
+  display: flex; align-items: center; justify-content: center;
+  min-width: 130px; transition: all 0.2s;
+}
+.partner-logo-box:hover { border-color: var(--gold); background: white; box-shadow: 0 4px 15px rgba(201,152,42,0.08); }
+.partner-logo-text { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--text-dark); }
+
+/* ── CONTACT ── */
+#contact { background: var(--midnight); position: relative; overflow: hidden; }
+#contact::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at top left, rgba(181,23,42,0.1), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(201,152,42,0.07), transparent 50%);
+}
+
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 4rem; margin-top: 3rem; position: relative;
+}
+.contact-info h3 {
+  font-family: var(--font-display); font-size: 1.1rem;
+  font-weight: 800; color: white; margin-bottom: 0.3rem;
+}
+.contact-info h4 {
+  font-size: 0.8rem; color: var(--gold-bright);
+  margin-bottom: 1.5rem; letter-spacing: 0.5px;
+}
+.contact-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1.4rem; }
+.cd-icon {
+  width: 38px; height: 38px;
+  background: rgba(201,152,42,0.1); border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.cd-label { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-bottom: 3px; }
+.cd-text { font-size: 0.86rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+.im-buttons { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.im-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 8px;
+  font-size: 0.83rem; font-weight: 600;
+  text-decoration: none; transition: all 0.2s;
+  cursor: pointer; border: none;
+}
+.whatsapp { background: #25D366; color: white; }
+.telegram { background: #229ED9; color: white; }
+.wechat { background: #07C160; color: white; }
+.im-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+.contact-form {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px; padding: 2.5rem;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+.form-group label { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.3px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 12px 14px;
+  color: white; font-size: 0.88rem;
+  font-family: var(--font-body); transition: border-color 0.2s; outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: rgba(201,152,42,0.5); background: rgba(201,152,42,0.04); }
+.form-group select option { background: var(--deep); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  color: var(--midnight); border: none; padding: 14px;
+  border-radius: 8px; font-size: 1rem; font-weight: 800;
+  font-family: var(--font-display); cursor: pointer;
+  transition: all 0.25s; box-shadow: 0 0 25px rgba(201,152,42,0.25);
+  margin-top: 0.5rem;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,152,42,0.45); }
+
+/* ── FOOTER ── */
+footer { background: #020408; padding: 3rem 5%; border-top: 1px solid rgba(201,152,42,0.1); }
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.footer-logo-en {
+  font-family: var(--font-display); font-size: 1.2rem;
+  font-weight: 800; color: white; margin-bottom: 0.25rem;
+}
+.footer-logo-en span { color: var(--gold-bright); }
+.footer-logo-zh { font-size: 0.8rem; color: rgba(255,255,255,0.35); margin-bottom: 1rem; letter-spacing: 1px; }
+.footer-desc { font-size: 0.82rem; color: rgba(255,255,255,0.3); line-height: 1.75; }
+.footer-col h4 {
+  font-family: var(--font-display); font-size: 0.8rem; font-weight: 800;
+  color: rgba(255,255,255,0.7); margin-bottom: 1rem;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.55rem; }
+.footer-col a { font-size: 0.8rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+.footer-col a:hover { color: var(--gold-bright); }
+
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-bottom-text { font-size: 0.75rem; color: rgba(255,255,255,0.22); }
+.footer-legal { display: flex; gap: 1.5rem; }
+.footer-legal a { font-size: 0.75rem; color: rgba(255,255,255,0.22); text-decoration: none; }
+.footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+/* ── FLOAT ── */
+.float-cta {
+  position: fixed; bottom: 2rem; right: 2rem;
+  z-index: 900; display: flex; flex-direction: column;
+  gap: 0.75rem; align-items: flex-end;
+}
+.float-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 50px;
+  font-size: 0.83rem; font-weight: 700;
+  cursor: pointer; border: none; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  transition: all 0.25s; white-space: nowrap;
+}
+.float-btn:hover { transform: translateY(-2px); }
+.float-main { background: linear-gradient(135deg, var(--gold), var(--gold-bright)); color: var(--midnight); font-family: var(--font-display); }
+.float-wa { background: #25D366; color: white; }
+.float-tg { background: #229ED9; color: white; }
+.float-sub { opacity: 0; transform: translateY(10px); transition: all 0.3s; pointer-events: none; }
+.float-cta:hover .float-sub { opacity: 1; transform: translateY(0); pointer-events: all; }
+
+/* ── COOKIE ── */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--deep);
+  border-top: 1px solid rgba(201,152,42,0.2);
+  padding: 1.2rem 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; z-index: 2000; transition: transform 0.4s;
+}
+.cookie-banner.hidden { transform: translateY(100%); }
+.cookie-text { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+.cookie-text a { color: var(--gold-bright); }
+.cookie-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+.btn-cookie { padding: 8px 20px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; border: none; transition: all 0.2s; }
+.btn-cookie-accept { background: var(--gold); color: var(--midnight); }
+.btn-cookie-decline { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.65); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(2,4,8,0.9);
+  z-index: 3000; display: flex; align-items: center;
+  justify-content: center; padding: 2rem;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--deep);
+  border: 1px solid rgba(201,152,42,0.2);
+  border-radius: 20px; padding: 2.5rem;
+  max-width: 500px; width: 100%;
+  transform: translateY(20px); transition: transform 0.3s; position: relative;
+}
+.modal-overlay.active .modal { transform: translateY(0); }
+.modal-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: white; margin-bottom: 0.5rem; }
+.modal-sub { font-size: 0.86rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+.modal-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: rgba(255,255,255,0.08); border: none; color: white;
+  width: 32px; height: 32px; border-radius: 50%;
+  cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .group-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .bridge-visual { grid-template-columns: 1fr; }
+  .bc-hk-badge { display: none; }
+  .bc-flow-arrows { display: none; }
+  .bridge-stats { grid-template-columns: repeat(2, 1fr); }
+  .savings-twin { grid-template-columns: 1fr; }
+  .solutions-grid, .model-features { grid-template-columns: repeat(2, 1fr); }
+  .offices-row { grid-template-columns: repeat(3, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .savings-cta { flex-direction: column; text-align: center; }
+  .features-strip { grid-template-columns: repeat(3, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; }
+  .process-steps::before { display: none; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links, .nav-right { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 70px 4%; }
+  .solutions-grid, .model-features { grid-template-columns: 1fr; }
+  .vendor-grid { grid-template-columns: repeat(2, 1fr); }
+  .models-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-strip { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: 1fr; }
+  .bridge-stats { grid-template-columns: repeat(2, 1fr); }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .cookie-banner { flex-direction: column; gap: 1rem; }
+  .float-cta { bottom: 1rem; right: 1rem; }
+  .offices-row { grid-template-columns: repeat(3, 1fr); }
+}
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.mobile-nav {
+  position: fixed; top: 74px; left: 0; right: 0;
+  background: rgba(6,12,24,0.98); backdrop-filter: blur(20px);
+  z-index: 999; padding: 1.5rem 5%;
+  display: none; flex-direction: column; gap: 1rem;
+  border-bottom: 1px solid rgba(201,152,42,0.1);
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  color: rgba(255,255,255,0.75); text-decoration: none;
+  font-size: 1rem; padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <span class="nav-logo-en">Rhcloud <span>Group</span> Holding</span>
+    <span class="nav-logo-zh">融合雲集團控股有限公司</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#bridge">Our Bridge</a></li>
+    <li><a href="#savings">Cost Savings</a></li>
+    <li><a href="#cloud">Cloud Services</a></li>
+    <li><a href="#models">AI Models</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-hq">🇭🇰 Hong Kong HQ</div>
+    <a href="#contact" class="btn-nav">Enquire Now</a>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#bridge" onclick="closeMobileNav()">Our Bridge</a>
+  <a href="#savings" onclick="closeMobileNav()">Cost Savings</a>
+  <a href="#cloud" onclick="closeMobileNav()">Cloud Services</a>
+  <a href="#models" onclick="closeMobileNav()">AI Models</a>
+  <a href="#solutions" onclick="closeMobileNav()">Solutions</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  <a href="#contact" style="color: var(--gold-bright);" onclick="closeMobileNav()">Enquire Now →</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div class="hero-bg">
+    <div class="harbour-glow"></div>
+    <div class="star-field"></div>
+    <div class="orb-cn"></div>
+    <div class="orb-us"></div>
+    <div class="orb-hk"></div>
+    <div class="grid-bg"></div>
+    <canvas class="neural-canvas" id="neuralCanvas"></canvas>
+  </div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-hq">Hong Kong Headquartered</span>
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-label">Group Holding · Est. in HK</span>
+      </div>
+      <h1 class="hero-title">
+        Where <span class="gold">East Meets West</span><br>
+        in Cloud &amp; AI
+      </h1>
+      <p class="hero-tagline">
+        "The highway for the world to enter China,<br>and for China to reach the world."
+      </p>
+      <p class="hero-sub">
+        Rhcloud Group Holding Limited is a Hong Kong–headquartered technology group with R&amp;D centres and cloud infrastructure in both Mainland China and the United States. We are the trusted bridge connecting global enterprises to Chinese cloud and AI resources — and opening China's digital ecosystem to the world.
+      </p>
+      <div class="hero-ctas">
+        <a href="#bridge" class="btn-primary">Discover Our Bridge →</a>
+        <a href="#contact" class="btn-outline">Talk to Us</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-val gold">3</div>
+          <div class="stat-label">Presence locations:<br>HK · China · USA</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val red">~10%</div>
+          <div class="stat-label">AI model cost<br>vs US pricing</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val green">~50%</div>
+          <div class="stat-label">Cloud cost<br>vs US pricing</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="globe-container">
+        <div class="globe-card hk-card">
+          <div class="gc-header">
+            <div>
+              <div class="gc-flag">🇭🇰</div>
+              <div class="gc-title">Hong Kong HQ</div>
+            </div>
+            <span class="gc-badge badge-hq">Group Headquarters</span>
+          </div>
+          <div class="gc-tags">
+            <span class="gc-tag">Group Strategy</span>
+            <span class="gc-tag">Global Sales</span>
+            <span class="gc-tag">Compliance</span>
+            <span class="gc-tag">Finance Hub</span>
+            <span class="gc-tag">International Gateway</span>
+          </div>
+        </div>
+
+        <div class="bridge-flow">
+          <div class="bf-arrow">↕ connected to ↕</div>
+          <div class="bf-node">HK</div>
+          <div class="bf-arrow">↕ unified through ↕</div>
+        </div>
+
+        <div class="globe-card" style="border-color:rgba(181,23,42,0.3); background:rgba(181,23,42,0.04);">
+          <div class="gc-header">
+            <div>
+              <div class="gc-flag">🇨🇳</div>
+              <div class="gc-title">China R&amp;D Centre</div>
+            </div>
+            <span class="gc-badge badge-cn">R&amp;D · Cloud · AI</span>
+          </div>
+          <div class="gc-tags">
+            <span class="gc-tag">Alibaba Cloud</span>
+            <span class="gc-tag">Tencent Cloud</span>
+            <span class="gc-tag">Huawei Cloud</span>
+            <span class="gc-tag">JD Cloud</span>
+            <span class="gc-tag">Qwen · Kimi · Doubao</span>
+          </div>
+        </div>
+
+        <div class="bridge-flow">
+          <div class="bf-arrow">↕ connected to ↕</div>
+        </div>
+
+        <div class="globe-card" style="border-color:rgba(21,87,255,0.3); background:rgba(21,87,255,0.04);">
+          <div class="gc-header">
+            <div>
+              <div class="gc-flag">🇺🇸</div>
+              <div class="gc-title">USA Tech Centre</div>
+            </div>
+            <span class="gc-badge badge-us">R&amp;D · Cloud · AI</span>
+          </div>
+          <div class="gc-tags">
+            <span class="gc-tag">AWS</span>
+            <span class="gc-tag">Google Cloud</span>
+            <span class="gc-tag">Azure</span>
+            <span class="gc-tag">OpenAI GPT</span>
+            <span class="gc-tag">Claude · Gemini</span>
+          </div>
+        </div>
+
+        <div class="savings-row">
+          <div class="sr-box green-border">
+            <div class="sr-val green">–50%</div>
+            <div class="sr-label">Cloud Cost Savings</div>
+          </div>
+          <div class="sr-box red-border">
+            <div class="sr-val red">–90%</div>
+            <div class="sr-label">AI Model Cost Savings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GROUP INTRO ── -->
+<section id="group">
+  <div class="section-max">
+    <div class="group-grid">
+      <div class="group-pillars">
+        <span class="section-label">Who We Are</span>
+        <div class="pillar reveal">
+          <div class="pillar-icon">🏛️</div>
+          <div>
+            <div class="pillar-title">Hong Kong Group Holding Company</div>
+            <p class="pillar-desc">Rhcloud Group Holding Limited is incorporated in Hong Kong — the world's premier international financial and technology hub, uniquely positioned at the intersection of China and global markets.</p>
+          </div>
+        </div>
+        <div class="pillar reveal" style="transition-delay:0.1s">
+          <div class="pillar-icon">🇨🇳</div>
+          <div>
+            <div class="pillar-title">China R&amp;D Centre &amp; Cloud Access</div>
+            <p class="pillar-desc">Our Mainland China team maintains direct partnerships with all major Chinese cloud providers and AI model labs, giving us unmatched access to cost-effective infrastructure and frontier AI at source pricing.</p>
+          </div>
+        </div>
+        <div class="pillar reveal" style="transition-delay:0.2s">
+          <div class="pillar-icon">🇺🇸</div>
+          <div>
+            <div class="pillar-title">USA Technology Centre &amp; Cloud Access</div>
+            <p class="pillar-desc">Our US technical centre holds official reseller partnerships with AWS, Google Cloud, Azure, OpenAI, Anthropic, and Google DeepMind — providing global-standard cloud and AI for international operations.</p>
+          </div>
+        </div>
+        <div class="pillar reveal" style="transition-delay:0.3s">
+          <div class="pillar-icon">🌐</div>
+          <div>
+            <div class="pillar-title">Global MSP &amp; AI Integration Services</div>
+            <p class="pillar-desc">From architecture to operations, our managed service team orchestrates multi-cloud environments spanning both ecosystems — delivering cost efficiency, compliance, and performance for clients worldwide.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="group-about reveal">
+        <h3>Hong Kong is our <em>superpower</em> — the unique gateway between two great technological civilisations.</h3>
+        <p>For Chinese enterprises expanding overseas, Hong Kong is the most trusted and strategically positioned gateway to global markets. For international businesses seeking access to China's powerful and cost-efficient cloud and AI ecosystem, Hong Kong offers the legal frameworks, banking infrastructure, and operational expertise to enter with confidence.</p>
+        <p>Rhcloud Group Holding sits at exactly this intersection. We don't just resell cloud resources — we architect the bridge. Our clients benefit from decades of combined expertise in both the Chinese and Western technology ecosystems, with a team fluent in the languages, regulations, and business cultures of both worlds.</p>
+        <p>Whether you are a US enterprise curious about reducing AI API costs by 90% through Chinese model access, or a Chinese company building global cloud infrastructure compliant with international data regulations — Rhcloud Group is your single, trusted partner.</p>
+
+        <div class="offices-row">
+          <div class="office-box">
+            <div class="office-flag">🇭🇰</div>
+            <div class="office-name">Hong Kong</div>
+            <div class="office-role">Group HQ</div>
+          </div>
+          <div class="office-box">
+            <div class="office-flag">🇨🇳</div>
+            <div class="office-name">China</div>
+            <div class="office-role">R&amp;D · Cloud</div>
+          </div>
+          <div class="office-box">
+            <div class="office-flag">🇺🇸</div>
+            <div class="office-name">USA</div>
+            <div class="office-role">Tech · Cloud</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BRIDGE ── -->
+<section id="bridge" class="dark">
+  <div class="section-max">
+    <span class="section-label">The Bridge</span>
+    <h2 class="section-title">Two Ecosystems. One Platform.</h2>
+    <p class="section-sub">Access the full breadth of Chinese and US cloud and AI resources — compliantly, affordably, and seamlessly — through a single Hong Kong–based partner.</p>
+
+    <div class="bridge-visual reveal">
+      <div class="bridge-side">
+        <div class="bridge-side-title">🇨🇳 China Ecosystem</div>
+        <div class="bridge-item cn-item">
+          <div class="bi-name">Alibaba Cloud (阿里云)</div>
+          <div class="bi-desc">Asia's largest cloud provider. Compute, storage, CDN, databases, and AI infrastructure.</div>
+          <span class="bi-price cheap">~50% of AWS pricing</span>
+        </div>
+        <div class="bridge-item cn-item">
+          <div class="bi-name">Tencent Cloud (腾讯云)</div>
+          <div class="bi-desc">Enterprise cloud with deep integration into WeChat and China's digital ecosystem.</div>
+          <span class="bi-price cheap">~50% of Azure pricing</span>
+        </div>
+        <div class="bridge-item cn-item">
+          <div class="bi-name">Huawei Cloud · JD Cloud · CT Cloud</div>
+          <div class="bi-desc">Diversified Chinese cloud options with sovereign infrastructure and competitive pricing.</div>
+          <span class="bi-price cheap">High savings available</span>
+        </div>
+        <div class="bridge-item cn-item">
+          <div class="bi-name">Qwen / Kimi / Doubao / Zhipu AI</div>
+          <div class="bi-desc">Frontier Chinese LLMs matching GPT-4o performance on major benchmarks.</div>
+          <span class="bi-price cheap">~10% of GPT-4o pricing</span>
+        </div>
+      </div>
+
+      <div class="bridge-center">
+        <div class="bc-flow-arrows">
+          <div class="bc-arrow">▲</div>
+          <div class="bc-arrow">▲</div>
+          <div class="bc-arrow">▲</div>
+        </div>
+        <div class="bc-hk-badge">
+          <div class="bc-hk-flag">🇭🇰</div>
+          <div class="bc-hk-name">Rhcloud Group</div>
+          <div class="bc-hk-sub">Hong Kong<br>Unified Platform</div>
+        </div>
+        <div class="bc-flow-arrows">
+          <div class="bc-arrow">▼</div>
+          <div class="bc-arrow">▼</div>
+          <div class="bc-arrow">▼</div>
+        </div>
+      </div>
+
+      <div class="bridge-side">
+        <div class="bridge-side-title">🇺🇸 US &amp; Global Ecosystem</div>
+        <div class="bridge-item us-item">
+          <div class="bi-name">Amazon Web Services</div>
+          <div class="bi-desc">World's leading cloud platform. Full suite of compute, storage, AI, and developer services.</div>
+          <span class="bi-price standard">Global standard pricing</span>
+        </div>
+        <div class="bridge-item us-item">
+          <div class="bi-name">Google Cloud Platform</div>
+          <div class="bi-desc">GCP with Vertex AI, BigQuery, and deep integration with Google's AI research.</div>
+          <span class="bi-price standard">Global standard pricing</span>
+        </div>
+        <div class="bridge-item us-item">
+          <div class="bi-name">Microsoft Azure</div>
+          <div class="bi-desc">Enterprise cloud with leading compliance certifications and hybrid capabilities.</div>
+          <span class="bi-price standard">Global standard pricing</span>
+        </div>
+        <div class="bridge-item us-item">
+          <div class="bi-name">OpenAI · Claude · Gemini</div>
+          <div class="bi-desc">World's most recognised AI models with broad enterprise adoption and compliance coverage.</div>
+          <span class="bi-price standard">US market pricing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bridge-stats reveal">
+      <div class="bs-box">
+        <div class="bs-val">8+</div>
+        <div class="bs-label">Cloud providers across<br>China &amp; the US</div>
+      </div>
+      <div class="bs-box">
+        <div class="bs-val">7+</div>
+        <div class="bs-label">AI models unified<br>in one API</div>
+      </div>
+      <div class="bs-box">
+        <div class="bs-val">~10%</div>
+        <div class="bs-label">AI model cost vs<br>US pricing</div>
+      </div>
+      <div class="bs-box">
+        <div class="bs-val">~50%</div>
+        <div class="bs-label">Cloud cost vs<br>US pricing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SAVINGS ── -->
+<section id="savings">
+  <div class="section-max">
+    <span class="section-label">Cost Advantage</span>
+    <h2 class="section-title">The Price Difference Is Real — and Enormous</h2>
+    <p class="section-sub">Chinese cloud infrastructure and AI models offer equivalent performance at dramatically lower cost. Our Hong Kong platform makes these savings accessible to any company, anywhere in the world.</p>
+
+    <div class="savings-twin reveal">
+      <div class="savings-panel">
+        <div class="sp-header cn-header">
+          <div class="sp-flag">🤖</div>
+          <div>
+            <div class="sp-title">AI Model Pricing Comparison</div>
+            <div class="sp-sub">Chinese models vs US models — same results, a fraction of the cost</div>
+          </div>
+        </div>
+        <div class="sp-body">
+          <div class="sp-row">
+            <span class="sp-name">GPT-4o Input (1M tokens)</span>
+            <div class="sp-prices">
+              <span class="sp-old">$5.00</span>
+              <span class="sp-new cn">~$0.40</span>
+              <span class="sp-save cn-save">–92%</span>
+            </div>
+          </div>
+          <div class="sp-row">
+            <span class="sp-name">GPT-4o Output (1M tokens)</span>
+            <div class="sp-prices">
+              <span class="sp-old">$15.00</span>
+              <span class="sp-new cn">~$1.20</span>
+              <span class="sp-save cn-save">–92%</span>
+            </div>
+          </div>
+          <div class="sp-row">
+            <span class="sp-name">Claude Sonnet Input (1M)</span>
+            <div class="sp-prices">
+              <span class="sp-old">$3.00</span>
+              <span class="sp-new cn">~$0.30</span>
+              <span class="sp-save cn-save">–90%</span>
+            </div>
+          </div>
+          <div class="sp-row">
+            <span class="sp-name">Gemini 1.5 Pro Input (1M)</span>
+            <div class="sp-prices">
+              <span class="sp-old">$3.50</span>
+              <span class="sp-new cn">~$0.35</span>
+              <span class="sp-save cn-save">–90%</span>
+            </div>
+          </div>
+          <div class="sp-row">
+            <span class="sp-name">500M tokens / month (blended)</span>
+            <div class="sp-prices">
+              <span class="sp-old">~$5,000</span>
+              <span class="sp-new cn">~$480</span>
+              <span class="sp-save cn-save">Save $4,500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="savings-panel">
+        <div class="sp-header us-header">
+          <div class="sp-flag">☁️</div>
+          <div>
+            <div class="sp-title">Cloud Infrastructure Pricing</div>
+            <div class="sp-sub">Chinese cloud providers vs US cloud — same compute, ~50% of the price</div>
+          </div>
+        </div>
+        <div class="sp-body">
+          <div class="sp-row">
+            <span class="sp-name">AWS EC2 c5.4xlarge / hr</span>
+            <div class="sp-prices">
+              <span class="sp-old">$0.68</span>
+              <span class="sp-new us">~$0.32</span>
+              <span class="sp-save us-save">–53%</span>
+            </div>
+          </div>
+          <div class="sp-row">
+            <span class="sp-name">Azure Standard D8 / hr</span>
+            <div class="sp-prices">
+              <span class="sp-old">$0.48</span>
+              <span class="sp-new us">~$0.22</span>
+              <span class="sp-save us-save">–54%</span>
+            </div>
+          </div>
+          <div class="sp-row">
+            <span class="sp-name">Google Cloud N2 8vCPU / hr</span>
+            <div class="sp-prices">
+              <span class="sp-old">$0.47</span>
+              <span class="sp-new us">~$0.24</span>
+              <span class="sp-save us-save">–49%</span>
+            </div>
+          </div>
+          <div class="sp-row">
+            <span class="sp-name">S3-equivalent Object Storage (TB)</span>
+            <div class="sp-prices">
+              <span class="sp-old">$23/mo</span>
+              <span class="sp-new us">~$11/mo</span>
+              <span class="sp-save us-save">–52%</span>
+            </div>
+          </div>
+          <div class="sp-row">
+            <span class="sp-name">100 vCPU production cluster / mo</span>
+            <div class="sp-prices">
+              <span class="sp-old">~$2,800</span>
+              <span class="sp-new us">~$1,300</span>
+              <span class="sp-save us-save">Save $1,500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="savings-cta reveal">
+      <div class="sc-text">
+        <h3>Your Hong Kong gateway to <span>massive savings</span></h3>
+        <p>All pricing above is accessible via Rhcloud Group's unified platform — billed in your preferred currency, with full compliance documentation, from a trusted Hong Kong entity.</p>
+      </div>
+      <a href="#contact" class="btn-primary">Get a Custom Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOUD ── -->
+<section id="cloud">
+  <div class="section-max">
+    <span class="section-label">Cloud Services</span>
+    <h2 class="section-title">Global Cloud Resources · Official Authorised Reseller</h2>
+    <p class="section-sub">Covering the full spectrum of Chinese and international cloud providers — unified billing, maximum rebates, single point of contact</p>
+
+    <div class="vendor-section reveal">
+      <div class="vendor-section-label">🇨🇳 China Cloud Providers — ~50% cheaper than US equivalents</div>
+      <div class="vendor-grid">
+        <div class="vendor-card">
+          <div class="vendor-logo ali">Alibaba Cloud</div>
+          <div class="vendor-sub">阿里云 · Aliyun</div>
+          <button class="btn-order" onclick="openConsole('aliyun')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo tencent">Tencent Cloud</div>
+          <div class="vendor-sub">腾讯云</div>
+          <button class="btn-order" onclick="openConsole('tencent')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo huawei">Huawei Cloud</div>
+          <div class="vendor-sub">华为云</div>
+          <button class="btn-order" onclick="openConsole('huawei')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo jd">JD Cloud</div>
+          <div class="vendor-sub">京东云</div>
+          <button class="btn-order" onclick="openConsole('jd')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo ct">CT Cloud</div>
+          <div class="vendor-sub">天翼云 · ChinaTelecom</div>
+          <button class="btn-order" onclick="openConsole('ct')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="vendor-section reveal" style="transition-delay:0.15s">
+      <div class="vendor-section-label">🌐 US &amp; International Cloud Providers</div>
+      <div class="vendor-grid">
+        <div class="vendor-card">
+          <div class="vendor-logo google">Google Cloud</div>
+          <div class="vendor-sub">GCP</div>
+          <button class="btn-order" onclick="openConsole('gcp')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo aws">Amazon AWS</div>
+          <div class="vendor-sub">AWS</div>
+          <button class="btn-order" onclick="openConsole('aws')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo azure">Microsoft Azure</div>
+          <div class="vendor-sub">Azure</div>
+          <button class="btn-order" onclick="openConsole('azure')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-strip reveal">
+      <div class="feature-item"><div class="feature-icon">🧾</div><div class="feature-label">Unified Billing</div></div>
+      <div class="feature-item"><div class="feature-icon">💱</div><div class="feature-label">Multi-Currency</div></div>
+      <div class="feature-item"><div class="feature-icon">💰</div><div class="feature-label">Volume Rebates</div></div>
+      <div class="feature-item"><div class="feature-icon">🎫</div><div class="feature-label">Credit Support</div></div>
+      <div class="feature-item"><div class="feature-icon">🛡️</div><div class="feature-label">24/7 Architects</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MODELS ── -->
+<section id="models" class="dark">
+  <div class="section-max" style="position:relative">
+    <span class="section-label">AI Model Services</span>
+    <h2 class="section-title">One API · Chinese &amp; US Frontier Models</h2>
+    <p class="section-sub">Access all major models through a single unified interface — Chinese models at ~10% of US pricing, US models at full capability. You choose based on your use case and budget.</p>
+
+    <div class="models-grid reveal">
+      <div class="model-card">
+        <div class="model-logo">🟢</div>
+        <div class="model-name">OpenAI GPT</div>
+        <div class="model-type">GPT-4o / o1</div>
+        <div class="model-origin origin-us">🇺🇸 US</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">💎</div>
+        <div class="model-name">Gemini</div>
+        <div class="model-type">Google DeepMind</div>
+        <div class="model-origin origin-us">🇺🇸 US</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🔶</div>
+        <div class="model-name">Claude</div>
+        <div class="model-type">Anthropic</div>
+        <div class="model-origin origin-us">🇺🇸 US</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🌊</div>
+        <div class="model-name">Qwen</div>
+        <div class="model-type">Alibaba Cloud</div>
+        <div class="model-origin origin-cn">🇨🇳 CN · ~10% cost</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🫘</div>
+        <div class="model-name">Doubao</div>
+        <div class="model-type">ByteDance</div>
+        <div class="model-origin origin-cn">🇨🇳 CN · ~10% cost</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🌙</div>
+        <div class="model-name">Kimi</div>
+        <div class="model-type">Moonshot AI</div>
+        <div class="model-origin origin-cn">🇨🇳 CN · ~10% cost</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🧠</div>
+        <div class="model-name">Zhipu AI</div>
+        <div class="model-type">GLM / CogVideo</div>
+        <div class="model-origin origin-cn">🇨🇳 CN · ~10% cost</div>
+      </div>
+    </div>
+
+    <div class="model-features reveal">
+      <div class="mf-item">
+        <div class="mf-icon">⚡</div>
+        <div class="mf-title">Unified API Interface</div>
+        <p class="mf-desc">OpenAI SDK-compatible. One codebase accesses all models — US and Chinese. Start on GPT-4o, migrate to Qwen for 90% savings with zero integration rewrite.</p>
+      </div>
+      <div class="mf-item">
+        <div class="mf-icon">🏗️</div>
+        <div class="mf-title">On-Premise &amp; Private Cloud</div>
+        <p class="mf-desc">Deploy models to your private cloud or local infrastructure. Data stays within your perimeter — critical for banking, healthcare, legal, and government use cases in any jurisdiction.</p>
+      </div>
+      <div class="mf-item">
+        <div class="mf-icon">📚</div>
+        <div class="mf-title">Enterprise Knowledge Integration</div>
+        <p class="mf-desc">RAG architecture connects any model to your ERP, CRM, SharePoint, or document repositories — building bespoke AI assistants tuned to your business language and workflows.</p>
+      </div>
+    </div>
+
+    <div class="compliance-box reveal">
+      <div class="compliance-title">⚠️ Compliance &amp; Regulatory Notice</div>
+      <p class="compliance-text">
+        Rhcloud Group Holding Limited operates from Hong Kong under Hong Kong SAR law. International AI and cloud services provided through this platform are intended for use in compliant jurisdictions only. Clients are responsible for ensuring their use of AI model outputs and cloud infrastructure complies with all applicable laws in their operating jurisdiction, including GDPR, PDPC, CCPA, China's PIPL, and the HKSAR's Personal Data (Privacy) Ordinance. Rhcloud Group acts as a technology intermediary and platform provider. Clients must independently fulfil all applicable compliance and regulatory obligations.
+      </p>
+    </div>
+
+    <div style="text-align:center; margin-top: 1.5rem;">
+      <button class="btn-model" onclick="openModal()">Book a Demo / Enquire about API Access →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTIONS ── -->
+<section id="solutions">
+  <div class="section-max">
+    <span class="section-label">Solutions</span>
+    <h2 class="section-title">Expert MSP Services · Bridging Both Worlds</h2>
+    <p class="section-sub">We don't just provide access — we architect, migrate, and operate your entire cloud and AI strategy across the China–US–global spectrum</p>
+
+    <div class="solutions-grid">
+      <div class="sol-card reveal">
+        <div class="sol-icon">🇨🇳→🌍</div>
+        <div class="sol-title">China Outbound: Going Global</div>
+        <p class="sol-desc">For Chinese enterprises expanding internationally, we architect compliant multi-cloud infrastructure using Hong Kong as the legal and operational hub — covering data sovereignty, GDPR, cross-border data flows, and international cloud deployment.</p>
+      </div>
+      <div class="sol-card reveal" style="transition-delay:0.1s">
+        <div class="sol-icon">🌍→🇨🇳</div>
+        <div class="sol-title">Global Inbound: Entering China</div>
+        <p class="sol-desc">For international companies seeking access to China's cloud and AI ecosystem, we provide the legal entity, technical infrastructure, and operational expertise to leverage Chinese cloud resources safely and compliantly through our Hong Kong structure.</p>
+      </div>
+      <div class="sol-card reveal" style="transition-delay:0.2s">
+        <div class="sol-icon">📊</div>
+        <div class="sol-title">Multi-Cloud Cost Optimisation</div>
+        <p class="sol-desc">Eliminate billing sprawl across US and Chinese providers. Our unified monitoring platform visualises all cloud spend, intelligently optimises resource allocation, and consistently delivers 30–50% cost reductions for enterprise clients.</p>
+      </div>
+    </div>
+
+    <div class="process-flow reveal">
+      <div class="process-title">Our Delivery Process</div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-label">Discovery</div>
+          <p class="step-desc">Understand your business goals, cloud footprint, compliance requirements, and cost targets</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-label">Architecture Design</div>
+          <p class="step-desc">Design the optimal China–US–global multi-cloud strategy with clear savings projections</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-label">Migration &amp; Delivery</div>
+          <p class="step-desc">Zero-downtime migration with full business continuity and regulatory compliance</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-label">Ongoing Operations</div>
+          <p class="step-desc">24/7 monitoring, continuous cost optimisation, and dedicated account management</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ── -->
+<section id="partners">
+  <div class="section-max">
+    <span class="section-label">Partners</span>
+    <h2 class="section-title">Official Partnerships Spanning East &amp; West</h2>
+    <p class="section-sub">Direct reseller agreements with leading Chinese and global cloud and AI providers — built from our Hong Kong headquarters, serving the world</p>
+
+    <div class="partners-tiers">
+      <div class="tier-label">
+        <span class="tier-badge tier-gold">Gold Partner</span>
+      </div>
+      <div class="partner-logos reveal">
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#FF6A00">Alibaba Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#FF9900">Amazon AWS</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#4285F4">Google Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#0078D4">Microsoft Azure</span></div>
+      </div>
+
+      <div class="tier-label" style="margin-top: 2rem;">
+        <span class="tier-badge tier-silver">Strategic Ally</span>
+      </div>
+      <div class="partner-logos reveal">
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#006EFF">Tencent Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#cf0a2c">Huawei Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#CC0000">JD Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#005BAC">CT Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#10B981">OpenAI</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#6366F1">Anthropic</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#F59E0B">Alibaba Qwen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact" class="dark">
+  <div class="section-max" style="position:relative">
+    <span class="section-label">Contact Us</span>
+    <h2 class="section-title">Your Bridge Starts Here</h2>
+    <p class="section-sub">Reach us in Hong Kong — our multilingual team serves clients from China, Southeast Asia, Europe, the Americas, and beyond</p>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Rhcloud Group Holding Limited</h3>
+        <h4>融合雲集團控股有限公司</h4>
+        <div class="contact-detail">
+          <div class="cd-icon">📍</div>
+          <div>
+            <div class="cd-label">Registered Office</div>
+            <div class="cd-text">Hong Kong SAR,<br>People's Republic of China</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">🏢</div>
+          <div>
+            <div class="cd-label">Group Subsidiaries</div>
+            <div class="cd-text">R&amp;D Centre · Mainland China<br>Technology Centre · United States</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">📧</div>
+          <div>
+            <div class="cd-label">Group Email</div>
+            <div class="cd-text">support@wonmay.net</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">💬</div>
+          <div>
+            <div class="cd-label">Instant Messaging</div>
+            <div class="cd-text">WhatsApp · WeChat · Telegram<br>Available Mon – Sat, 9:00 AM – 10:00 PM HKT</div>
+          </div>
+        </div>
+        <div class="im-buttons">
+          <a href="https://wa.me/" class="im-btn whatsapp">💬 WhatsApp</a>
+          <a href="https://t.me/" class="im-btn telegram">✈️ Telegram</a>
+          <a href="#" class="im-btn wechat">💚 WeChat</a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal" style="transition-delay:0.15s">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Company *</label>
+            <input type="text" placeholder="Company full name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email or Messaging Contact *</label>
+          <input type="text" placeholder="email@company.com or WhatsApp / WeChat ID">
+        </div>
+        <div class="form-group">
+          <label>Your Location</label>
+          <select>
+            <option value="">Select your base</option>
+            <option>Mainland China</option>
+            <option>Hong Kong SAR</option>
+            <option>United States</option>
+            <option>Southeast Asia</option>
+            <option>Europe</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Primary Interest</label>
+          <select>
+            <option value="">Select a product or service</option>
+            <option>AI Models — Chinese (Cost Savings)</option>
+            <option>AI Models — US (OpenAI / Claude / Gemini)</option>
+            <option>Cloud — Chinese Providers (Cost Savings)</option>
+            <option>Cloud — US / International Providers</option>
+            <option>China Outbound: Going Global</option>
+            <option>Global Inbound: Entering China</option>
+            <option>Multi-Cloud Cost Audit</option>
+            <option>Enterprise AI Integration</option>
+            <option>MSP Managed Services</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell us about your needs</label>
+          <textarea placeholder="Describe your current cloud setup, AI usage, expansion plans, or questions — in English or Chinese..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="handleSubmit()">Submit Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-en">Rhcloud <span>Group</span> Holding Limited</div>
+      <div class="footer-logo-zh">融合雲集團控股有限公司</div>
+      <p class="footer-desc">Hong Kong–headquartered technology group with R&amp;D centres in China and the USA.<br>Your trusted bridge between the world's two largest technology ecosystems.<br>Email: support@wonmay.net</p>
+    </div>
+    <div class="footer-col">
+      <h4>Cloud</h4>
+      <ul>
+        <li><a href="#cloud">Alibaba Cloud</a></li>
+        <li><a href="#cloud">Tencent Cloud</a></li>
+        <li><a href="#cloud">Huawei Cloud</a></li>
+        <li><a href="#cloud">JD Cloud</a></li>
+        <li><a href="#cloud">CT Cloud</a></li>
+        <li><a href="#cloud">Amazon AWS</a></li>
+        <li><a href="#cloud">Google Cloud</a></li>
+        <li><a href="#cloud">Microsoft Azure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>AI Models</h4>
+      <ul>
+        <li><a href="#models">OpenAI GPT</a></li>
+        <li><a href="#models">Gemini</a></li>
+        <li><a href="#models">Claude</a></li>
+        <li><a href="#models">Qwen · ~10% cost</a></li>
+        <li><a href="#models">Doubao · ~10% cost</a></li>
+        <li><a href="#models">Kimi · ~10% cost</a></li>
+        <li><a href="#models">Zhipu AI</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#group">About the Group</a></li>
+        <li><a href="#bridge">Our Bridge</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-bottom-text">© 2025 Rhcloud Group Holding Limited 融合雲集團控股有限公司. All rights reserved. Incorporated in Hong Kong SAR.</span>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">AI Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FLOAT ── -->
+<div class="float-cta">
+  <a href="https://wa.me/" class="float-btn float-wa float-sub">💬 WhatsApp</a>
+  <a href="https://t.me/" class="float-btn float-tg float-sub">✈️ Telegram</a>
+  <button class="float-btn float-main" onclick="openModal()">📅 Book a Demo</button>
+</div>
+
+<!-- ── COOKIE ── -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">We use cookies to enhance your experience. By continuing, you agree to our <a href="#">Cookie Policy</a> and <a href="#">Privacy Notice</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn-cookie btn-cookie-decline" onclick="dismissCookie()">Essential Only</button>
+    <button class="btn-cookie btn-cookie-accept" onclick="dismissCookie()">Accept All</button>
+  </div>
+</div>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">Book a Demo</div>
+    <p class="modal-sub">Our multilingual team will be in touch within 24 hours</p>
+    <div class="form-group">
+      <label>Full Name *</label>
+      <input type="text" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label>Email or Messaging Contact *</label>
+      <input type="text" placeholder="email@company.com or WhatsApp / WeChat">
+    </div>
+    <div class="form-group">
+      <label>Primary Interest</label>
+      <select>
+        <option>AI Model Cost Reduction (Chinese Models)</option>
+        <option>Cloud Cost Reduction (Chinese Cloud)</option>
+        <option>China Outbound: Going Global</option>
+        <option>Global Inbound: Entering China</option>
+        <option>Multi-Cloud MSP Services</option>
+      </select>
+    </div>
+    <button class="btn-submit" onclick="handleModalSubmit()">Book Now →</button>
+  </div>
+</div>
+
+<script>
+// Neural canvas
+const canvas = document.getElementById('neuralCanvas');
+const ctx = canvas.getContext('2d');
+let nodes = [];
+function resizeCanvas() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+function initNodes() {
+  nodes = [];
+  const count = Math.floor((canvas.width * canvas.height) / 20000);
+  for (let i = 0; i < count; i++) {
+    nodes.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35, r: Math.random()*1.8+0.8 });
+  }
+}
+function drawNeural() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  for (let i=0;i<nodes.length;i++) {
+    for (let j=i+1;j<nodes.length;j++) {
+      const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if (dist<120) {
+        ctx.beginPath();
+        ctx.strokeStyle=`rgba(201,152,42,${(1-dist/120)*0.2})`;
+        ctx.lineWidth=0.8;
+        ctx.moveTo(nodes[i].x,nodes[i].y); ctx.lineTo(nodes[j].x,nodes[j].y); ctx.stroke();
+      }
+    }
+  }
+  nodes.forEach(n => {
+    ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(201,152,42,0.45)'; ctx.fill();
+    n.x+=n.vx; n.y+=n.vy;
+    if(n.x<0||n.x>canvas.width) n.vx*=-1;
+    if(n.y<0||n.y>canvas.height) n.vy*=-1;
+  });
+  requestAnimationFrame(drawNeural);
+}
+window.addEventListener('resize',()=>{resizeCanvas();initNodes();});
+resizeCanvas(); initNodes(); drawNeural();
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+
+// Mobile nav
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');}
+
+// Cookie
+function dismissCookie(){document.getElementById('cookieBanner').classList.add('hidden');}
+
+// Modal
+function openModal(){document.getElementById('modalOverlay').classList.add('active');}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('active');}
+function closeModalOutside(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+
+// Console
+function openConsole(v){alert(`Redirecting to ${v.toUpperCase()} portal...`);}
+
+// Forms
+function handleSubmit(){alert('Thank you for your enquiry. Our team will be in touch within 24 hours.');}
+function handleModalSubmit(){closeModal();alert('Demo booked. Our multilingual team will reach out shortly.');}
+
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('navbar');
+  nav.style.background=window.scrollY>50?'rgba(6,12,24,0.98)':'rgba(6,12,24,0.92)';
+});
+</script>
+</body>
+</html>

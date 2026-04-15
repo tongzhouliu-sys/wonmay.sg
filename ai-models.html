@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aggregate AI Models — RHCLOUD PTE. LTD.</title>
+  <meta name="description" content="One API key for 30+ global AI models. Unified gateway for OpenAI, Claude, Gemini, DeepSeek, Qwen and more. Enterprise AI platform with intelligent load balancing.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .api-demo {
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+    .api-demo-header {
+      background: var(--bg-secondary);
+      padding: 12px 16px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .api-demo-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .api-demo-title { margin-left: 4px; color: var(--grey-light); font-size: 0.75rem; }
+    .api-demo-body { padding: 20px; line-height: 1.8; }
+    .code-comment { color: var(--grey-mid); }
+    .code-key { color: #f92672; }
+    .code-string { color: #a6e22e; }
+    .code-value { color: #66d9ef; }
+    .code-accent { color: var(--accent-bright); }
+
+    .model-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .model-table th {
+      text-align: left; padding: 12px 16px;
+      font-family: var(--font-mono); font-size: 0.72rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--grey-mid); border-bottom: 1px solid var(--border);
+    }
+    .model-table td {
+      padding: 14px 16px; border-bottom: 1px solid var(--border);
+      font-size: 0.875rem; color: var(--grey-light);
+    }
+    .model-table tr:last-child td { border-bottom: none; }
+    .model-table tr:hover td { background: var(--bg-card-hover); }
+    .model-table .model-name { color: var(--white); font-weight: 500; }
+    .model-table .status-badge {
+      display: inline-block;
+      padding: 2px 8px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 0.7rem;
+      background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+      color: #4ade80; letter-spacing: 0.04em;
+    }
+
+    .value-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px;
+      text-align: center; transition: var(--transition);
+    }
+    .value-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--shadow-glow); }
+    .value-card .value-emoji { font-size: 2.4rem; margin-bottom: 12px; }
+    .value-card .value-headline { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent-bright); margin-bottom: 8px; }
+    .value-card p { font-size: 0.875rem; color: var(--grey-light); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">RH</div>
+      <span class="nav-logo-text">RH<span>CLOUD</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cloud-resale.html">Cloud Resale</a></li>
+      <li><a href="ai-models.html">AI Models</a></li>
+      <li><a href="msp.html">MSP</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="mailto:info@rhcloud.com" class="btn btn-primary" style="padding:10px 20px;font-size:0.875rem;">Get API Access</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="cloud-resale.html">Cloud Resale</a>
+  <a href="ai-models.html">AI Models</a>
+  <a href="msp.html">MSP</a>
+  <a href="careers.html">Careers</a>
+  <a href="about.html">About Us</a>
+  <a href="mailto:info@rhcloud.com" class="btn btn-primary">Get API Access</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb animate-up">
+      <a href="index.html">Home</a> <span>/</span> <span>AI Models</span>
+    </div>
+    <span class="tag animate-up delay-1">Aggregate AI Models</span>
+    <h1 class="page-hero-title animate-up delay-2">One Key.<br><span style="color:var(--accent-bright);">30+ Global</span><br>AI Models.</h1>
+    <p class="page-hero-sub animate-up delay-3">Enterprise AI gateway platform. Access OpenAI, Claude, Gemini, DeepSeek, Qwen and more through a single unified API — more stable, more cost-effective, more powerful.</p>
+    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;" class="animate-up delay-4">
+      <a href="mailto:info@rhcloud.com" class="btn btn-primary">Request API Access</a>
+      <a href="#models" class="btn btn-outline">View All Models</a>
+    </div>
+  </div>
+</div>
+
+<!-- Value Props -->
+<section class="section-sm" style="padding:48px 0;">
+  <div class="container">
+    <div class="grid-3">
+      <div class="value-card reveal">
+        <div class="value-emoji">🔒</div>
+        <div class="value-headline">More Stable</div>
+        <p>Intelligent load balancing and automatic retry mechanisms ensure 99.9% uptime — even when individual model providers have outages.</p>
+      </div>
+      <div class="value-card reveal" style="animation-delay:0.15s;">
+        <div class="value-emoji">💸</div>
+        <div class="value-headline">More Affordable</div>
+        <p>Aggregated token pricing with granular cost analytics. Reduce AI spend by 30–60% compared to direct API calls at official rates.</p>
+      </div>
+      <div class="value-card reveal" style="animation-delay:0.3s;">
+        <div class="value-emoji">⚡</div>
+        <div class="value-headline">More Powerful</div>
+        <p>Access the right model for every task — reasoning, coding, image generation, music, multilingual — all from one integration point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- API Demo + Features -->
+<section class="section">
+  <div class="container">
+    <div class="feature-row reveal">
+      <div class="feature-content">
+        <span class="tag">Unified API</span>
+        <h2 class="feature-title" style="margin-top:16px;">Zero-Code Model<br>Switching</h2>
+        <p class="feature-body">Our platform is fully compatible with the OpenAI, Claude Messages, and Gemini API protocols. Your existing code works without modification — simply point your API base URL to our gateway and switch models by changing one parameter.</p>
+        <ul class="feature-list">
+          <li>Single API key for all 30+ integrated models</li>
+          <li>OpenAI, Claude, and Gemini protocol compatibility</li>
+          <li>Sub-50ms routing overhead — near-native latency</li>
+          <li>Streaming, function calling, and vision all supported</li>
+          <li>Per-token billing with team quota management</li>
+        </ul>
+      </div>
+
+      <div class="api-demo reveal" style="animation-delay:0.2s;">
+        <div class="api-demo-header">
+          <div class="api-demo-dot" style="background:#ff5f57;"></div>
+          <div class="api-demo-dot" style="background:#febc2e;"></div>
+          <div class="api-demo-dot" style="background:#28c840;"></div>
+          <span class="api-demo-title">rhcloud_api_example.py</span>
+        </div>
+        <div class="api-demo-body">
+          <div class="code-comment"># ── RHCLOUD Unified AI Gateway ──</div>
+          <div style="margin-top:8px;">
+            <span class="code-key">from</span> openai <span class="code-key">import</span> OpenAI
+          </div>
+          <div style="margin-top:12px;">
+            client = OpenAI(<br>
+            &nbsp;&nbsp;<span class="code-key">api_key</span>=<span class="code-string">"rh-your-enterprise-key"</span>,<br>
+            &nbsp;&nbsp;<span class="code-key">base_url</span>=<span class="code-string">"https://api.rhcloud.com/v1"</span><br>
+            )
+          </div>
+          <div style="margin-top:12px;">
+            response = client.chat.completions.create(<br>
+            &nbsp;&nbsp;<span class="code-key">model</span>=<span class="code-accent">"claude-opus-4-5"</span>, <span class="code-comment"># ← swap freely</span><br>
+            &nbsp;&nbsp;<span class="code-comment"># "gpt-4o" | "gemini-2.0" |</span><br>
+            &nbsp;&nbsp;<span class="code-comment"># "deepseek-v3" | "qwen-max"</span><br>
+            &nbsp;&nbsp;<span class="code-key">messages</span>=[{<span class="code-string">"role"</span>: <span class="code-string">"user"</span>, <span class="code-string">"content"</span>: <span class="code-string">"Hello"</span>}]<br>
+            )
+          </div>
+          <div style="margin-top:12px;color:var(--accent);"> ✓ Works with existing OpenAI SDK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Model Catalog -->
+<section class="section" id="models" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Model Catalog</span>
+      <h2 class="section-title" style="margin-top:12px;">30+ Models, One Gateway</h2>
+      <p class="section-subtitle">Text, reasoning, code, image, audio — full multimodal support across leading global AI providers.</p>
+    </div>
+
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;" class="reveal">
+      <table class="model-table">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Provider</th>
+            <th>Capability</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="model-name">GPT-4o / GPT-4o mini</td><td>OpenAI</td><td>Text, Vision, Code</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">o3 / o4-mini</td><td>OpenAI</td><td>Advanced Reasoning</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">Claude Opus 4 / Sonnet 4</td><td>Anthropic</td><td>Text, Analysis, Vision</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">Gemini 2.0 Flash / Pro</td><td>Google</td><td>Text, Multimodal</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">DeepSeek V3 / R1</td><td>DeepSeek</td><td>Text, Code, Reasoning</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">Qwen Max / Plus / Turbo</td><td>Alibaba</td><td>Text, Multilingual</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">Hunyuan / Baichuan</td><td>Tencent / Baidu</td><td>Text, Chinese NLP</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">Midjourney V7</td><td>Midjourney</td><td>Image Generation</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">DALL·E 3 / Flux</td><td>OpenAI / Black Forest</td><td>Image Generation</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">Suno V4</td><td>Suno AI</td><td>Music Generation</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">Whisper / TTS</td><td>OpenAI</td><td>Audio / Speech</td><td><span class="status-badge">LIVE</span></td></tr>
+          <tr><td class="model-name">Llama 3.3 / Mistral Large</td><td>Meta / Mistral</td><td>Open Source LLM</td><td><span class="status-badge">LIVE</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pill-row" style="margin-top:20px;justify-content:center;" class="reveal">
+      <span class="pill">+ More models added regularly</span>
+      <span class="pill">Custom model integration on request</span>
+      <span class="pill">On-premise deployment available</span>
+    </div>
+  </div>
+</section>
+
+<!-- Management Features -->
+<section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="tag">Enterprise Management</span>
+      <h2 class="section-title" style="margin-top:12px;">Built for Enterprise Operations</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="capability-card reveal">
+        <span class="num">01 / BILLING</span>
+        <h3>Granular Token Billing</h3>
+        <p>Per-token cost tracking across models, teams, and projects. Real-time spend dashboards with alerts, quotas, and auto-topup — so AI costs are always predictable.</p>
+      </div>
+      <div class="capability-card reveal" style="animation-delay:0.1s;">
+        <span class="num">02 / MANAGEMENT</span>
+        <h3>Quota &amp; Group Management</h3>
+        <p>Create sub-accounts for teams, departments, or clients. Assign per-model quotas, rate limits, and whitelisted models — all managed from a central admin console.</p>
+      </div>
+      <div class="capability-card reveal" style="animation-delay:0.2s;">
+        <span class="num">03 / RELIABILITY</span>
+        <h3>99.9% High Availability</h3>
+        <p>Intelligent load balancing across multiple upstream providers. Automatic failover and retry logic means your applications stay online even during provider incidents.</p>
+      </div>
+      <div class="capability-card reveal" style="animation-delay:0.3s;">
+        <span class="num">04 / MULTIMODAL</span>
+        <h3>Full Multimodal Coverage</h3>
+        <p>Native integration for text, code, image (Midjourney, DALL·E, Flux), music (Suno), speech (Whisper, TTS), and video generation — one platform for all modalities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section reveal">
+      <span class="tag" style="margin-bottom:20px;">Get API Access</span>
+      <h2 class="section-title" style="margin-bottom:16px;">Start Using 30+ AI Models<br>With One API Key</h2>
+      <p style="color:var(--grey-light);max-width:480px;margin:0 auto 32px;font-weight:300;line-height:1.7;">Contact us to set up your enterprise AI gateway account. Volume pricing and custom model integrations available.</p>
+      <a href="mailto:info@rhcloud.com" class="btn btn-primary">Get API Access — info@rhcloud.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:12px;display:inline-flex;">
+          <div class="nav-logo-mark">RH</div>
+          <span class="nav-logo-text">RH<span>CLOUD</span></span>
+        </a>
+        <p class="footer-brand-desc">Global Cloud & AI Infrastructure Leader. Headquartered in Singapore, serving enterprises worldwide since 2007.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="cloud-resale.html">Cloud Resale</a></li>
+          <li><a href="ai-models.html">Aggregate AI Models</a></li>
+          <li><a href="msp.html">MSP Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="mailto:info@rhcloud.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <div class="footer-col-title">Contact</div>
+        <p>
+          <strong>Email</strong>
+          info@rhcloud.com
+          <strong>Singapore HQ</strong>
+          RHCLOUD PTE. LTD.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 RHCLOUD PTE. LTD. All Rights Reserved.</span>
+      <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--grey-mid);">Reg. in Singapore</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

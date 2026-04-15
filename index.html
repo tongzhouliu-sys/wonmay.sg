@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RHCLOUD PTE. LTD. — Global Cloud & AI Infrastructure</title>
+  <meta name="description" content="RHCLOUD is a global cloud & AI infrastructure leader headquartered in Singapore, delivering cloud resale, aggregate AI models, and MSP solutions worldwide.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific overrides */
+    .globe-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      height: 340px;
+    }
+
+    .globe-ring {
+      position: absolute;
+      border-radius: 50%; border: 1px solid var(--border);
+      animation: spin-ring linear infinite;
+    }
+
+    .globe-ring:nth-child(1) { width: 240px; height: 240px; animation-duration: 18s; border-color: rgba(14,165,233,0.2); }
+    .globe-ring:nth-child(2) { width: 310px; height: 310px; animation-duration: 24s; animation-direction: reverse; }
+    .globe-ring:nth-child(3) { width: 380px; height: 380px; animation-duration: 32s; }
+
+    @keyframes spin-ring {
+      from { transform: rotate(0deg) rotateX(70deg); }
+      to   { transform: rotate(360deg) rotateX(70deg); }
+    }
+
+    .globe-center {
+      width: 100px; height: 100px;
+      background: radial-gradient(circle at 35% 35%, rgba(14,165,233,0.6), rgba(14,165,233,0.1));
+      border-radius: 50%; border: 1px solid var(--accent);
+      box-shadow: 0 0 40px rgba(14,165,233,0.3), inset 0 0 40px rgba(14,165,233,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--accent); letter-spacing: 0.1em; z-index: 2;
+    }
+
+    .location-dot {
+      position: absolute; z-index: 3;
+    }
+
+    .location-dot::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--accent); border-radius: 50%;
+      display: block;
+      box-shadow: 0 0 12px var(--accent);
+      animation: pulse-dot 2s ease infinite;
+    }
+
+    .location-dot .loc-label {
+      position: absolute; top: -18px; left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono); font-size: 0.62rem;
+      color: var(--accent-bright); white-space: nowrap;
+      letter-spacing: 0.06em;
+    }
+
+    .loc-sg { top: 55%; left: 58%; }
+    .loc-wh { top: 38%; left: 62%; }
+    .loc-hk { top: 42%; left: 70%; }
+    .loc-us { top: 40%; left: 18%; }
+
+    .pillar-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px 32px;
+      transition: var(--transition); position: relative; overflow: hidden;
+    }
+
+    .pillar-card::after {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0; transition: var(--transition);
+    }
+
+    .pillar-card:hover { border-color: var(--border-strong); transform: translateY(-4px); box-shadow: var(--shadow-card), var(--shadow-glow); }
+    .pillar-card:hover::after { opacity: 1; }
+
+    .pillar-num {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--accent); letter-spacing: 0.1em; margin-bottom: 20px;
+    }
+
+    .pillar-icon { font-size: 2.2rem; margin-bottom: 16px; }
+
+    .pillar-title { font-size: 1.5rem; margin-bottom: 12px; }
+    .pillar-text { font-size: 0.875rem; color: var(--grey-light); line-height: 1.7; }
+    .pillar-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent); font-size: 0.85rem; margin-top: 20px;
+      font-family: var(--font-mono); letter-spacing: 0.04em;
+      transition: var(--transition);
+    }
+    .pillar-link:hover { gap: 10px; }
+
+    .why-grid {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 20px;
+    }
+
+    .why-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: var(--transition);
+    }
+    .why-item:hover { border-color: var(--border-strong); }
+
+    .why-item .icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .why-item h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .why-item p { font-size: 0.85rem; color: var(--grey-light); line-height: 1.6; }
+
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">RH</div>
+      <span class="nav-logo-text">RH<span>CLOUD</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cloud-resale.html">Cloud Resale</a></li>
+      <li><a href="ai-models.html">AI Models</a></li>
+      <li><a href="msp.html">MSP</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="mailto:info@rhcloud.com" class="btn btn-primary" style="padding:10px 20px;font-size:0.875rem;">Contact Us</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="cloud-resale.html">Cloud Resale</a>
+  <a href="ai-models.html">AI Models</a>
+  <a href="msp.html">MSP</a>
+  <a href="careers.html">Careers</a>
+  <a href="about.html">About Us</a>
+  <a href="mailto:info@rhcloud.com" class="btn btn-primary">Contact Us</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;">
+      <div>
+        <div class="hero-badge animate-up">
+          <span class="hero-badge-dot"></span>
+          Singapore Headquartered · Global Operations
+        </div>
+        <h1 class="hero-title animate-up delay-1">
+          <span class="line">Global Cloud</span>
+          <span class="line accent-line">&amp; AI</span>
+          <span class="line">Infrastructure</span>
+        </h1>
+        <p class="hero-description animate-up delay-2">
+          RHCLOUD PTE. LTD. is the group's global decision headquarters. From Singapore to Wuhan, Hong Kong, and the USA — we power enterprises worldwide with cloud resale, aggregate AI models, and managed cloud solutions.
+        </p>
+        <div class="hero-actions animate-up delay-3">
+          <a href="cloud-resale.html" class="btn btn-primary">Explore Services</a>
+          <a href="about.html" class="btn btn-outline">Learn About Us</a>
+        </div>
+        <div class="hero-stats animate-up delay-4">
+          <div>
+            <div class="hero-stat-num"><span data-counter="20" data-suffix="+">20+</span></div>
+            <div class="hero-stat-label">Years Since 2007</div>
+          </div>
+          <div>
+            <div class="hero-stat-num"><span data-counter="30" data-suffix="+">30+</span></div>
+            <div class="hero-stat-label">AI Models</div>
+          </div>
+          <div>
+            <div class="hero-stat-num"><span data-counter="6">6</span></div>
+            <div class="hero-stat-label">Cloud Partners</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">99.9<span style="font-size:1.4rem;">%</span></div>
+            <div class="hero-stat-label">Uptime SLA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="globe-visual animate-up delay-2">
+        <div class="globe-ring"></div>
+        <div class="globe-ring"></div>
+        <div class="globe-ring"></div>
+        <div class="globe-center">GLOBAL</div>
+        <div class="location-dot loc-sg"><span class="loc-label">SG HQ</span></div>
+        <div class="location-dot loc-wh"><span class="loc-label">Wuhan</span></div>
+        <div class="location-dot loc-hk"><span class="loc-label">HK</span></div>
+        <div class="location-dot loc-us"><span class="loc-label">USA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Strip -->
+<div class="partners-strip">
+  <div class="container">
+    <div class="partners-inner">
+      <span class="mono-label" style="flex-shrink:0;margin:0;">Authorized Partners</span>
+      <div class="partner-logo"><span class="dot">◆</span> Alibaba Cloud</div>
+      <div class="partner-logo"><span class="dot">◆</span> Tencent Cloud</div>
+      <div class="partner-logo"><span class="dot">◆</span> Huawei Cloud</div>
+      <div class="partner-logo"><span class="dot">◆</span> JD Cloud</div>
+      <div class="partner-logo"><span class="dot">◆</span> Google Cloud</div>
+      <div class="partner-logo"><span class="dot">◆</span> AWS</div>
+      <div class="partner-logo"><span class="dot">◆</span> OpenAI</div>
+      <div class="partner-logo"><span class="dot">◆</span> Anthropic</div>
+      <div class="partner-logo"><span class="dot">◆</span> DeepSeek</div>
+    </div>
+  </div>
+</div>
+
+<!-- Three Core Pillars -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="tag">Core Services</span>
+      <h2 class="section-title" style="margin-top:12px;">Three Pillars of Growth</h2>
+      <p class="section-subtitle" style="margin:12px auto 0;">From cloud infrastructure to AI intelligence — we deliver the full technology stack your enterprise needs.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="pillar-card reveal">
+        <div class="pillar-num">01 / CLOUD RESALE</div>
+        <div class="pillar-icon">☁️</div>
+        <h3 class="pillar-title">Cloud Resale</h3>
+        <p class="pillar-text">Authorized reseller for Alibaba Cloud, Tencent, Huawei, JD, GCP, and AWS. Enterprise-grade discounts up to 85% off list price with full account ownership and 7×24 expert support.</p>
+        <a href="cloud-resale.html" class="pillar-link">Explore Cloud Resale →</a>
+      </div>
+
+      <div class="pillar-card reveal" style="animation-delay:0.15s;">
+        <div class="pillar-num">02 / AGGREGATE AI</div>
+        <div class="pillar-icon">🤖</div>
+        <h3 class="pillar-title">Aggregate AI Models</h3>
+        <p class="pillar-text">One API key. 30+ global AI models. Unified gateway for OpenAI, Claude, Gemini, DeepSeek, Qwen and more — with intelligent load balancing and enterprise billing management.</p>
+        <a href="ai-models.html" class="pillar-link">Explore AI Platform →</a>
+      </div>
+
+      <div class="pillar-card reveal" style="animation-delay:0.3s;">
+        <div class="pillar-num">03 / MSP SOLUTIONS</div>
+        <div class="pillar-icon">🛡️</div>
+        <h3 class="pillar-title">MSP Solutions</h3>
+        <p class="pillar-text">Unified multi-cloud management across public clouds, private clouds, and on-premise infrastructure. Built-in bastion host, cost optimization, and automated DevOps orchestration.</p>
+        <a href="msp.html" class="pillar-link">Explore MSP →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="section-sm" style="padding:0 0 96px;">
+  <div class="container">
+    <div class="stats-bar reveal">
+      <div class="stat-item">
+        <div class="stat-num" data-counter="85" data-suffix="%">85%</div>
+        <div class="stat-label">Max Cloud Discount</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-counter="30" data-suffix="+">30+</div>
+        <div class="stat-label">AI Models Integrated</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-counter="4">4</div>
+        <div class="stat-label">Global Locations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-counter="20" data-suffix="+">20+</div>
+        <div class="stat-label">Years of Expertise</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Presence -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="feature-row reveal">
+      <div class="feature-content">
+        <span class="tag">Global Presence</span>
+        <h2 class="feature-title" style="margin-top:16px;">Decision Center.<br>Global Execution.</h2>
+        <p class="feature-body">RHCLOUD PTE. LTD. serves as the group's global strategy and decision headquarters — coordinating operations across Singapore, Wuhan, Hong Kong, and the United States to serve enterprise clients worldwide.</p>
+        <ul class="feature-list">
+          <li><strong>Singapore HQ</strong> — Group headquarters, global strategy &amp; compliance</li>
+          <li><strong>Wuhan R&amp;D Center</strong> — 完美网络, 20 years of technical heritage</li>
+          <li><strong>Hong Kong</strong> — Greater China &amp; regional financial hub operations</li>
+          <li><strong>USA</strong> — Silicon Valley &amp; New York enterprise market coverage</li>
+        </ul>
+      </div>
+
+      <div class="feature-visual reveal" style="animation-delay:0.2s;">
+        <span class="mono-label">Global Office Locations</span>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:8px;">
+          <div style="display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;">
+            <span style="font-size:1.4rem;">🇸🇬</span>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">Singapore</div>
+              <div style="font-size:0.78rem;color:var(--grey-light);font-family:var(--font-mono);">Global HQ · RHCLOUD PTE. LTD.</div>
+            </div>
+            <span style="margin-left:auto;font-family:var(--font-mono);font-size:0.7rem;color:var(--accent);background:var(--accent-glow);padding:3px 8px;border-radius:4px;border:1px solid var(--border);">HQ</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;">
+            <span style="font-size:1.4rem;">🇨🇳</span>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">Wuhan, China</div>
+              <div style="font-size:0.78rem;color:var(--grey-light);font-family:var(--font-mono);">R&amp;D Center · 武汉完美网络</div>
+            </div>
+            <span style="margin-left:auto;font-family:var(--font-mono);font-size:0.7rem;color:var(--grey-light);background:var(--bg-card);padding:3px 8px;border-radius:4px;border:1px solid var(--border);">R&amp;D</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;">
+            <span style="font-size:1.4rem;">🇭🇰</span>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">Hong Kong</div>
+              <div style="font-size:0.78rem;color:var(--grey-light);font-family:var(--font-mono);">Regional Business Center</div>
+            </div>
+            <span style="margin-left:auto;font-family:var(--font-mono);font-size:0.7rem;color:var(--grey-light);background:var(--bg-card);padding:3px 8px;border-radius:4px;border:1px solid var(--border);">BIZ</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;">
+            <span style="font-size:1.4rem;">🇺🇸</span>
+            <div>
+              <div style="font-weight:600;font-size:0.9rem;">United States</div>
+              <div style="font-size:0.78rem;color:var(--grey-light);font-family:var(--font-mono);">Silicon Valley · New York</div>
+            </div>
+            <span style="margin-left:auto;font-family:var(--font-mono);font-size:0.7rem;color:var(--grey-light);background:var(--bg-card);padding:3px 8px;border-radius:4px;border:1px solid var(--border);">BIZ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="tag">Why RHCLOUD</span>
+      <h2 class="section-title" style="margin-top:12px;">Built for Enterprise Trust</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="icon">🏆</div>
+        <h3>20 Years of Technical Heritage</h3>
+        <p>Rooted in 武汉完美网络 founded in 2007, RHCLOUD inherits two decades of deep infrastructure expertise and client trust — now elevated to a global stage.</p>
+      </div>
+      <div class="why-item reveal" style="animation-delay:0.1s;">
+        <div class="icon">🌐</div>
+        <h3>Global Compliance Capability</h3>
+        <p>Operating across Singapore, China, Hong Kong, and the USA means we understand multi-jurisdiction compliance. Your data stays yours — 100% account ownership guaranteed.</p>
+      </div>
+      <div class="why-item reveal" style="animation-delay:0.2s;">
+        <div class="icon">💰</div>
+        <h3>Unmatched Cost Efficiency</h3>
+        <p>As an authorized reseller with strategic partner status, we provide enterprise clients with discounts up to 85% off list pricing across major cloud platforms.</p>
+      </div>
+      <div class="why-item reveal" style="animation-delay:0.3s;">
+        <div class="icon">🤝</div>
+        <h3>National High-Tech Enterprise</h3>
+        <p>Recognized as a National High-Tech Enterprise and Alibaba Cloud Strategic Partner — qualifications that reflect our engineering capability and commitment to excellence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section reveal">
+      <span class="tag" style="margin-bottom:20px;">Get Started</span>
+      <h2 class="section-title" style="margin-bottom:16px;">Ready to Transform Your<br>Cloud Strategy?</h2>
+      <p style="color:var(--grey-light);max-width:480px;margin:0 auto 32px;font-weight:300;line-height:1.7;">Talk to our solutions team about cloud migration, AI model integration, or managed infrastructure services.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="mailto:info@rhcloud.com" class="btn btn-primary">Contact Sales Team</a>
+        <a href="about.html" class="btn btn-outline">Learn Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:12px;display:inline-flex;">
+          <div class="nav-logo-mark">RH</div>
+          <span class="nav-logo-text">RH<span>CLOUD</span></span>
+        </a>
+        <p class="footer-brand-desc">Global Cloud & AI Infrastructure Leader. Headquartered in Singapore, serving enterprises worldwide since 2007.</p>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="cloud-resale.html">Cloud Resale</a></li>
+          <li><a href="ai-models.html">Aggregate AI Models</a></li>
+          <li><a href="msp.html">MSP Solutions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="mailto:info@rhcloud.com">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <div class="footer-col-title">Global Offices</div>
+        <p>
+          <strong>Singapore HQ</strong>
+          RHCLOUD PTE. LTD., Singapore
+          <strong>Wuhan, China</strong>
+          武汉完美网络科技有限公司
+          <strong>Email</strong>
+          info@rhcloud.com
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 RHCLOUD PTE. LTD. All Rights Reserved.</span>
+      <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--grey-mid);">Reg. in Singapore</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

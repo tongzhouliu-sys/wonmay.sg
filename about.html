@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — RHCLOUD PTE. LTD.</title>
+  <meta name="description" content="RHCLOUD PTE. LTD. — the global decision headquarters rooted in 20 years of Chinese tech heritage and now positioned as a world-class cloud and AI infrastructure leader.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .award-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px;
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: var(--transition);
+    }
+    .award-card:hover { border-color: var(--border-strong); }
+    .award-icon { font-size: 2rem; flex-shrink: 0; }
+    .award-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; }
+    .award-text { font-size: 0.82rem; color: var(--grey-light); line-height: 1.5; }
+
+    .vision-block {
+      background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(14,165,233,0.03));
+      border: 1px solid var(--border-strong);
+      border-radius: 20px; padding: 56px 48px;
+      position: relative; overflow: hidden;
+    }
+
+    .vision-block::before {
+      content: '"';
+      position: absolute; top: -20px; left: 32px;
+      font-family: var(--font-display); font-size: 14rem; line-height: 1;
+      color: rgba(14,165,233,0.06); pointer-events: none;
+    }
+
+    .vision-text {
+      font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 600; line-height: 1.4; position: relative;
+    }
+
+    .team-values {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 20px;
+    }
+    .team-value {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      transition: var(--transition);
+    }
+    .team-value:hover { border-color: var(--border-strong); }
+    .team-value h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .team-value p { font-size: 0.875rem; color: var(--grey-light); line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      .team-values { grid-template-columns: 1fr; }
+      .vision-block { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">RH</div>
+      <span class="nav-logo-text">RH<span>CLOUD</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cloud-resale.html">Cloud Resale</a></li>
+      <li><a href="ai-models.html">AI Models</a></li>
+      <li><a href="msp.html">MSP</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="mailto:info@rhcloud.com" class="btn btn-primary" style="padding:10px 20px;font-size:0.875rem;">Get in Touch</a>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="cloud-resale.html">Cloud Resale</a>
+  <a href="ai-models.html">AI Models</a>
+  <a href="msp.html">MSP</a>
+  <a href="careers.html">Careers</a>
+  <a href="about.html">About Us</a>
+  <a href="mailto:info@rhcloud.com" class="btn btn-primary">Get in Touch</a>
+</div>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb animate-up">
+      <a href="index.html">Home</a> <span>/</span> <span>About Us</span>
+    </div>
+    <span class="tag animate-up delay-1">Our Story</span>
+    <h1 class="page-hero-title animate-up delay-2">20 Years of<br><span style="color:var(--accent-bright);">Digital</span> Heritage.<br>Global Ambition.</h1>
+    <p class="page-hero-sub animate-up delay-3">From a technology company founded in Wuhan in 2007, to a Singapore-headquartered global cloud and AI infrastructure group — RHCLOUD's journey reflects the evolution of China's tech sector onto the world stage.</p>
+  </div>
+</div>
+
+<!-- Group Overview -->
+<section class="section">
+  <div class="container">
+    <div class="feature-row reveal">
+      <div class="feature-content">
+        <span class="tag">Group Structure</span>
+        <h2 class="feature-title" style="margin-top:16px;">Global HQ.<br>Local Expertise.</h2>
+        <p class="feature-body">RHCLOUD PTE. LTD. was established in Singapore as the group's global decision-making headquarters. We operate on a model of "centralized group resources, independently operated businesses" — combining the financial and technology resources of the group with the agility of regionally-focused business units.</p>
+        <p class="feature-body" style="margin-top:16px;">Our anchor operating member, 武汉完美网络科技有限公司 (Wuhan Perfect Network Technology), has served as the group's technical foundation for nearly two decades — earning recognition as a National High-Tech Enterprise and building deep expertise in cloud infrastructure and managed services.</p>
+        <ul class="feature-list" style="margin-top:8px;">
+          <li>Singapore PTE. LTD. — Global strategy, governance, and BD</li>
+          <li>Wuhan R&amp;D — Engineering, platform development, China ops</li>
+          <li>Hong Kong — Regional finance hub and Greater China gateway</li>
+          <li>USA offices — North America enterprise market development</li>
+        </ul>
+      </div>
+
+      <div class="feature-visual reveal" style="animation-delay:0.2s;">
+        <span class="mono-label">Group Architecture</span>
+        <div style="margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:0;">
+          <div style="background:linear-gradient(135deg,var(--accent-dim),var(--accent));border-radius:12px;padding:14px 28px;font-family:var(--font-display);font-weight:700;font-size:1rem;letter-spacing:0.04em;box-shadow:0 0 24px rgba(14,165,233,0.3);">RHCLOUD PTE. LTD.</div>
+          <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--grey-mid);margin:4px 0;">Singapore HQ — Global Decision Center</div>
+          <div style="width:2px;height:32px;background:linear-gradient(to bottom,var(--accent),var(--grey-mid));"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;">
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+              <div style="font-size:1.2rem;margin-bottom:6px;">🇨🇳</div>
+              <div style="font-weight:600;font-size:0.85rem;margin-bottom:4px;">武汉完美网络</div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--grey-mid);">R&amp;D · Operations</div>
+            </div>
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+              <div style="font-size:1.2rem;margin-bottom:6px;">🇭🇰</div>
+              <div style="font-weight:600;font-size:0.85rem;margin-bottom:4px;">HK Business</div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--grey-mid);">Finance · BD</div>
+            </div>
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+              <div style="font-size:1.2rem;margin-bottom:6px;">🇺🇸</div>
+              <div style="font-weight:600;font-size:0.85rem;margin-bottom:4px;">USA Office</div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--grey-mid);">SV · NYC · Sales</div>
+            </div>
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;">
+              <div style="font-size:1.2rem;margin-bottom:6px;">🌐</div>
+              <div style="font-weight:600;font-size:0.85rem;margin-bottom:4px;">Cloud Partners</div>
+              <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--grey-mid);">6 Major Platforms</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Our Journey</span>
+      <h2 class="section-title" style="margin-top:12px;">Two Decades of Growth</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:flex-start;">
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-year">2007</div>
+          <div style="font-weight:600;margin-bottom:4px;">Foundation</div>
+          <p class="timeline-text">武汉完美网络科技有限公司 is founded in Wuhan, China, beginning its journey as an internet infrastructure and managed services provider.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2012</div>
+          <div style="font-weight:600;margin-bottom:4px;">Cloud Era Begins</div>
+          <p class="timeline-text">Early adoption of cloud computing services. The company becomes an authorized reseller for China's emerging cloud platforms and builds its first enterprise client base.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2016</div>
+          <div style="font-weight:600;margin-bottom:4px;">National High-Tech Recognition</div>
+          <p class="timeline-text">Officially recognized as a National High-Tech Enterprise (国家高新技术企业) by the Chinese government — validating the company's R&D capability and technical excellence.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div style="font-weight:600;margin-bottom:4px;">Alibaba Cloud Strategic Partnership</div>
+          <p class="timeline-text">Elevated to Alibaba Cloud Strategic Partner status, unlocking deep cooperation on enterprise deals, co-marketing, and preferred pricing structures.</p>
+        </div>
+      </div>
+
+      <div class="timeline reveal" style="animation-delay:0.2s;">
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div style="font-weight:600;margin-bottom:4px;">AI Model Platform Launch</div>
+          <p class="timeline-text">Launched the aggregate AI model platform, providing enterprises with unified access to global LLMs through a single API gateway — ahead of the mainstream AI adoption wave.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div style="font-weight:600;margin-bottom:4px;">Global Expansion</div>
+          <p class="timeline-text">RHCLOUD PTE. LTD. incorporated in Singapore as the group's global headquarters. Expansion into Hong Kong and the United States markets begins.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div style="font-weight:600;margin-bottom:4px;">MSP Platform Rollout</div>
+          <p class="timeline-text">Launched 行云管家 multi-cloud management platform, delivering unified hybrid cloud operations for enterprise clients across Southeast Asia and Greater China.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026 →</div>
+          <div style="font-weight:600;margin-bottom:4px;">The AI-Native Era</div>
+          <p class="timeline-text">Transitioning from cloud infrastructure to AI-native intelligence partner — helping enterprises adopt and operationalize frontier AI models across their businesses.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Credentials & Awards -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="tag">Credentials</span>
+      <h2 class="section-title" style="margin-top:12px;">Recognized Excellence</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="award-card reveal">
+        <div class="award-icon">🏅</div>
+        <div>
+          <div class="award-title">National High-Tech Enterprise</div>
+          <p class="award-text">Certified by China's Ministry of Science and Technology — recognizing sustained R&D investment and technological innovation capability.</p>
+        </div>
+      </div>
+      <div class="award-card reveal" style="animation-delay:0.1s;">
+        <div class="award-icon">🤝</div>
+        <div>
+          <div class="award-title">Alibaba Cloud Strategic Partner</div>
+          <p class="award-text">Highest tier partnership with Asia Pacific's largest cloud provider — enabling premium pricing, co-selling, and technical co-innovation programs.</p>
+        </div>
+      </div>
+      <div class="award-card reveal" style="animation-delay:0.2s;">
+        <div class="award-icon">🌐</div>
+        <div>
+          <div class="award-title">Multi-Cloud Authorized Reseller</div>
+          <p class="award-text">Authorized partner status across 6 major cloud platforms: Alibaba, Tencent, Huawei, JD, Google Cloud, and AWS — spanning Chinese domestic and global hyperscalers.</p>
+        </div>
+      </div>
+      <div class="award-card reveal" style="animation-delay:0.3s;">
+        <div class="award-icon">🏢</div>
+        <div>
+          <div class="award-title">Singapore PTE. LTD. Incorporated</div>
+          <p class="award-text">Legally incorporated in Singapore, the region's leading global business hub — providing the group with access to international capital markets, legal frameworks, and global talent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vision -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="vision-block reveal">
+      <p class="vision-text">
+        "RHCLOUD's mission is to evolve from a <span class="highlight">cloud infrastructure provider</span> into an <span class="highlight">AI-native transformation partner</span> — helping enterprises worldwide harness the full potential of intelligent cloud technology."
+      </p>
+      <div style="margin-top:32px;display:flex;align-items:center;gap:16px;">
+        <div style="width:40px;height:40px;background:linear-gradient(135deg,var(--accent),var(--accent-dim));border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.8rem;font-weight:600;color:#fff;">RH</div>
+        <div>
+          <div style="font-weight:600;font-size:0.9rem;">RHCLOUD Leadership</div>
+          <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--grey-light);">Singapore Headquarters</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="tag">Our Values</span>
+      <h2 class="section-title" style="margin-top:12px;">What We Stand For</h2>
+    </div>
+
+    <div class="team-values">
+      <div class="team-value reveal">
+        <h3>🌐 Global Perspective, Local Execution</h3>
+        <p>We combine the macro view of a Singapore headquarters with the depth of regional teams who understand local regulations, culture, and enterprise needs. International vision, local trust.</p>
+      </div>
+      <div class="team-value reveal" style="animation-delay:0.1s;">
+        <h3>🔒 Customer Data Sovereignty First</h3>
+        <p>We believe enterprise clients should own their data and cloud accounts completely. Our model ensures that RHCLOUD is always a service gateway — never a gatekeeper to your own infrastructure.</p>
+      </div>
+      <div class="team-value reveal" style="animation-delay:0.2s;">
+        <h3>⚡ Technology-Led Growth</h3>
+        <p>Every service we offer is grounded in genuine technical capability — from cloud architecture to AI model integration. We don't just resell; we understand, design, and optimize.</p>
+      </div>
+      <div class="team-value reveal" style="animation-delay:0.3s;">
+        <h3>🤝 Long-Term Partnerships</h3>
+        <p>Our business model depends on client success. We build multi-year relationships with enterprises and invest in understanding their business goals — not just their infrastructure requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section reveal">
+      <span class="tag" style="margin-bottom:20px;">Contact Us</span>
+      <h2 class="section-title" style="margin-bottom:16px;">Let's Build Something<br>Together</h2>
+      <p style="color:var(--grey-light);max-width:480px;margin:0 auto 32px;font-weight:300;line-height:1.7;">Whether you're exploring cloud migration, AI platform adoption, or long-term infrastructure partnership — our team is ready to help.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="mailto:info@rhcloud.com" class="btn btn-primary">info@rhcloud.com</a>
+        <a href="careers.html" class="btn btn-outline">Join Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:12px;display:inline-flex;">
+          <div class="nav-logo-mark">RH</div>
+          <span class="nav-logo-text">RH<span>CLOUD</span></span>
+        </a>
+        <p class="footer-brand-desc">Global Cloud & AI Infrastructure Leader. Headquartered in Singapore, serving enterprises worldwide since 2007.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="cloud-resale.html">Cloud Resale</a></li>
+          <li><a href="ai-models.html">Aggregate AI Models</a></li>
+          <li><a href="msp.html">MSP Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="mailto:info@rhcloud.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <div class="footer-col-title">Global Offices</div>
+        <p>
+          <strong>Singapore HQ</strong>
+          RHCLOUD PTE. LTD., Singapore
+          <strong>Wuhan, China</strong>
+          武汉完美网络科技有限公司
+          <strong>Email</strong>
+          info@rhcloud.com
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 RHCLOUD PTE. LTD. All Rights Reserved.</span>
+      <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--grey-mid);">Reg. in Singapore</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QCloud LLC — Access China & US Cloud + AI at Unbeatable Cost</title>
+<meta name="description" content="QCloud LLC — Your bridge to both US and Chinese cloud infrastructure and AI models. Cut AI costs by 90%, slash cloud bills by 50%. Corona, CA based multi-cloud MSP.">
+<meta name="keywords" content="Chinese AI Models USA, China Cloud Provider US, Cheap LLM API, Multi-Cloud MSP California, QCloud, Alibaba Cloud US, Cost-Effective AI">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --midnight: #080F1E;
+  --deep: #0A1628;
+  --navy: #0D1F3C;
+  --blue: #1557FF;
+  --blue-mid: #2F6FFF;
+  --cyan: #00D4FF;
+  --cyan-soft: #7EEEFF;
+  --red: #FF3B3B;
+  --red-soft: #FF6B6B;
+  --gold: #FFB800;
+  --green: #00E87A;
+  --white: #FFFFFF;
+  --off-white: #F0F4FF;
+  --gray-light: #EEF2F9;
+  --gray-mid: #D6DFF0;
+  --text-dark: #080F1E;
+  --text-mid: #4A5568;
+  --font-display: 'Cabinet Grotesk', sans-serif;
+  --font-body: 'Instrument Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 5%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8,15,30,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: all 0.3s;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav-logo .q { color: var(--cyan); }
+.nav-logo .tagline {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 1px;
+  margin-left: 10px;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cyan); }
+
+.nav-cta {
+  display: flex; align-items: center; gap: 1rem;
+}
+.btn-nav {
+  background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+  color: white; padding: 9px 22px;
+  border-radius: 6px; font-size: 0.85rem;
+  font-weight: 600; text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 0 20px rgba(21,87,255,0.35);
+}
+.btn-nav:hover { transform: translateY(-1px); box-shadow: 0 0 30px rgba(21,87,255,0.55); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+/* ── HERO ── */
+#home {
+  min-height: 100vh;
+  background: var(--midnight);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 70px;
+}
+
+.hero-bg { position: absolute; inset: 0; }
+
+/* US + China flag glow */
+.flag-glow-us {
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(21,87,255,0.18), transparent 65%);
+  top: -100px; left: -100px;
+  border-radius: 50%;
+  animation: glowPulse 6s ease-in-out infinite;
+}
+.flag-glow-cn {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,59,59,0.15), transparent 65%);
+  bottom: -80px; right: -80px;
+  border-radius: 50%;
+  animation: glowPulse 6s ease-in-out infinite reverse;
+}
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(21,87,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,87,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridShift 25s linear infinite;
+}
+@keyframes gridShift {
+  from { transform: translate(0,0); }
+  to { transform: translate(50px, 50px); }
+}
+
+.neural-canvas { position: absolute; inset: 0; opacity: 0.3; }
+
+.hero-content {
+  position: relative; z-index: 10;
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.25);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  color: var(--cyan);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+  animation: fadeUp 0.5s ease both;
+}
+.eyebrow-dot {
+  width: 6px; height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  animation: blink 2s ease infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.5s ease 0.1s both;
+  letter-spacing: -1.5px;
+}
+.hero-title .us { color: var(--blue-mid); }
+.hero-title .cn { color: var(--red-soft); }
+.hero-title .cost { 
+  background: linear-gradient(135deg, var(--cyan), var(--cyan-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  animation: fadeUp 0.5s ease 0.2s both;
+}
+
+.hero-ctas {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  animation: fadeUp 0.5s ease 0.3s both;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+  color: white; padding: 14px 28px;
+  border-radius: 8px; font-size: 0.95rem;
+  font-weight: 700; text-decoration: none;
+  cursor: pointer; border: none;
+  transition: all 0.25s;
+  box-shadow: 0 0 30px rgba(21,87,255,0.4);
+  font-family: var(--font-display);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(21,87,255,0.55); }
+
+.btn-outline {
+  background: transparent; color: white;
+  padding: 14px 28px; border-radius: 8px;
+  font-size: 0.95rem; font-weight: 700;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.25s;
+  font-family: var(--font-display);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.45); }
+
+.hero-stats {
+  display: flex; gap: 2rem;
+  margin-top: 3rem; padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  animation: fadeUp 0.5s ease 0.4s both;
+}
+.stat-val {
+  font-family: var(--font-display);
+  font-size: 2.2rem; font-weight: 900;
+  line-height: 1; letter-spacing: -1px;
+}
+.stat-val.blue { color: var(--cyan); }
+.stat-val.red { color: var(--red-soft); }
+.stat-val.gold { color: var(--gold); }
+.stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 5px; line-height: 1.4; }
+
+/* Bridge visual */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeRight 0.7s ease 0.3s both;
+}
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.bridge-diagram {
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+}
+
+.bridge-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+.bridge-card.us-card { border-color: rgba(21,87,255,0.4); background: rgba(21,87,255,0.06); }
+.bridge-card.cn-card { border-color: rgba(255,59,59,0.4); background: rgba(255,59,59,0.06); }
+.bridge-card.center-card {
+  border-color: rgba(0,212,255,0.4);
+  background: rgba(0,212,255,0.06);
+  text-align: center; margin: 0.5rem 0;
+}
+
+.bc-flag { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.bc-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem; font-weight: 800;
+  color: white; margin-bottom: 0.4rem;
+}
+.bc-items {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.bc-tag {
+  font-size: 0.68rem; font-weight: 600;
+  padding: 3px 8px; border-radius: 4px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.65);
+}
+.bc-tag.blue { background: rgba(21,87,255,0.2); color: #7BAAFF; }
+.bc-tag.red { background: rgba(255,59,59,0.2); color: #FF9A9A; }
+
+.bc-center-label {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 800; color: var(--cyan);
+  margin-bottom: 0.3rem;
+}
+.bc-center-sub { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+.bridge-arrow {
+  text-align: center; padding: 4px 0;
+  font-size: 1.2rem; color: rgba(255,255,255,0.3);
+}
+
+.savings-badges {
+  display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap;
+}
+.savings-badge {
+  flex: 1;
+  background: rgba(0,232,122,0.1);
+  border: 1px solid rgba(0,232,122,0.25);
+  border-radius: 8px;
+  padding: 0.75rem;
+  text-align: center;
+}
+.sb-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 900;
+  color: var(--green);
+}
+.sb-label { font-size: 0.68rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SECTIONS ── */
+section { padding: 100px 5%; }
+.section-max { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  display: inline-block; font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 0.9rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.9rem);
+  font-weight: 900; color: var(--text-dark);
+  line-height: 1.1; margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+.section-sub {
+  font-size: 1rem; color: var(--text-mid);
+  line-height: 1.75; max-width: 600px; font-weight: 400;
+}
+
+/* dark section overrides */
+.dark .section-label { color: var(--cyan); }
+.dark .section-title { color: white; }
+.dark .section-sub { color: rgba(255,255,255,0.55); }
+
+/* ── ADVANTAGE SECTION ── */
+#advantage { background: var(--gray-light); padding: 90px 5%; }
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin-top: 3rem;
+}
+
+.adv-card {
+  background: white;
+  border-radius: 18px;
+  padding: 2.5rem;
+  border: 1px solid var(--gray-mid);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.adv-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.adv-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(8,15,30,0.1); }
+.adv-card:hover::before { transform: scaleX(1); }
+
+.adv-icon {
+  width: 58px; height: 58px;
+  border-radius: 14px; display: flex;
+  align-items: center; justify-content: center;
+  margin-bottom: 1.5rem; font-size: 1.7rem;
+}
+.adv-icon.blue-bg { background: rgba(21,87,255,0.08); }
+.adv-icon.red-bg { background: rgba(255,59,59,0.08); }
+.adv-icon.green-bg { background: rgba(0,232,122,0.08); }
+
+.adv-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem; font-weight: 800;
+  color: var(--text-dark); margin-bottom: 0.75rem;
+}
+.adv-desc { font-size: 0.88rem; color: var(--text-mid); line-height: 1.75; }
+.adv-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 1.5rem; font-size: 0.84rem; font-weight: 700;
+  color: var(--blue); text-decoration: none; transition: gap 0.2s;
+}
+.adv-link:hover { gap: 10px; }
+
+/* ── SAVINGS SECTION ── */
+#savings {
+  background: var(--midnight);
+  position: relative; overflow: hidden;
+}
+#savings::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(21,87,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,87,255,0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.savings-header { margin-bottom: 4rem; }
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.comp-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+}
+.comp-card.us-side { border-color: rgba(21,87,255,0.3); }
+.comp-card.cn-side { border-color: rgba(255,59,59,0.3); }
+
+.comp-flag { font-size: 2rem; margin-bottom: 0.75rem; }
+.comp-title {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 800; color: white; margin-bottom: 1.5rem;
+}
+
+.comp-item {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.comp-item:last-child { border-bottom: none; }
+.comp-item-name { font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+.comp-price {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 800;
+}
+.price-us { color: #7BAAFF; }
+.price-cn { color: #FF9A9A; }
+
+.comp-vs {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0.5rem;
+}
+.vs-circle {
+  width: 60px; height: 60px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 900; color: white;
+}
+.vs-arrow { font-size: 1.2rem; color: rgba(255,255,255,0.2); }
+
+.savings-callout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; margin-top: 3rem;
+}
+
+.sc-box {
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative; overflow: hidden;
+}
+.sc-box.ai-box {
+  background: linear-gradient(135deg, rgba(255,59,59,0.12), rgba(255,59,59,0.04));
+  border: 1px solid rgba(255,59,59,0.25);
+}
+.sc-box.cloud-box {
+  background: linear-gradient(135deg, rgba(0,232,122,0.1), rgba(0,232,122,0.03));
+  border: 1px solid rgba(0,232,122,0.2);
+}
+
+.sc-label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 0.75rem;
+}
+.sc-label.red { color: var(--red-soft); }
+.sc-label.green { color: var(--green); }
+
+.sc-headline {
+  font-family: var(--font-display);
+  font-size: 2.5rem; font-weight: 900;
+  line-height: 1; letter-spacing: -1px; margin-bottom: 1rem;
+}
+.sc-headline.red { color: var(--red-soft); }
+.sc-headline.green { color: var(--green); }
+
+.sc-desc { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.75; }
+
+.sc-example {
+  margin-top: 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px; padding: 1rem 1.25rem;
+}
+.sc-ex-title { font-size: 0.72rem; font-weight: 700; color: rgba(255,255,255,0.35); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.75rem; }
+.sc-ex-row { display: flex; justify-content: space-between; padding: 0.4rem 0; font-size: 0.82rem; }
+.sc-ex-name { color: rgba(255,255,255,0.5); }
+.sc-ex-val { font-weight: 700; }
+.sc-ex-val.old { color: rgba(255,255,255,0.3); text-decoration: line-through; }
+.sc-ex-val.new-red { color: var(--red-soft); }
+.sc-ex-val.new-green { color: var(--green); }
+
+/* ── CLOUD ── */
+#cloud { background: white; }
+
+.vendor-section { margin-bottom: 3rem; }
+.vendor-section-label {
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: #94a3b8; margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 12px;
+}
+.vendor-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-mid); }
+
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 1rem;
+}
+
+.vendor-card {
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: 12px; padding: 1.5rem;
+  text-align: center; transition: all 0.25s; cursor: pointer;
+}
+.vendor-card:hover {
+  background: white; border-color: var(--blue);
+  box-shadow: 0 8px 25px rgba(21,87,255,0.1);
+  transform: translateY(-3px);
+}
+
+.vendor-logo {
+  font-family: var(--font-display);
+  font-size: 0.95rem; font-weight: 800;
+  color: var(--text-dark); margin-bottom: 0.4rem;
+}
+.vendor-logo.ali { color: #FF6A00; }
+.vendor-logo.tencent { color: #006EFF; }
+.vendor-logo.huawei { color: #cf0a2c; }
+.vendor-logo.jd { color: #CC0000; }
+.vendor-logo.ct { color: #005BAC; }
+.vendor-logo.google { color: #4285F4; }
+.vendor-logo.aws { color: #FF9900; }
+.vendor-logo.azure { color: #0078D4; }
+
+.vendor-sub { font-size: 0.72rem; color: #94a3b8; margin-bottom: 0.85rem; }
+
+.btn-order {
+  background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+  color: white; border: none; padding: 8px 14px;
+  border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+  cursor: pointer; width: 100%; transition: all 0.2s;
+}
+.btn-order:hover { box-shadow: 0 4px 15px rgba(21,87,255,0.35); }
+
+.features-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem; margin-top: 3rem; padding: 2rem;
+  background: var(--midnight); border-radius: 16px;
+}
+.feature-item { text-align: center; color: white; }
+.feature-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.feature-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); }
+
+/* ── MODELS ── */
+#models {
+  background: var(--deep);
+  position: relative; overflow: hidden;
+}
+#models::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(21,87,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,87,255,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 1rem; margin: 3rem 0;
+}
+.model-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 1.5rem 1rem;
+  text-align: center; transition: all 0.25s;
+  cursor: pointer; position: relative; overflow: hidden;
+}
+.model-card:hover {
+  border-color: rgba(21,87,255,0.5);
+  background: rgba(21,87,255,0.07);
+  transform: translateY(-3px);
+}
+.model-logo { font-size: 2rem; margin-bottom: 0.75rem; }
+.model-name { font-family: var(--font-display); font-size: 0.88rem; font-weight: 800; color: white; margin-bottom: 0.3rem; }
+.model-type { font-size: 0.68rem; color: rgba(255,255,255,0.4); }
+.model-origin {
+  display: inline-block; margin-top: 6px;
+  font-size: 0.62rem; padding: 2px 7px;
+  border-radius: 3px; font-weight: 700;
+}
+.origin-us { background: rgba(21,87,255,0.2); color: #7BAAFF; }
+.origin-cn { background: rgba(255,59,59,0.2); color: #FF9A9A; }
+
+.model-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin: 3rem 0;
+}
+.mf-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px; padding: 1.8rem;
+}
+.mf-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+.mf-title { font-family: var(--font-display); font-weight: 800; color: white; margin-bottom: 0.5rem; }
+.mf-desc { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+.compliance-box {
+  background: rgba(255,184,0,0.07);
+  border: 1px solid rgba(255,184,0,0.3);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 1.5rem 2rem; margin: 2rem 0;
+}
+.compliance-title {
+  font-weight: 700; color: var(--gold); margin-bottom: 0.75rem;
+  font-size: 0.88rem; display: flex; align-items: center; gap: 8px;
+}
+.compliance-text { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+
+.btn-model {
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: white; border: none; padding: 14px 32px;
+  border-radius: 8px; font-size: 0.95rem; font-weight: 700;
+  font-family: var(--font-display);
+  cursor: pointer; transition: all 0.25s;
+  box-shadow: 0 0 25px rgba(21,87,255,0.3);
+}
+.btn-model:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(21,87,255,0.5); }
+
+/* ── PAIN POINTS ── */
+#painpoints { background: var(--gray-light); }
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem; margin: 3rem 0 2.5rem;
+}
+.pain-card {
+  background: white; border-radius: 14px;
+  padding: 2rem; border: 1px solid var(--gray-mid);
+  transition: all 0.3s; position: relative; overflow: hidden;
+}
+.pain-card::after {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #ef4444, #f97316);
+}
+.pain-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(239,68,68,0.08); }
+.pain-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+.pain-title {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 800;
+  color: var(--text-dark); margin-bottom: 0.6rem;
+}
+.pain-desc { font-size: 0.84rem; color: var(--text-mid); line-height: 1.7; }
+
+.solution-banner {
+  background: linear-gradient(135deg, var(--midnight), var(--navy));
+  border-radius: 18px; padding: 2.5rem 3rem;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 2rem;
+}
+.solution-banner-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 900; color: white; margin-bottom: 0.5rem;
+}
+.solution-banner-text p { font-size: 0.88rem; color: rgba(255,255,255,0.6); }
+
+/* ── SOLUTIONS ── */
+#solutions { background: white; }
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin: 3rem 0;
+}
+.sol-card {
+  background: var(--gray-light); border-radius: 16px;
+  padding: 2rem; border: 1px solid var(--gray-mid);
+  transition: all 0.3s;
+}
+.sol-card:hover { border-color: var(--blue); box-shadow: 0 12px 40px rgba(21,87,255,0.08); transform: translateY(-4px); }
+.sol-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+.sol-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.75rem; }
+.sol-desc { font-size: 0.85rem; color: var(--text-mid); line-height: 1.75; }
+
+.process-flow {
+  background: var(--gray-light); border-radius: 20px;
+  padding: 3rem; margin-top: 3rem;
+  border: 1px solid var(--gray-mid);
+}
+.process-title {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 800;
+  text-align: center; margin-bottom: 3rem; color: var(--text-dark);
+}
+.process-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+.process-steps::before {
+  content: ''; position: absolute;
+  top: 27px; left: 12.5%; right: 12.5%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+}
+.process-step { text-align: center; }
+.step-num {
+  width: 54px; height: 54px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; margin: 0 auto 1rem;
+  font-family: var(--font-display); font-size: 1rem; font-weight: 900;
+  color: white; position: relative; z-index: 1;
+  box-shadow: 0 0 20px rgba(21,87,255,0.3);
+}
+.step-label { font-family: var(--font-display); font-size: 0.88rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.4rem; }
+.step-desc { font-size: 0.76rem; color: #94a3b8; line-height: 1.55; padding: 0 0.5rem; }
+
+/* ── PARTNERS ── */
+#partners { background: var(--gray-light); }
+.partners-tiers { margin-top: 3rem; }
+.tier-label { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 1.5rem; }
+.tier-badge {
+  padding: 4px 14px; border-radius: 20px;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px;
+}
+.tier-gold { background: rgba(255,184,0,0.12); color: var(--gold); border: 1px solid rgba(255,184,0,0.3); }
+.tier-silver { background: rgba(100,116,139,0.1); color: #64748b; border: 1px solid rgba(100,116,139,0.25); }
+
+.partner-logos { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+.partner-logo-box {
+  background: white; border: 1px solid var(--gray-mid);
+  border-radius: 10px; padding: 1.1rem 1.8rem;
+  display: flex; align-items: center; justify-content: center;
+  min-width: 130px; transition: all 0.2s; cursor: default;
+}
+.partner-logo-box:hover { border-color: var(--blue); box-shadow: 0 4px 15px rgba(21,87,255,0.1); }
+.partner-logo-text { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--text-dark); }
+
+/* ── CONTACT ── */
+#contact {
+  background: var(--midnight);
+  position: relative; overflow: hidden;
+}
+#contact::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top left, rgba(21,87,255,0.12), transparent 55%),
+              radial-gradient(ellipse at bottom right, rgba(255,59,59,0.08), transparent 55%);
+}
+
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+  gap: 4rem; margin-top: 3rem; position: relative;
+}
+.contact-info h3 {
+  font-family: var(--font-display); font-size: 1.1rem;
+  font-weight: 800; color: white; margin-bottom: 1.25rem;
+}
+.contact-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1.4rem; }
+.cd-icon {
+  width: 38px; height: 38px;
+  background: rgba(21,87,255,0.12); border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.cd-label { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-bottom: 3px; letter-spacing: 0.3px; }
+.cd-text { font-size: 0.86rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+.im-buttons { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+.im-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 8px;
+  font-size: 0.83rem; font-weight: 600;
+  text-decoration: none; transition: all 0.2s;
+  cursor: pointer; border: none;
+}
+.whatsapp { background: #25D366; color: white; }
+.telegram { background: #229ED9; color: white; }
+.im-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+.contact-form {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px; padding: 2.5rem;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+.form-group label { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.55); letter-spacing: 0.3px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 12px 14px;
+  color: white; font-size: 0.88rem;
+  font-family: var(--font-body); transition: border-color 0.2s; outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: rgba(21,87,255,0.5); background: rgba(21,87,255,0.04); }
+.form-group select option { background: var(--deep); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: white; border: none; padding: 14px;
+  border-radius: 8px; font-size: 1rem; font-weight: 800;
+  font-family: var(--font-display); cursor: pointer;
+  transition: all 0.25s; box-shadow: 0 0 25px rgba(21,87,255,0.3);
+  margin-top: 0.5rem;
+}
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(21,87,255,0.5); }
+
+/* ── FOOTER ── */
+footer { background: #020810; padding: 3rem 5%; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.footer-logo {
+  font-family: var(--font-display); font-size: 1.5rem;
+  font-weight: 900; color: white; margin-bottom: 1rem; letter-spacing: -0.5px;
+}
+.footer-logo .q { color: var(--cyan); }
+.footer-desc { font-size: 0.82rem; color: rgba(255,255,255,0.35); line-height: 1.75; }
+.footer-col h4 {
+  font-family: var(--font-display); font-size: 0.82rem; font-weight: 800;
+  color: rgba(255,255,255,0.75); margin-bottom: 1rem;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.55rem; }
+.footer-col a { font-size: 0.8rem; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.footer-col a:hover { color: var(--cyan); }
+
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-bottom-text { font-size: 0.76rem; color: rgba(255,255,255,0.25); }
+.footer-legal { display: flex; gap: 1.5rem; }
+.footer-legal a { font-size: 0.76rem; color: rgba(255,255,255,0.25); text-decoration: none; }
+.footer-legal a:hover { color: rgba(255,255,255,0.55); }
+
+/* ── FLOAT ── */
+.float-cta {
+  position: fixed; bottom: 2rem; right: 2rem;
+  z-index: 900; display: flex; flex-direction: column;
+  gap: 0.75rem; align-items: flex-end;
+}
+.float-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 50px;
+  font-size: 0.83rem; font-weight: 700;
+  cursor: pointer; border: none; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  transition: all 0.25s; white-space: nowrap;
+}
+.float-btn:hover { transform: translateY(-2px); }
+.float-main { background: linear-gradient(135deg, var(--blue), var(--cyan)); color: white; font-family: var(--font-display); }
+.float-wa { background: #25D366; color: white; }
+.float-tg { background: #229ED9; color: white; }
+.float-sub { opacity: 0; transform: translateY(10px); transition: all 0.3s; pointer-events: none; }
+.float-cta:hover .float-sub { opacity: 1; transform: translateY(0); pointer-events: all; }
+
+/* ── COOKIE ── */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--deep);
+  border-top: 1px solid rgba(21,87,255,0.2);
+  padding: 1.2rem 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; z-index: 2000; transition: transform 0.4s;
+}
+.cookie-banner.hidden { transform: translateY(100%); }
+.cookie-text { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+.cookie-text a { color: var(--cyan); }
+.cookie-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+.btn-cookie { padding: 8px 20px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; border: none; transition: all 0.2s; }
+.btn-cookie-accept { background: var(--blue); color: white; }
+.btn-cookie-decline { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.65); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(2,8,16,0.88);
+  z-index: 3000; display: flex; align-items: center;
+  justify-content: center; padding: 2rem;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--deep);
+  border: 1px solid rgba(21,87,255,0.2);
+  border-radius: 20px; padding: 2.5rem;
+  max-width: 500px; width: 100%;
+  transform: translateY(20px); transition: transform 0.3s; position: relative;
+}
+.modal-overlay.active .modal { transform: translateY(0); }
+.modal-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; color: white; margin-bottom: 0.5rem; }
+.modal-sub { font-size: 0.86rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+.modal-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: rgba(255,255,255,0.08); border: none; color: white;
+  width: 32px; height: 32px; border-radius: 50%;
+  cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 1024px) {
+  .advantage-grid, .solutions-grid, .model-features, .pain-grid { grid-template-columns: repeat(2, 1fr); }
+  .savings-callout { grid-template-columns: 1fr; }
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .comparison-row { grid-template-columns: 1fr; }
+  .comp-vs { display: none; }
+  .features-strip { grid-template-columns: repeat(3, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; }
+  .process-steps::before { display: none; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .solution-banner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 70px 4%; }
+  .advantage-grid, .solutions-grid, .model-features, .pain-grid { grid-template-columns: 1fr; }
+  .vendor-grid { grid-template-columns: repeat(2, 1fr); }
+  .models-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-strip { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .cookie-banner { flex-direction: column; gap: 1rem; }
+  .float-cta { bottom: 1rem; right: 1rem; }
+}
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.mobile-nav {
+  position: fixed; top: 70px; left: 0; right: 0;
+  background: rgba(8,15,30,0.98); backdrop-filter: blur(20px);
+  z-index: 999; padding: 1.5rem 5%;
+  display: none; flex-direction: column; gap: 1rem;
+  border-bottom: 1px solid rgba(21,87,255,0.1);
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  color: rgba(255,255,255,0.8); text-decoration: none;
+  font-size: 1rem; padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo"><span class="q">Q</span>Cloud <span class="tagline">LLC · Corona, CA</span></a>
+  <ul class="nav-links">
+    <li><a href="#savings">Cost Savings</a></li>
+    <li><a href="#cloud">Cloud Services</a></li>
+    <li><a href="#models">AI Models</a></li>
+    <li><a href="#painpoints">Why Us</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#contact" class="btn-nav">Get a Free Quote</a>
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#savings" onclick="closeMobileNav()">Cost Savings</a>
+  <a href="#cloud" onclick="closeMobileNav()">Cloud Services</a>
+  <a href="#models" onclick="closeMobileNav()">AI Models</a>
+  <a href="#painpoints" onclick="closeMobileNav()">Why Us</a>
+  <a href="#solutions" onclick="closeMobileNav()">Solutions</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  <a href="#contact" style="color: var(--cyan);" onclick="closeMobileNav()">Get a Free Quote →</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div class="hero-bg">
+    <div class="flag-glow-us"></div>
+    <div class="flag-glow-cn"></div>
+    <div class="grid-bg"></div>
+    <canvas class="neural-canvas" id="neuralCanvas"></canvas>
+  </div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        US-Based · QCLOUD LLC · Corona, California
+      </div>
+      <h1 class="hero-title">
+        The Only Platform with<br>
+        <span class="us">US</span> &amp; <span class="cn">Chinese</span> Cloud<br>
+        at <span class="cost">Unbeatable Cost</span>
+      </h1>
+      <p class="hero-sub">
+        American businesses are overpaying for AI and cloud — massively. QCloud bridges the US and Chinese technology ecosystems, giving you access to world-class resources at a fraction of the cost. Same results. Same quality. Up to 90% less spend.
+      </p>
+      <div class="hero-ctas">
+        <a href="#savings" class="btn-primary">See the Savings →</a>
+        <a href="#contact" class="btn-outline">Talk to an Expert</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-val red">~10%</div>
+          <div class="stat-label">of typical US AI<br>model API cost</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val gold">~50%</div>
+          <div class="stat-label">of typical US<br>cloud pricing</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val blue">8+</div>
+          <div class="stat-label">Cloud providers<br>US &amp; China</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="bridge-diagram">
+        <div class="bridge-card us-card">
+          <div class="bc-flag">🇺🇸</div>
+          <div class="bc-title">US Cloud &amp; AI Providers</div>
+          <div class="bc-items">
+            <span class="bc-tag blue">AWS</span>
+            <span class="bc-tag blue">Google Cloud</span>
+            <span class="bc-tag blue">Azure</span>
+            <span class="bc-tag blue">OpenAI GPT</span>
+            <span class="bc-tag blue">Claude</span>
+            <span class="bc-tag blue">Gemini</span>
+          </div>
+        </div>
+        <div class="bridge-arrow">⬇ unified through ⬇</div>
+        <div class="bridge-card center-card">
+          <div class="bc-center-label">⚡ QCloud Unified Platform</div>
+          <div class="bc-center-sub">One account · One invoice · Full compliance</div>
+        </div>
+        <div class="bridge-arrow">⬆ connected to ⬆</div>
+        <div class="bridge-card cn-card">
+          <div class="bc-flag">🇨🇳</div>
+          <div class="bc-title">Chinese Cloud &amp; AI Providers</div>
+          <div class="bc-items">
+            <span class="bc-tag red">Alibaba Cloud</span>
+            <span class="bc-tag red">Tencent Cloud</span>
+            <span class="bc-tag red">Huawei Cloud</span>
+            <span class="bc-tag red">JD Cloud</span>
+            <span class="bc-tag red">Qwen</span>
+            <span class="bc-tag red">Kimi · Doubao</span>
+          </div>
+        </div>
+        <div class="savings-badges">
+          <div class="savings-badge">
+            <div class="sb-val">–90%</div>
+            <div class="sb-label">AI Model Cost</div>
+          </div>
+          <div class="savings-badge">
+            <div class="sb-val">–50%</div>
+            <div class="sb-label">Cloud Cost</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ADVANTAGE ── -->
+<section id="advantage">
+  <div class="section-max">
+    <span class="section-label">Our Advantage</span>
+    <h2 class="section-title">Why QCloud is Different</h2>
+    <p class="section-sub">We're the only US-based reseller with direct, official access to both American and Chinese cloud and AI ecosystems — giving our clients an edge no competitor can match.</p>
+    <div class="advantage-grid">
+      <div class="adv-card reveal">
+        <div class="adv-icon blue-bg">🌉</div>
+        <div class="adv-title">The US–China Cloud Bridge</div>
+        <p class="adv-desc">No other US provider offers consolidated access to Alibaba Cloud, Tencent Cloud, Huawei Cloud, JD Cloud, AND AWS, GCP, Azure under one roof. We do — with official reseller status in both markets.</p>
+        <a href="#cloud" class="adv-link">Explore Cloud →</a>
+      </div>
+      <div class="adv-card reveal" style="transition-delay:0.1s">
+        <div class="adv-icon red-bg">🤖</div>
+        <div class="adv-title">Massive AI Cost Arbitrage</div>
+        <p class="adv-desc">Chinese frontier models — Qwen, Kimi, Doubao, Zhipu AI — deliver comparable results to GPT-4o at roughly 10% of the price. We make these models accessible to US businesses, compliantly.</p>
+        <a href="#models" class="adv-link">Explore AI Models →</a>
+      </div>
+      <div class="adv-card reveal" style="transition-delay:0.2s">
+        <div class="adv-icon green-bg">🔧</div>
+        <div class="adv-title">Full-Lifecycle MSP Support</div>
+        <p class="adv-desc">From architecture design to ongoing operations, our expert team handles migration, cost governance, compliance, and 24/7 monitoring — so you can focus on building, not managing infrastructure.</p>
+        <a href="#solutions" class="adv-link">Explore Solutions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SAVINGS ── -->
+<section id="savings" class="dark">
+  <div class="section-max">
+    <div class="savings-header">
+      <span class="section-label">Cost Comparison</span>
+      <h2 class="section-title">The Numbers Don't Lie</h2>
+      <p class="section-sub">Side-by-side pricing tells a clear story. Access the same computational power and AI intelligence — through Chinese providers — for a fraction of US rates.</p>
+    </div>
+
+    <div class="comparison-row reveal">
+      <div class="comp-card us-side">
+        <div class="comp-flag">🇺🇸</div>
+        <div class="comp-title">Typical US Provider Pricing</div>
+        <div class="comp-item">
+          <span class="comp-item-name">GPT-4o Input (1M tokens)</span>
+          <span class="comp-price price-us">$5.00</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-item-name">GPT-4o Output (1M tokens)</span>
+          <span class="comp-price price-us">$15.00</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-item-name">AWS EC2 c5.4xlarge / hr</span>
+          <span class="comp-price price-us">~$0.68</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-item-name">Azure Standard D8 / hr</span>
+          <span class="comp-price price-us">~$0.48</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-item-name">Google Cloud N2 8vCPU / hr</span>
+          <span class="comp-price price-us">~$0.47</span>
+        </div>
+      </div>
+
+      <div class="comp-vs">
+        <div class="vs-circle">VS</div>
+        <div class="vs-arrow">↕</div>
+      </div>
+
+      <div class="comp-card cn-side">
+        <div class="comp-flag">🇨🇳</div>
+        <div class="comp-title">Chinese Provider via QCloud</div>
+        <div class="comp-item">
+          <span class="comp-item-name">Qwen-Max Input (1M tokens)</span>
+          <span class="comp-price price-cn">~$0.40</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-item-name">Qwen-Max Output (1M tokens)</span>
+          <span class="comp-price price-cn">~$1.20</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-item-name">Alibaba Cloud ECS 16vCPU / hr</span>
+          <span class="comp-price price-cn">~$0.32</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-item-name">Tencent Cloud CVM 8vCPU / hr</span>
+          <span class="comp-price price-cn">~$0.22</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-item-name">Huawei Cloud ECS 8vCPU / hr</span>
+          <span class="comp-price price-cn">~$0.24</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="savings-callout">
+      <div class="sc-box ai-box reveal">
+        <div class="sc-label red">AI Model Cost Savings</div>
+        <div class="sc-headline red">Pay ~10%<br>of US Rates</div>
+        <p class="sc-desc">Chinese frontier models like Qwen, Kimi, and Doubao have achieved parity with GPT-4o and Claude on major benchmarks — at approximately 8–12% of the US price. For high-volume AI applications, this difference is transformative.</p>
+        <div class="sc-example">
+          <div class="sc-ex-title">Example: 500M tokens / month</div>
+          <div class="sc-ex-row">
+            <span class="sc-ex-name">GPT-4o (blended)</span>
+            <span class="sc-ex-val old">~$5,000/mo</span>
+          </div>
+          <div class="sc-ex-row">
+            <span class="sc-ex-name">Qwen via QCloud</span>
+            <span class="sc-ex-val new-red">~$480/mo</span>
+          </div>
+        </div>
+      </div>
+      <div class="sc-box cloud-box reveal" style="transition-delay:0.1s">
+        <div class="sc-label green">Cloud Infrastructure Savings</div>
+        <div class="sc-headline green">Pay ~50%<br>of US Cloud</div>
+        <p class="sc-desc">Chinese cloud providers offer equivalent compute, storage, and networking resources at roughly 40–55% of major US cloud prices. For cloud-heavy workloads, this represents tens of thousands in annual savings.</p>
+        <div class="sc-example">
+          <div class="sc-ex-title">Example: 100 vCPU production cluster</div>
+          <div class="sc-ex-row">
+            <span class="sc-ex-name">AWS / GCP / Azure</span>
+            <span class="sc-ex-val old">~$2,800/mo</span>
+          </div>
+          <div class="sc-ex-row">
+            <span class="sc-ex-name">Alibaba Cloud via QCloud</span>
+            <span class="sc-ex-val new-green">~$1,300/mo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOUD ── -->
+<section id="cloud">
+  <div class="section-max">
+    <span class="section-label">Cloud Services</span>
+    <h2 class="section-title">US &amp; Chinese Cloud · Official Authorised Reseller</h2>
+    <p class="section-sub">8 cloud providers across two markets — unified billing, maximum rebates, one point of contact</p>
+
+    <div class="vendor-section reveal">
+      <div class="vendor-section-label">🇺🇸 US & International Cloud Providers</div>
+      <div class="vendor-grid">
+        <div class="vendor-card">
+          <div class="vendor-logo aws">Amazon AWS</div>
+          <div class="vendor-sub">AWS</div>
+          <button class="btn-order" onclick="openConsole('aws')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo google">Google Cloud</div>
+          <div class="vendor-sub">GCP</div>
+          <button class="btn-order" onclick="openConsole('gcp')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo azure">Microsoft Azure</div>
+          <div class="vendor-sub">Azure</div>
+          <button class="btn-order" onclick="openConsole('azure')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="vendor-section reveal" style="transition-delay: 0.15s">
+      <div class="vendor-section-label">🇨🇳 Chinese Cloud Providers — Up to 50% Cheaper</div>
+      <div class="vendor-grid">
+        <div class="vendor-card">
+          <div class="vendor-logo ali">Alibaba Cloud</div>
+          <div class="vendor-sub">阿里云 · Aliyun</div>
+          <button class="btn-order" onclick="openConsole('aliyun')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo tencent">Tencent Cloud</div>
+          <div class="vendor-sub">腾讯云</div>
+          <button class="btn-order" onclick="openConsole('tencent')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo huawei">Huawei Cloud</div>
+          <div class="vendor-sub">华为云</div>
+          <button class="btn-order" onclick="openConsole('huawei')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo jd">JD Cloud</div>
+          <div class="vendor-sub">京东云</div>
+          <button class="btn-order" onclick="openConsole('jd')">Order Now</button>
+        </div>
+        <div class="vendor-card">
+          <div class="vendor-logo ct">CT Cloud</div>
+          <div class="vendor-sub">天翼云 · ChinaTelecom</div>
+          <button class="btn-order" onclick="openConsole('ct')">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="features-strip reveal">
+      <div class="feature-item"><div class="feature-icon">🧾</div><div class="feature-label">Unified Billing</div></div>
+      <div class="feature-item"><div class="feature-icon">💱</div><div class="feature-label">USD Payments</div></div>
+      <div class="feature-item"><div class="feature-icon">💰</div><div class="feature-label">Volume Rebates</div></div>
+      <div class="feature-item"><div class="feature-icon">🎫</div><div class="feature-label">Credit Support</div></div>
+      <div class="feature-item"><div class="feature-icon">🛡️</div><div class="feature-label">24/7 Architects</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MODELS ── -->
+<section id="models" class="dark">
+  <div class="section-max" style="position:relative">
+    <span class="section-label">AI Model Services</span>
+    <h2 class="section-title">One API · US &amp; Chinese AI Models</h2>
+    <p class="section-sub">Access all major US and Chinese frontier models through a single unified interface — with Chinese models delivering benchmark-matching results at ~10% of US pricing</p>
+
+    <div class="models-grid reveal">
+      <div class="model-card">
+        <div class="model-logo">🟢</div>
+        <div class="model-name">OpenAI GPT</div>
+        <div class="model-type">GPT-4o / o1</div>
+        <div class="model-origin origin-us">🇺🇸 US</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">💎</div>
+        <div class="model-name">Gemini</div>
+        <div class="model-type">Google DeepMind</div>
+        <div class="model-origin origin-us">🇺🇸 US</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🔶</div>
+        <div class="model-name">Claude</div>
+        <div class="model-type">Anthropic</div>
+        <div class="model-origin origin-us">🇺🇸 US</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🌊</div>
+        <div class="model-name">Qwen</div>
+        <div class="model-type">Alibaba Cloud</div>
+        <div class="model-origin origin-cn">🇨🇳 CN · ~10% cost</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🫘</div>
+        <div class="model-name">Doubao</div>
+        <div class="model-type">ByteDance</div>
+        <div class="model-origin origin-cn">🇨🇳 CN · ~10% cost</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🌙</div>
+        <div class="model-name">Kimi</div>
+        <div class="model-type">Moonshot AI</div>
+        <div class="model-origin origin-cn">🇨🇳 CN · ~10% cost</div>
+      </div>
+      <div class="model-card">
+        <div class="model-logo">🧠</div>
+        <div class="model-name">Zhipu AI</div>
+        <div class="model-type">GLM / CogVideo</div>
+        <div class="model-origin origin-cn">🇨🇳 CN · ~10% cost</div>
+      </div>
+    </div>
+
+    <div class="model-features reveal">
+      <div class="mf-item">
+        <div class="mf-icon">⚡</div>
+        <div class="mf-title">Unified API Interface</div>
+        <p class="mf-desc">OpenAI SDK-compatible format. One codebase calls all models — US and Chinese. Switch providers instantly with zero rewrite. Start with GPT-4o, migrate to Qwen to cut costs by 90%.</p>
+      </div>
+      <div class="mf-item">
+        <div class="mf-icon">🏗️</div>
+        <div class="mf-title">On-Premise Deployment</div>
+        <p class="mf-desc">Deploy to your private cloud or on-site servers. Data stays within your perimeter — essential for enterprise compliance, healthcare, finance, and legal use cases.</p>
+      </div>
+      <div class="mf-item">
+        <div class="mf-icon">📚</div>
+        <div class="mf-title">Enterprise Knowledge Integration</div>
+        <p class="mf-desc">RAG architecture connects any model directly to your ERP, CRM, Salesforce, or internal documents — building intelligent agents tailored to your business.</p>
+      </div>
+    </div>
+
+    <div class="compliance-box reveal">
+      <div class="compliance-title">⚠️ Compliance &amp; Legal Notice</div>
+      <p class="compliance-text">
+        QCloud provides access to international AI model services for use in compliant jurisdictions only. Users are responsible for ensuring their data handling and AI usage comply with applicable US federal and state laws, including CCPA, HIPAA where relevant, and applicable export control regulations. QCloud acts solely as a technology interface provider and assumes no liability for content generated. Clients must independently assess and fulfil all compliance obligations applicable to their industry and jurisdiction.
+      </p>
+    </div>
+
+    <div style="text-align:center; margin-top: 1.5rem;">
+      <button class="btn-model" onclick="openModal()">Book a Demo / Get API Access →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAIN POINTS ── -->
+<section id="painpoints">
+  <div class="section-max">
+    <span class="section-label">Why QCloud</span>
+    <h2 class="section-title">The Hidden Pain of Managing AI APIs In-House</h2>
+    <p class="section-sub">Most teams don't realise how much friction — and money — they're burning by managing multiple cloud and AI providers independently.</p>
+
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon">🔐</div>
+        <div class="pain-title">Locked Out of Chinese Models</div>
+        <p class="pain-desc">Accessing Qwen, Kimi, or Doubao directly requires Chinese business registration, RMB payment methods, and navigating Chinese-language portals. Most US teams simply can't get in. We bridge that gap.</p>
+      </div>
+      <div class="pain-card reveal" style="transition-delay:0.05s">
+        <div class="pain-icon">💸</div>
+        <div class="pain-title">Massively Overpaying for AI</div>
+        <p class="pain-desc">Running GPT-4o at scale costs $5–15 per million tokens. The same workload on Qwen-Max costs under $1.50. Most companies don't know this option exists — or how to access it compliantly.</p>
+      </div>
+      <div class="pain-card reveal" style="transition-delay:0.1s">
+        <div class="pain-icon">🔄</div>
+        <div class="pain-title">Fragmented Multi-Cloud Billing</div>
+        <p class="pain-desc">Four cloud providers means four bills, four portals, four sets of cost alerts, and four quarterly reviews. Consolidating this alone saves dozens of engineering and finance hours per month.</p>
+      </div>
+      <div class="pain-card reveal" style="transition-delay:0.15s">
+        <div class="pain-icon">⚡</div>
+        <div class="pain-title">Vendor Lock-In & Rewrite Risk</div>
+        <p class="pain-desc">Each AI provider has a different SDK and API format. Switching from OpenAI to a cheaper model means rewriting integration code, retesting pipelines, and re-tuning prompts — killing velocity.</p>
+      </div>
+      <div class="pain-card reveal" style="transition-delay:0.2s">
+        <div class="pain-icon">🛡️</div>
+        <div class="pain-title">Compliance Complexity</div>
+        <p class="pain-desc">Sending data to foreign AI endpoints without proper Data Processing Agreements can violate CCPA, HIPAA, or client contracts. QCloud provides compliant pathways with clear contractual coverage.</p>
+      </div>
+      <div class="pain-card reveal" style="transition-delay:0.25s">
+        <div class="pain-icon">🔧</div>
+        <div class="pain-title">No Enterprise Integration Out-of-Box</div>
+        <p class="pain-desc">Raw API keys don't connect to your Salesforce, ERP, or internal knowledge base. Building that yourself means months of engineering. QCloud ships enterprise integrations as a managed service.</p>
+      </div>
+    </div>
+
+    <div class="solution-banner reveal">
+      <div class="solution-banner-text">
+        <h3>QCloud eliminates all of this with one platform.</h3>
+        <p>One unified API. Consolidated billing in USD. US &amp; Chinese model access. Enterprise integrations. Compliance coverage. Available now.</p>
+      </div>
+      <a href="#contact" class="btn-primary">Get Started →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTIONS ── -->
+<section id="solutions">
+  <div class="section-max">
+    <span class="section-label">Solutions</span>
+    <h2 class="section-title">Expert MSP Services · Full-Lifecycle Cloud Governance</h2>
+    <p class="section-sub">More than a reseller — your strategic cloud and AI partner for long-term growth</p>
+
+    <div class="solutions-grid">
+      <div class="sol-card reveal">
+        <div class="sol-icon">📊</div>
+        <div class="sol-title">Multi-Cloud Cost Management</div>
+        <p class="sol-desc">Eliminate billing sprawl and cost black holes across US and Chinese cloud providers. Unified monitoring, intelligent resource optimisation, and consistent 30%+ cost reductions for enterprise clients.</p>
+      </div>
+      <div class="sol-card reveal" style="transition-delay:0.1s">
+        <div class="sol-icon">🌏</div>
+        <div class="sol-title">US–China Cloud Architecture</div>
+        <p class="sol-desc">For businesses with operations or users in both markets, we design hybrid cloud architectures that leverage the best of both ecosystems — cost efficiency from Chinese cloud, reliability from US providers.</p>
+      </div>
+      <div class="sol-card reveal" style="transition-delay:0.2s">
+        <div class="sol-icon">🚀</div>
+        <div class="sol-title">AI-Powered Business Transformation</div>
+        <p class="sol-desc">Embed LLM capabilities into your CRM, Salesforce, ERP, or internal tooling. We build intelligent customer service agents, document processors, and analytics pipelines — using the most cost-effective models available.</p>
+      </div>
+    </div>
+
+    <div class="process-flow reveal">
+      <div class="process-title">Our Delivery Process</div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div class="step-label">Discovery</div>
+          <p class="step-desc">Understand your workloads, AI usage patterns, and cost targets</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div class="step-label">Architecture Design</div>
+          <p class="step-desc">Architect the optimal US/China multi-cloud solution with savings projections</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div class="step-label">Migration &amp; Delivery</div>
+          <p class="step-desc">Zero-downtime migration with full business continuity and data security</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div class="step-label">Ongoing Operations</div>
+          <p class="step-desc">24/7 monitoring, cost optimisation, and dedicated account management</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ── -->
+<section id="partners">
+  <div class="section-max">
+    <span class="section-label">Partners</span>
+    <h2 class="section-title">Official Partnerships Across Two Ecosystems</h2>
+    <p class="section-sub">Direct reseller agreements with leading US and Chinese cloud and AI providers — giving our clients the best terms, best pricing, and best support</p>
+
+    <div class="partners-tiers">
+      <div class="tier-label">
+        <span class="tier-badge tier-gold">Gold Partner</span>
+      </div>
+      <div class="partner-logos reveal">
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#FF9900">Amazon AWS</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#4285F4">Google Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#0078D4">Microsoft Azure</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#FF6A00">Alibaba Cloud</span></div>
+      </div>
+
+      <div class="tier-label" style="margin-top: 2rem;">
+        <span class="tier-badge tier-silver">Strategic Ally</span>
+      </div>
+      <div class="partner-logos reveal">
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#006EFF">Tencent Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#cf0a2c">Huawei Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#CC0000">JD Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#005BAC">CT Cloud</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#10B981">OpenAI</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#6366F1">Anthropic</span></div>
+        <div class="partner-logo-box"><span class="partner-logo-text" style="color:#F59E0B">Alibaba Qwen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact" class="dark">
+  <div class="section-max" style="position:relative">
+    <span class="section-label">Contact Us</span>
+    <h2 class="section-title">Start Saving on Cloud &amp; AI Today</h2>
+    <p class="section-sub">Talk to a specialist about your current cloud spend — most clients identify $10,000+ in annual savings in their first consultation.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>QCLOUD LLC</h3>
+        <div class="contact-detail">
+          <div class="cd-icon">📍</div>
+          <div>
+            <div class="cd-label">Office Address</div>
+            <div class="cd-text">7862 Natoma St<br>Corona, CA 92880, United States</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">📞</div>
+          <div>
+            <div class="cd-label">Phone</div>
+            <div class="cd-text">+1 (909) 909-0888</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">📧</div>
+          <div>
+            <div class="cd-label">Email</div>
+            <div class="cd-text">support@wonmay.net</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">💬</div>
+          <div>
+            <div class="cd-label">Instant Messaging</div>
+            <div class="cd-text">WhatsApp / Telegram<br>Mon – Fri 9:00 AM – 7:00 PM PT</div>
+          </div>
+        </div>
+        <div class="im-buttons">
+          <a href="https://wa.me/19099090888" class="im-btn whatsapp">💬 WhatsApp</a>
+          <a href="https://t.me/" class="im-btn telegram">✈️ Telegram</a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal" style="transition-delay:0.15s">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Company *</label>
+            <input type="text" placeholder="Company name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email or Phone *</label>
+          <input type="text" placeholder="email@company.com or +1 (xxx) xxx-xxxx">
+        </div>
+        <div class="form-group">
+          <label>What are you interested in?</label>
+          <select>
+            <option value="">Select a product or service</option>
+            <option>AI Model API — Chinese Models (Cost Savings)</option>
+            <option>AI Model API — US Models (OpenAI / Claude / Gemini)</option>
+            <option>Cloud — Amazon AWS</option>
+            <option>Cloud — Google Cloud</option>
+            <option>Cloud — Microsoft Azure</option>
+            <option>Cloud — Alibaba Cloud (50% savings)</option>
+            <option>Cloud — Tencent / Huawei / JD / CT Cloud</option>
+            <option>Multi-Cloud Cost Audit</option>
+            <option>MSP Managed Services</option>
+            <option>Enterprise AI Integration</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Current Monthly Cloud / AI Spend (Optional)</label>
+          <select>
+            <option value="">Select a range</option>
+            <option>Under $1,000/mo</option>
+            <option>$1,000 – $5,000/mo</option>
+            <option>$5,000 – $20,000/mo</option>
+            <option>$20,000 – $100,000/mo</option>
+            <option>$100,000+/mo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell us about your needs</label>
+          <textarea placeholder="Describe your current infrastructure, AI usage, and what you're hoping to achieve..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="handleSubmit()">Submit — Get a Free Cost Audit →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><span class="q">Q</span>Cloud LLC</div>
+      <p class="footer-desc">Your bridge to US &amp; Chinese cloud and AI resources.<br>QCLOUD LLC — Corona, California, USA.<br>Trusted multi-cloud MSP and AI model aggregation platform for businesses seeking real cost efficiency.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Cloud</h4>
+      <ul>
+        <li><a href="#cloud">Amazon AWS</a></li>
+        <li><a href="#cloud">Google Cloud</a></li>
+        <li><a href="#cloud">Microsoft Azure</a></li>
+        <li><a href="#cloud">Alibaba Cloud</a></li>
+        <li><a href="#cloud">Tencent Cloud</a></li>
+        <li><a href="#cloud">Huawei Cloud</a></li>
+        <li><a href="#cloud">JD Cloud</a></li>
+        <li><a href="#cloud">CT Cloud</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>AI Models</h4>
+      <ul>
+        <li><a href="#models">OpenAI GPT</a></li>
+        <li><a href="#models">Gemini</a></li>
+        <li><a href="#models">Claude</a></li>
+        <li><a href="#models">Qwen</a></li>
+        <li><a href="#models">Doubao / Kimi</a></li>
+        <li><a href="#models">Zhipu AI</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#savings">Cost Savings</a></li>
+        <li><a href="#painpoints">Why QCloud</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-bottom-text">© 2025 QCLOUD LLC. All rights reserved. Corona, CA 92880, United States.</span>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">AI Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── FLOATING CTA ── -->
+<div class="float-cta">
+  <a href="https://wa.me/19099090888" class="float-btn float-wa float-sub">💬 WhatsApp</a>
+  <a href="https://t.me/" class="float-btn float-tg float-sub">✈️ Telegram</a>
+  <button class="float-btn float-main" onclick="openModal()">📅 Book a Demo</button>
+</div>
+
+<!-- ── COOKIE ── -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    We use cookies to improve your experience. By continuing, you agree to our <a href="#">Cookie Policy</a> and <a href="#">Privacy Policy</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="btn-cookie btn-cookie-decline" onclick="dismissCookie()">Essential Only</button>
+    <button class="btn-cookie btn-cookie-accept" onclick="dismissCookie()">Accept All</button>
+  </div>
+</div>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">Book a Demo</div>
+    <p class="modal-sub">Submit your details and a specialist will reach out within 24 hours</p>
+    <div class="form-group">
+      <label>Full Name *</label>
+      <input type="text" placeholder="Your name">
+    </div>
+    <div class="form-group">
+      <label>Email or Phone *</label>
+      <input type="text" placeholder="email@company.com or +1 (xxx) xxx-xxxx">
+    </div>
+    <div class="form-group">
+      <label>Primary Interest</label>
+      <select>
+        <option>AI Model Cost Reduction</option>
+        <option>Cloud Cost Reduction</option>
+        <option>Multi-Cloud Management</option>
+        <option>Enterprise AI Integration</option>
+      </select>
+    </div>
+    <button class="btn-submit" onclick="handleModalSubmit()">Book Now →</button>
+  </div>
+</div>
+
+<script>
+// Neural canvas
+const canvas = document.getElementById('neuralCanvas');
+const ctx = canvas.getContext('2d');
+let nodes = [];
+
+function resizeCanvas() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+function initNodes() {
+  nodes = [];
+  const count = Math.floor((canvas.width * canvas.height) / 18000);
+  for (let i = 0; i < count; i++) {
+    nodes.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, vx: (Math.random()-0.5)*0.4, vy: (Math.random()-0.5)*0.4, r: Math.random()*2+1 });
+  }
+}
+function drawNeural() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  for (let i=0;i<nodes.length;i++) {
+    for (let j=i+1;j<nodes.length;j++) {
+      const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if (dist<130) {
+        ctx.beginPath();
+        ctx.strokeStyle=`rgba(21,87,255,${(1-dist/130)*0.25})`;
+        ctx.lineWidth=1;
+        ctx.moveTo(nodes[i].x,nodes[i].y);
+        ctx.lineTo(nodes[j].x,nodes[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+  nodes.forEach(n => {
+    ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(0,212,255,0.5)'; ctx.fill();
+    n.x+=n.vx; n.y+=n.vy;
+    if(n.x<0||n.x>canvas.width) n.vx*=-1;
+    if(n.y<0||n.y>canvas.height) n.vy*=-1;
+  });
+  requestAnimationFrame(drawNeural);
+}
+window.addEventListener('resize',()=>{resizeCanvas();initNodes();});
+resizeCanvas(); initNodes(); drawNeural();
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.1});
+reveals.forEach(r=>observer.observe(r));
+
+// Mobile nav
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');}
+
+// Cookie
+function dismissCookie(){document.getElementById('cookieBanner').classList.add('hidden');}
+
+// Modal
+function openModal(){document.getElementById('modalOverlay').classList.add('active');}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('active');}
+function closeModalOutside(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
+
+// Console
+function openConsole(v){alert(`Redirecting to ${v.toUpperCase()} reseller portal...`);}
+
+// Forms
+function handleSubmit(){alert('Thank you! A QCloud specialist will contact you within 24 hours with a personalised cost audit.');}
+function handleModalSubmit(){closeModal();alert('Demo booked! Our team will reach out within 24 hours.');}
+
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  const nav=document.getElementById('navbar');
+  nav.style.background=window.scrollY>50?'rgba(8,15,30,0.98)':'rgba(8,15,30,0.92)';
+});
+</script>
+</body>
+</html>
